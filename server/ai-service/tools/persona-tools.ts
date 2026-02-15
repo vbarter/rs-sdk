@@ -27,6 +27,9 @@ export function createPersonaTools(
             case 'recommend_item':
                 tools.push(createRecommendItemTool(actions, context, toolDef.description));
                 break;
+            case 'sell_item':
+                tools.push(createSellItemTool(actions, context, toolDef.description));
+                break;
         }
     }
 
@@ -75,6 +78,47 @@ function createRecommendItemTool(
                 actions.push({ type: 'say', text });
                 return { content: [{ type: 'text', text: `未找到商品: ${name}` }], details: {} };
             }
+        }
+    };
+}
+
+function createSellItemTool(
+    actions: NpcAiAction[],
+    context: PersonaToolContext,
+    description?: string
+): AgentTool<any> {
+    return {
+        name: 'sell_item',
+        description: description || '向玩家出售商品。会弹出确认提示，玩家确认后才完成交易。当玩家明确表示想买某个具体商品时使用。',
+        label: '出售商品',
+        parameters: Type.Object({
+            itemName: Type.String({ description: '要出售的商品名称（英文）' }),
+            count: Type.Number({ description: '出售数量，默认1', default: 1 })
+        }),
+        execute: async (_id, params) => {
+            const name = String(params.itemName);
+            const count = Number(params.count) || 1;
+            const shopItems = context.shopInventory || [];
+            const found = shopItems.find(
+                item => item.itemName.toLowerCase().includes(name.toLowerCase())
+            );
+
+            if (!found) {
+                actions.push({ type: 'say', text: `抱歉，我店里没有${name}。` });
+                return { content: [{ type: 'text', text: `商品不存在: ${name}` }], details: {} };
+            }
+
+            if (found.stock < count) {
+                actions.push({ type: 'say', text: `${found.itemName}库存不够了，只剩${found.stock}个。` });
+                return { content: [{ type: 'text', text: `库存不足: ${found.itemName} 剩余${found.stock}` }], details: {} };
+            }
+
+            // playerName 会在后处理阶段填充
+            actions.push({ type: 'sell_item', itemName: found.itemName, count, playerName: '' });
+            return {
+                content: [{ type: 'text', text: `已发起交易: ${found.itemName} x${count}，等待玩家确认` }],
+                details: {}
+            };
         }
     };
 }

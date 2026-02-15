@@ -37,8 +37,13 @@ import ServerTriggerType from '#/engine/script/ServerTriggerType.js';
 import World from '#/engine/World.js';
 import LinkList from '#/util/LinkList.js';
 import { printError } from '#/util/Logger.js';
-import { getController as getAiController } from '#/ai/AiBridge.js';
-import { executeAiAction, formatBubbleText } from '#/ai/AiActionExecutor.js';
+import { getController as getAiController, sendAiGreetRequest, isAiBridgeConnected } from '#/ai/AiBridge.js';
+import { getAiRole } from '#/ai/AiNpcRegistry.js';
+import { tryClaimGreet } from '#/ai/AiGreetCoordinator.js';
+import { GREET_SCAN_RANGE, GREET_PROBABILITY } from '#/ai/NpcAiController.js';
+import { executeAiAction, formatBubbleText, broadcastToChatPanel } from '#/ai/AiActionExecutor.js';
+import { ParamHelper } from '#/cache/config/ParamHelper.js';
+import ObjType from '#/cache/config/ObjType.js';
 import TranslationService from '#/util/TranslationService.js';
 
 export default class Npc extends PathingEntity {
@@ -225,8 +230,8 @@ export default class Npc extends PathingEntity {
             }
             const action = controller.dequeueAction();
             if (action) {
-                // 说话或开店时停步——NPC 不应该边走边说
-                if (action.type === 'say' || action.type === 'open_shop_for_player') {
+                // 说话、开店或出售物品时停步——NPC 不应该边走边说/交易
+                if (action.type === 'say' || action.type === 'open_shop_for_player' || action.type === 'sell_item') {
                     this.clearWaypoints();
                 }
                 executeAiAction(this, action);
@@ -245,6 +250,23 @@ export default class Npc extends PathingEntity {
 
         // === engaged 状态: 对话中（无动作等待） ===
         if (controller.isEngaged()) {
+            // 检查待确认交易超时（50 ticks ≈ 30秒）
+            if (controller.isTradeExpired(World.currentTick)) {
+                const trade = controller.pendingTrade!;
+                // 发送超时提示
+                for (const player of World.players) {
+                    if (player.displayName === trade.playerName) {
+                        player.messageGame(`@red@交易已超时取消。`);
+                        break;
+                    }
+                }
+                const tradeNpcType = NpcType.get(this.type);
+                this.say('看来你不想买了。');
+                broadcastToChatPanel(this, TranslationService.translate(tradeNpcType.name || 'NPC'), '看来你不想买了。');
+                controller.clearPendingTrade();
+                controller.lockedAt = World.currentTick; // 刷新锁时间，不立即超时结束对话
+            }
+
             // 检查空闲超时（30秒无对话）
             if (controller.shouldTimeout(World.currentTick)) {
                 controller.endConversation(World.currentTick);
@@ -261,8 +283,9 @@ export default class Npc extends PathingEntity {
                             playerNearby = true;
                             controller.setTargetPlayerPos(player.x, player.z);
 
-                            // 跟随玩家：如果距离 > 1（不相邻）或 === 0（重叠），走到玩家旁边
-                            if (dist !== 1 && !this.hasWaypoints()) {
+                            // 主动问候发起的对话：NPC 不跟随玩家，只在原地面向
+                            // 玩家主动发起的对话：NPC 跟随玩家走动
+                            if (!controller.greetInitiated && dist !== 1 && !this.hasWaypoints()) {
                                 const dx = this.x - player.x;
                                 const dz = this.z - player.z;
                                 let stepX = 0;
@@ -325,7 +348,93 @@ export default class Npc extends PathingEntity {
             return;
         }
 
-        // === idle 状态: 不做特殊处理，让引擎默认行为接管 ===
+        // === idle 状态: 主动问候附近玩家 ===
+        if (!isAiBridgeConnected()) return;
+        if (Math.random() >= GREET_PROBABILITY) return;
+
+        const npcType = NpcType.get(this.type);
+        const role = getAiRole(this.type, npcType.name);
+        if (!role) return;
+
+        // 扫描范围内的玩家
+        for (const player of World.players) {
+            if (!player || !player.isActive) continue;
+            if (player.level !== this.level) continue;
+
+            const dist = CoordGrid.distanceToSW(this, player);
+            if (dist > GREET_SCAN_RANGE) continue;
+
+            // 冷却检查
+            if (!controller.canGreetPlayer(player.displayName, World.currentTick)) continue;
+
+            // 区域协调：同一 tick 内只允许一个 NPC 问候同一玩家，同一区域只允许一个 NPC 主动问候
+            if (!tryClaimGreet(player.displayName, this.uid, this.x, this.z, this.level)) continue;
+
+            // 尝试锁定对话
+            if (!controller.tryLock(player.displayName, World.currentTick)) continue;
+
+            // 标记为主动问候发起（NPC 不跟随玩家）
+            controller.greetInitiated = true;
+
+            // 记录问候冷却
+            controller.recordGreet(player.displayName, World.currentTick);
+
+            // 记录目标位置，NPC 会面向玩家
+            controller.setTargetPlayerPos(player.x, player.z);
+            this.faceSquare(player.x, player.z);
+
+            // 收集附近玩家信息
+            const nearbyPlayers: Array<{ name: string; combatLevel: number; distance: number }> = [];
+            for (const other of World.players) {
+                if (!other || other.pid === player.pid) continue;
+                const otherDist = CoordGrid.distanceToSW(this, other);
+                if (otherDist <= GREET_SCAN_RANGE && other.level === this.level) {
+                    nearbyPlayers.push({
+                        name: other.displayName,
+                        combatLevel: other.combatLevel,
+                        distance: otherDist
+                    });
+                }
+            }
+
+            // 获取商店库存
+            let shopInventory: Array<{ itemName: string; stock: number; price: number }> | undefined;
+            const shopInvId = ParamHelper.getIntParam(39, npcType, -1);
+            if (shopInvId !== -1) {
+                const inventory = World.getInventory(shopInvId);
+                if (inventory) {
+                    const items: Array<{ itemName: string; stock: number; price: number }> = [];
+                    for (const item of inventory.items) {
+                        if (!item || item.id === -1) continue;
+                        const objType = ObjType.get(item.id);
+                        items.push({
+                            itemName: objType.name || `item#${item.id}`,
+                            stock: item.count,
+                            price: objType.cost
+                        });
+                    }
+                    if (items.length > 0) shopInventory = items;
+                }
+            }
+
+            // 发送主动问候请求
+            sendAiGreetRequest(
+                this.uid,
+                npcType.name || `NPC#${this.type}`,
+                role,
+                player.displayName,
+                player.combatLevel,
+                dist,
+                this.x, this.z, this.level,
+                nearbyPlayers,
+                controller,
+                this.type,
+                shopInventory
+            );
+
+            // 只问候一个玩家
+            break;
+        }
     }
 
     cleanup(): void {

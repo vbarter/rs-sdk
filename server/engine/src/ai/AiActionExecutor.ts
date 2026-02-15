@@ -6,10 +6,13 @@ import Player from '#/engine/entity/Player.js';
 import World from '#/engine/World.js';
 import { CoordGrid } from '#/engine/CoordGrid.js';
 import NpcType from '#/cache/config/NpcType.js';
+import ObjType from '#/cache/config/ObjType.js';
 import { ParamHelper } from '#/cache/config/ParamHelper.js';
 import TranslationService from '#/util/TranslationService.js';
 import IfSetText from '#/network/game/server/model/IfSetText.js';
 import { printInfo } from '#/util/Logger.js';
+import { getController } from '#/ai/AiBridge.js';
+import type { PendingTrade } from '#/ai/NpcAiController.js';
 
 type NpcAiAction =
     | { type: 'say'; text: string }
@@ -17,6 +20,7 @@ type NpcAiAction =
     | { type: 'open_shop_for_player'; playerName: string }
     | { type: 'open_bank' }
     | { type: 'give_item'; itemId: number; count: number }
+    | { type: 'sell_item'; itemName: string; count: number; playerName: string }
     | { type: 'face_player'; playerName: string }
     | { type: 'walk_to'; x: number; z: number }
     | { type: 'attack'; playerName: string }
@@ -264,6 +268,78 @@ export function executeAiAction(npc: Npc, action: NpcAiAction): boolean {
             return true;
         }
 
+        case 'sell_item': {
+            const sellPlayer = findPlayerByName(action.playerName);
+            if (!sellPlayer) {
+                printInfo(`[AI Sell] 找不到玩家: ${action.playerName}`);
+                return true;
+            }
+
+            // 从 NPC 的商店库存中查找物品 ID 和价格
+            const sellNpcType = NpcType.get(npc.type);
+            const shopInvId = ParamHelper.getIntParam(39, sellNpcType, -1);
+            if (shopInvId === -1) {
+                npc.say('抱歉，我没有商店。');
+                broadcastToChatPanel(npc, npcName, '抱歉，我没有商店。');
+                return true;
+            }
+
+            const inventory = World.getInventory(shopInvId);
+            if (!inventory) {
+                npc.say('商店暂时关门了。');
+                broadcastToChatPanel(npc, npcName, '商店暂时关门了。');
+                return true;
+            }
+
+            // 在库存中查找物品
+            let foundItem: { id: number; count: number; price: number } | null = null;
+            for (const item of inventory.items) {
+                if (!item || item.id === -1) continue;
+                const objType = ObjType.get(item.id);
+                if (objType.name && objType.name.toLowerCase().includes(action.itemName.toLowerCase())) {
+                    foundItem = { id: item.id, count: item.count, price: objType.cost };
+                    break;
+                }
+            }
+
+            if (!foundItem) {
+                npc.say(`抱歉，没有${action.itemName}了。`);
+                broadcastToChatPanel(npc, npcName, `抱歉，没有${action.itemName}了。`);
+                return true;
+            }
+
+            if (foundItem.count < action.count) {
+                npc.say(`${action.itemName}只剩${foundItem.count}个了。`);
+                broadcastToChatPanel(npc, npcName, `${action.itemName}只剩${foundItem.count}个了。`);
+                return true;
+            }
+
+            const unitPrice = foundItem.price;
+            const totalPrice = unitPrice * action.count;
+
+            // 在 controller 上设置 pendingTrade
+            const controller = getController(npc.uid);
+            controller.setPendingTrade({
+                playerName: action.playerName,
+                itemName: action.itemName,
+                itemId: foundItem.id,
+                count: action.count,
+                unitPrice,
+                totalPrice,
+                createdAt: World.currentTick
+            });
+
+            // 发送黄色确认提示到玩家聊天面板
+            const translatedItemName = TranslationService.translate(action.itemName);
+            const confirmMsg = action.count === 1
+                ? `@yel@[交易确认] ${translatedItemName} x1，价格 ${totalPrice} 金币。回复"确认"购买，"取消"取消。`
+                : `@yel@[交易确认] ${translatedItemName} x${action.count}，单价 ${unitPrice}，总价 ${totalPrice} 金币。回复"确认"购买，"取消"取消。`;
+            sellPlayer.messageGame(confirmMsg);
+
+            printInfo(`[AI Sell] 待确认交易: ${action.playerName} <- ${action.itemName} x${action.count} @ ${totalPrice}gp`);
+            return true;
+        }
+
         case 'attack': {
             const target = findPlayerByName(action.playerName);
             if (target) {
@@ -293,4 +369,85 @@ export function executeAiAction(npc: Npc, action: NpcAiAction): boolean {
         default:
             return true;
     }
+}
+
+// 金币 ID
+const COINS_ID = 995;
+// 玩家背包 inv ID
+const PLAYER_INV = 93;
+
+/**
+ * 执行交易确认：扣金币 + 给物品
+ */
+export function executeTradeConfirmation(npc: Npc, player: Player, trade: PendingTrade): void {
+    const npcType = NpcType.get(npc.type);
+    const npcName = TranslationService.translate(npcType.name || 'NPC');
+    const itemDisplayName = TranslationService.translate(trade.itemName);
+
+    // 检查金币
+    const playerCoins = player.invTotal(PLAYER_INV, COINS_ID);
+    if (playerCoins < trade.totalPrice) {
+        player.messageGame(`@red@金币不够！需要 ${trade.totalPrice} 金币，你只有 ${playerCoins} 金币。`);
+        npc.say('金币不够哦。');
+        broadcastToChatPanel(npc, npcName, '金币不够哦。');
+        return;
+    }
+
+    // 检查背包空位
+    const freeSpace = player.invFreeSpace(PLAYER_INV);
+    if (freeSpace < trade.count) {
+        player.messageGame(`@red@背包满了！需要 ${trade.count} 个空位，只剩 ${freeSpace} 个。`);
+        npc.say('你背包满了，先清理一下吧。');
+        broadcastToChatPanel(npc, npcName, '你背包满了，先清理一下吧。');
+        return;
+    }
+
+    // 再次检查库存（可能在等待确认期间卖完了）
+    const shopInvId = ParamHelper.getIntParam(39, npcType, -1);
+    if (shopInvId !== -1) {
+        const inventory = World.getInventory(shopInvId);
+        if (inventory) {
+            let stockOk = false;
+            for (const item of inventory.items) {
+                if (item && item.id === trade.itemId && item.count >= trade.count) {
+                    stockOk = true;
+                    break;
+                }
+            }
+            if (!stockOk) {
+                player.messageGame(`@red@抱歉，${itemDisplayName}刚卖完了。`);
+                npc.say('不好意思，刚卖完了。');
+                broadcastToChatPanel(npc, npcName, '不好意思，刚卖完了。');
+                return;
+            }
+        }
+    }
+
+    // 执行交易：扣金币
+    player.invDel(PLAYER_INV, COINS_ID, trade.totalPrice);
+    // 给物品
+    player.invAdd(PLAYER_INV, trade.itemId, trade.count);
+
+    // 成功提示
+    const successMsg = trade.count === 1
+        ? `@gre@交易成功！获得 ${itemDisplayName} x1，花费 ${trade.totalPrice} 金币。`
+        : `@gre@交易成功！获得 ${itemDisplayName} x${trade.count}，花费 ${trade.totalPrice} 金币。`;
+    player.messageGame(successMsg);
+
+    npc.say('好咧，拿好！');
+    broadcastToChatPanel(npc, npcName, '好咧，拿好！');
+
+    printInfo(`[AI Sell] 交易完成: ${trade.playerName} 购买 ${trade.itemName} x${trade.count} @ ${trade.totalPrice}gp`);
+}
+
+/**
+ * 执行交易取消
+ */
+export function executeTradeCancellation(npc: Npc, player: Player): void {
+    const npcType = NpcType.get(npc.type);
+    const npcName = TranslationService.translate(npcType.name || 'NPC');
+
+    player.messageGame('@yel@交易已取消。');
+    npc.say('好吧，想买的时候再来找我。');
+    broadcastToChatPanel(npc, npcName, '好吧，想买的时候再来找我。');
 }

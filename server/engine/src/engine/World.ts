@@ -100,7 +100,7 @@ import InputTrackingBlob from './entity/tracking/InputTrackingBlob.js';
 import OnDemand from './OnDemand.js';
 import { ObjDelayedRequest } from './entity/ObjDelayedRequest.js';
 import DbTableIndex from '#/cache/config/DbTableIndex.js';
-import { initAiBridge, isAiNpc } from '#/ai/index.js';
+import { initAiBridge, isAiNpc, clearGreetClaims } from '#/ai/index.js';
 import { setAiEnabled } from '#/ai/AiNpcRegistry.js';
 
 const priv = forge.pki.privateKeyFromPem(Environment.STANDALONE_BUNDLE ? await (await fetch('data/config/private.pem')).text() : fs.readFileSync('data/config/private.pem', 'ascii'));
@@ -729,6 +729,7 @@ class World {
     // - modes
     private processNpcs(): void {
         const start: number = Date.now();
+        clearGreetClaims();
         for (const npc of this.npcs) {
             try {
                 npc.turn();

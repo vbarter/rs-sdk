@@ -15,7 +15,8 @@ import World from '#/engine/World.js';
 import { CoordGrid } from '#/engine/CoordGrid.js';
 import { isAiEnabled, getAiRole, type NpcRole } from '#/ai/AiNpcRegistry.js';
 import { isAiBridgeConnected, getController, sendAiRequest } from '#/ai/AiBridge.js';
-import { broadcastPlayerChatToPanel } from '#/ai/AiActionExecutor.js';
+import { broadcastPlayerChatToPanel, executeTradeConfirmation, executeTradeCancellation } from '#/ai/AiActionExecutor.js';
+import TranslationService from '#/util/TranslationService.js';
 import { printInfo } from '#/util/Logger.js';
 
 const AI_CHAT_RANGE = 5; // NPC 能"听到"玩家说话的范围（格数）
@@ -131,6 +132,44 @@ export default class MessagePublicHandler extends ClientGameMessageHandler<Messa
         printInfo(`[AI Chat] 选中NPC: name="${npcType.name}", type=${closestNpc.type}, role=${closestRole}, shop="${shopTitle}", dist=${closestDist}, 玩家=${player.displayName}`);
 
         const controller = getController(closestNpc.uid);
+
+        // === 待确认交易拦截 ===
+        if (controller.hasPendingTradeFor(player.displayName)) {
+            const trade = controller.pendingTrade!;
+            const confirmPattern = /^(确认|买|好|好的|行|yes|buy|ok|y)$/i;
+            const cancelPattern = /^(取消|不买|算了|不要|no|cancel|n|不)$/i;
+
+            // 广播玩家消息到聊天面板
+            broadcastPlayerChatToPanel(closestNpc, player.displayName, chatText);
+
+            if (confirmPattern.test(chatText.trim())) {
+                // 确认交易
+                executeTradeConfirmation(closestNpc, player, trade);
+                controller.clearPendingTrade();
+                controller.lockedAt = World.currentTick; // 刷新锁时间
+                controller.addToHistory(player.displayName, chatText);
+                controller.addToHistory(
+                    TranslationService.translate(NpcType.get(closestNpc.type).name || 'NPC'),
+                    '好咧，拿好！'
+                );
+                return true;
+            } else if (cancelPattern.test(chatText.trim())) {
+                // 取消交易
+                executeTradeCancellation(closestNpc, player);
+                controller.clearPendingTrade();
+                controller.lockedAt = World.currentTick;
+                controller.addToHistory(player.displayName, chatText);
+                controller.addToHistory(
+                    TranslationService.translate(NpcType.get(closestNpc.type).name || 'NPC'),
+                    '好吧，想买的时候再来找我。'
+                );
+                return true;
+            } else {
+                // 说了其他内容 → 清除 pendingTrade，继续正常 AI 对话
+                controller.clearPendingTrade();
+                printInfo(`[AI Trade] 玩家说了无关内容，清除 pendingTrade，继续正常对话`);
+            }
+        }
 
         // 尝试获取对话锁
         if (!controller.tryLock(player.displayName, World.currentTick)) {

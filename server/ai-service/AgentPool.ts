@@ -187,6 +187,8 @@ export async function processRequest(
 
         systemPrompt += `\n\n## 工具使用（极其重要）\n**你必须通过调用工具来执行动作，不能只用文字描述动作。**\n- 说话 → 必须调用 say 工具\n- 玩家说"交易""买东西""Trade""开店" → 必须调用 open_shop_for_player 工具\n- 面向玩家 → 必须调用 face_player 工具\n- 绝对不要用文字说"我帮你打开商店"而不调用工具，那样商店不会真的打开。`;
 
+        systemPrompt += `\n\n## 主动打招呼\n当系统通知你有玩家走近时，你应该主动热情地打个招呼。\n- 先用 face_player 面向玩家，再用 say 打招呼\n- 问候要自然、友好、符合你的角色和个性\n- 可以根据你的职业特点来打招呼（比如店主可以招揽生意，卫兵可以提醒安全）\n- 保持简短，不超过40个字\n- 不要每次都说一样的话，要有变化`;
+
         if (context.nearbyPlayers.length > 0) {
             systemPrompt += `\n\n## 附近的玩家\n`;
             for (const p of context.nearbyPlayers) {
@@ -233,7 +235,12 @@ export async function processRequest(
     activeRequests++;
     let unsubscribe: (() => void) | null = null;
     try {
-        const userMsg = `玩家 ${event.playerName} 说: "${event.playerMessage}"`;
+        let userMsg: string;
+        if (event.type === 'player_nearby') {
+            userMsg = `一个叫 ${event.playerName} 的玩家走到了你附近（距离${event.playerDistance}格，战斗等级${event.playerCombatLevel}）。你注意到了他/她，主动打个招呼吧！`;
+        } else {
+            userMsg = `玩家 ${event.playerName} 说: "${event.playerMessage}"`;
+        }
 
         // 流式监听：在 prompt 之前订阅，累积文本并回调
         if (onStreamChunk) {
@@ -292,16 +299,20 @@ export async function processRequest(
         actions.push({ type: 'say', text: '...' });
     }
 
-    // 后处理：为 open_shop_for_player 填充 playerName
+    // 后处理：为 open_shop_for_player / sell_item 填充 playerName
     for (const action of actions) {
         if (action.type === 'open_shop_for_player' && !action.playerName) {
+            action.playerName = event.playerName;
+        }
+        if (action.type === 'sell_item' && !action.playerName) {
             action.playerName = event.playerName;
         }
     }
 
     // 关键词回退：如果玩家请求交易但模型没有调用 open_shop_for_player 工具，自动补上
+    // 仅对 player_chat 事件生效
     const hasShopAction = actions.some(a => a.type === 'open_shop_for_player');
-    if (!hasShopAction && npcRole === 'shopkeeper') {
+    if (!hasShopAction && npcRole === 'shopkeeper' && event.type === 'player_chat') {
         const playerMsg = event.playerMessage.toLowerCase();
         const sayTexts = actions.filter(a => a.type === 'say').map(a => (a as any).text || '').join(' ');
         const tradeKeywords = /交易|买东西|trade|看看商品|打开商店|开店|购买|browse|shop/i;
@@ -379,7 +390,8 @@ function buildPersonaPrompt(
         for (const item of context.shopInventory) {
             prompt += `| ${item.itemName} | ${item.stock} | ${item.price} |\n`;
         }
-        prompt += `\n当玩家想买东西时，使用 open_shop_for_player 工具打开商店界面。\n`;
+        prompt += `\n当玩家说"看看商品""交易""逛逛"等模糊请求时，使用 open_shop_for_player 工具打开商店界面。\n`;
+        prompt += `当玩家明确说要买某个具体商品（如"买一张地图""给我一个桶"）时，使用 sell_item 工具直接出售，会弹出确认提示让玩家确认。\n`;
         prompt += `你也可以用 recommend_item 工具主动推荐商品。\n`;
     }
 

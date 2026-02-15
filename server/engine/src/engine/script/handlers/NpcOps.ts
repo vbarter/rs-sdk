@@ -20,6 +20,7 @@ import ScriptState from '#/engine/script/ScriptState.js';
 import { CategoryTypeValid, check, CoordValid, DurationValid, HitTypeValid, HuntTypeValid, HuntVisValid, NpcModeValid, NpcStatValid, NpcTypeValid, NumberNotNull, ParamTypeValid, QueueValid, SpotAnimTypeValid } from '#/engine/script/ScriptValidators.js';
 import ServerTriggerType from '#/engine/script/ServerTriggerType.js';
 import World from '#/engine/World.js';
+import TranslationService from '#/util/TranslationService.js';
 
 const NpcOps: CommandHandlers = {
     [ScriptOpcode.NPC_FINDUID]: state => {
@@ -167,7 +168,8 @@ const NpcOps: CommandHandlers = {
     }),
 
     [ScriptOpcode.NPC_SAY]: checkedHandler(ActiveNpc, state => {
-        state.activeNpc.say(state.popString());
+        const text = state.popString();
+        state.activeNpc.say(TranslationService.translate(text));
     }),
 
     [ScriptOpcode.NPC_SETHUNT]: checkedHandler(ActiveNpc, state => {

@@ -42,6 +42,18 @@ export const lumbridgeGeneralShopkeeper: PersonaConfig = {
                 },
                 required: ['itemName']
             }
+        },
+        {
+            name: 'sell_item',
+            description: '直接向玩家出售商品（不需要打开商店界面）。当玩家明确说要买某个具体商品时使用此工具，会弹出确认提示让玩家确认购买。只能卖本店商品：Pot、Jug、Shears、Bucket、Tinderbox、Chisel、Hammer、Newcomer map。',
+            parameters: {
+                type: 'object',
+                properties: {
+                    itemName: { type: 'string', description: '要出售的商品名称（英文）' },
+                    count: { type: 'number', description: '出售数量，默认1' }
+                },
+                required: ['itemName']
+            }
         }
     ],
     skills: [

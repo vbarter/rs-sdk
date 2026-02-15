@@ -7,17 +7,17 @@ import { printError, printInfo } from '#/util/Logger.js';
 // AI 请求/响应类型（与 ai-service/types.ts 保持一致）
 type NpcRole = 'shopkeeper' | 'guard' | 'banker' | 'bartender' | 'trainer' | 'generic';
 
+type AiEvent =
+    | { type: 'player_chat'; playerName: string; playerMessage: string }
+    | { type: 'player_nearby'; playerName: string; playerCombatLevel: number; playerDistance: number };
+
 interface AiRequest {
     requestId: string;
     npcUid: number;
     npcName: string;
     npcRole: NpcRole;
     npcTypeId: number;
-    event: {
-        type: 'player_chat';
-        playerName: string;
-        playerMessage: string;
-    };
+    event: AiEvent;
     context: {
         npcPosition: { x: number; z: number; level: number };
         nearbyPlayers: Array<{ name: string; combatLevel: number; distance: number }>;
@@ -248,6 +248,84 @@ export function sendAiRequest(
         ws.send(JSON.stringify(wsMsg));
     } catch (err) {
         printError(`[AI Bridge] 发送请求失败: ${err}`);
+        pendingCallbacks.delete(requestId);
+        controller.pendingRequest = false;
+    }
+}
+
+/**
+ * 发送 AI 主动问候请求（NPC 主动与附近玩家打招呼）
+ * 与 sendAiRequest 的区别：
+ * - 无 playerMessage 验证（NPC 主动发起）
+ * - 不调 addToHistory（非回应玩家消息）
+ * - 更短超时(15s)
+ * - 超时时静默处理（不输出尴尬回退语）
+ */
+export function sendAiGreetRequest(
+    npcUid: number,
+    npcName: string,
+    npcRole: NpcRole,
+    playerName: string,
+    playerCombatLevel: number,
+    playerDistance: number,
+    npcX: number,
+    npcZ: number,
+    npcLevel: number,
+    nearbyPlayers: Array<{ name: string; combatLevel: number; distance: number }>,
+    controller: NpcAiController,
+    npcTypeId: number = 0,
+    shopInventory?: Array<{ itemName: string; stock: number; price: number }>
+): void {
+    if (!connected || !ws) return;
+
+    const requestId = `greet-${++requestCounter}-${Date.now()}`;
+
+    const request: AiRequest = {
+        requestId,
+        npcUid,
+        npcName,
+        npcRole,
+        npcTypeId,
+        event: {
+            type: 'player_nearby',
+            playerName,
+            playerCombatLevel,
+            playerDistance
+        },
+        context: {
+            npcPosition: { x: npcX, z: npcZ, level: npcLevel },
+            nearbyPlayers,
+            shopInventory,
+            conversationHistory: controller.getHistory()
+        }
+    };
+
+    // 注册回调和流式映射
+    requestToNpcUid.set(requestId, npcUid);
+    pendingCallbacks.set(requestId, (response) => {
+        controller.enqueueActions(response.actions);
+    });
+
+    // 超时清理（15秒，比普通请求短）
+    setTimeout(() => {
+        if (pendingCallbacks.has(requestId)) {
+            pendingCallbacks.delete(requestId);
+            requestToNpcUid.delete(requestId);
+            controller.pendingRequest = false;
+            // 超时静默处理：NPC 保持安静，不说尴尬回退语
+            controller.endConversation();
+        }
+    }, 15_000);
+
+    controller.pendingRequest = true;
+    // 不调 addToHistory —— NPC 主动发起，非回应玩家消息
+
+    const wsMsg: WsMessage = { type: 'ai_request', data: request };
+    try {
+        ws.send(JSON.stringify(wsMsg));
+        printInfo(`[AI Bridge] 发送主动问候请求: npc=${npcName}, player=${playerName}, dist=${playerDistance}`);
+    } catch (err) {
+        printError(`[AI Bridge] 发送问候请求失败: ${err}`);
         pendingCallbacks.delete(requestId);
         controller.pendingRequest = false;
     }

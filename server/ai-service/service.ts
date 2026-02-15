@@ -79,7 +79,10 @@ const server = Bun.serve({
 
             if (parsed.type === 'ai_request') {
                 const request = parsed.data as AiRequest;
-                console.log(`[AI Service] 收到请求: ${request.npcName} <- 玩家 ${request.event.playerName}: "${request.event.playerMessage}"`);
+                const eventDesc = request.event.type === 'player_chat'
+                    ? `玩家 ${request.event.playerName}: "${request.event.playerMessage}"`
+                    : `玩家 ${request.event.playerName} 走近 (距离${request.event.playerDistance}格)`;
+                console.log(`[AI Service] 收到请求: ${request.npcName} <- ${eventDesc}`);
 
                 try {
                     const response = await processRequest(request, (text) => {

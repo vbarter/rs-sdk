@@ -321,3 +321,49 @@ TypeError: undefined is not an object (evaluating 'model.id')
 [AI Service] 回复: Shop keeper -> "哈，当然！橡木柜台记得你笑声呢！要不再带把锤子？木料敲敲更结实！"
 [AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "我来之前说了啥"
 [AI Service] 回复: Shop keeper -> "你问天气，我让你问风去，然后讲了橡树和斧头的笑话呀！记得不？"
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI] Kimi/Moonshot 初始化完成, model=kimi-k2-turbo-preview, baseUrl=https://api.moonshot.cn/v1
+[AI Service] 启动中，端口 7781...
+[AI Service] 已启动: ws://localhost:7781
+[AI Service] 状态页面: http://localhost:7781/status
+[AI Service] AI 模型: kimi-k2-turbo-preview (provider: moonshot)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI] Kimi/Moonshot 初始化完成, model=kimi-k2-turbo-preview, baseUrl=https://api.moonshot.cn/v1
+[AI Service] 启动中，端口 7781...
+[AI Service] 已启动: ws://localhost:7781
+[AI Service] 状态页面: http://localhost:7781/status
+[AI Service] AI 模型: kimi-k2-turbo-preview (provider: moonshot)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI] Kimi/Moonshot 初始化完成, model=kimi-k2-turbo-preview, baseUrl=https://api.moonshot.cn/v1
+[AI Service] 启动中，端口 7781...
+[AI Service] 已启动: ws://localhost:7781
+[AI Service] 状态页面: http://localhost:7781/status
+[AI Service] AI 模型: kimi-k2-turbo-preview (provider: moonshot)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI] Kimi/Moonshot 初始化完成, model=kimi-k2-turbo-preview, baseUrl=https://api.moonshot.cn/v1
+[AI Service] 启动中，端口 7781...
+[AI Service] 已启动: ws://localhost:7781
+[AI Service] 状态页面: http://localhost:7781/status
+[AI Service] AI 模型: kimi-k2-turbo-preview (provider: moonshot)
+[AI Service] 引擎客户端已连接 (总数: 1)

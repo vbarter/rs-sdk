@@ -14,11 +14,9 @@ export interface AiRequest {
 
 export type NpcRole = 'shopkeeper' | 'guard' | 'banker' | 'bartender' | 'trainer' | 'generic';
 
-export interface AiEvent {
-    type: 'player_chat';
-    playerName: string;
-    playerMessage: string;
-}
+export type AiEvent =
+    | { type: 'player_chat'; playerName: string; playerMessage: string }
+    | { type: 'player_nearby'; playerName: string; playerCombatLevel: number; playerDistance: number };
 
 export interface AiContext {
     npcPosition: { x: number; z: number; level: number };
@@ -40,6 +38,7 @@ export type NpcAiAction =
     | { type: 'open_shop_for_player'; playerName: string }
     | { type: 'open_bank' }
     | { type: 'give_item'; itemId: number; count: number }
+    | { type: 'sell_item'; itemName: string; count: number; playerName: string }
     | { type: 'face_player'; playerName: string }
     | { type: 'walk_to'; x: number; z: number }
     | { type: 'attack'; playerName: string }

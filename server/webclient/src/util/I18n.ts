@@ -51,9 +51,111 @@ const ZH_DICT: Record<string, string> = {
     'Exit': '离开',
     'Read': '阅读',
     'Steal from': '偷窃',
+    'Steal-from': '偷窃',
+    'Steal-From': '偷窃',
     'Pick': '采摘',
+    'Pick-up': '拾取',
+    'Pick Lock': '撬锁',
+    'Pick-lock': '撬锁',
     'Fill': '装满',
     'Light': '点燃',
+    'Chop-down': '砍伐',
+    'Chop down': '砍伐',
+    'Climb down': '向下攀爬',
+    'Climb-Down': '向下攀爬',
+    'Climb-on': '攀上',
+    'Climb-out': '爬出',
+    'Climb-over': '翻越',
+    'Climb-to': '攀到',
+    'Climb_over': '翻越',
+    'Cross': '穿越',
+    'Cut': '切割',
+    'Craft': '制作',
+    'Craft-rune': '制作符文',
+    'Jump': '跳',
+    'Jump-over': '跳过',
+    'Jump-from': '跳下',
+    'Jump-From': '跳下',
+    'Push': '推',
+    'push': '推',
+    'Pull': '拉',
+    'Knock': '敲门',
+    'Knock-at': '敲门',
+    'Smash-to-bits': '砸得粉碎',
+    'Squeeze-through': '挤过去',
+    'Touch': '触摸',
+    'Unlock': '解锁',
+    'Turn': '转动',
+    'Turn-left': '向左转',
+    'Turn-right': '向右转',
+    'Watch': '观看',
+    'Feed': '喂食',
+    'Heal': '治疗',
+    'Fire': '射击',
+    'Fire-at': '射向',
+    'Operate': '操作',
+    'Balance': '平衡',
+    'Repair': '修理',
+    'Board': '登上',
+    'Disembark': '下船',
+    'Ascend': '上升',
+    'Descend': '下降',
+    'Walk-up': '走上去',
+    'Walk-Up': '走上去',
+    'Walk-down': '走下去',
+    'Walk-Down': '走下去',
+    'Walk-across': '走过去',
+    'Walk-on': '走上去',
+    'Walk-through': '穿过',
+    'Walk through': '穿过',
+    'Go-through': '穿过',
+    'Pass-through': '通过',
+    'Step-into': '踏入',
+    'Swim to': '游向',
+    'Swing across': '荡过去',
+    'Swing-on': '荡上去',
+    'Tackle': '铲球',
+    'Take From': '从中取出',
+    'Take-from': '从中取出',
+    'Take treasure': '取走宝藏',
+    'Take-cutting': '取插枝',
+    'Talk': '交谈',
+    'Talk-through': '通话',
+    'Teleport': '传送',
+    'Shoo-away': '赶走',
+    'Shout-across': '隔岸喊话',
+    'Shake': '摇动',
+    'Rotate': '旋转',
+    'Prod': '戳',
+    'Pluck': '拔取',
+    'Play': '玩',
+    'Pray at': '在此祈祷',
+    'Lean against': '倚靠',
+    'Lift': '举起',
+    'Listen-at': '贴耳听',
+    'Look at': '查看',
+    'Look in': '看里面',
+    'Look-in': '看里面',
+    'Look-under': '看下面',
+    'Investigate': '调查',
+    'Hide-in': '藏进去',
+    'Hit': '击打',
+    'Get in': '进去',
+    'Forfeit': '放弃',
+    'Fix': '修复',
+    'Drink From': '饮用',
+    'Burst': '冲破',
+    'Buy': '购买',
+    'Chase vermin': '追赶害虫',
+    'Check': '检查',
+    'Remove-coal': '移除煤炭',
+    'Search for traps': '搜索陷阱',
+    'Shut': '关上',
+    'Stroke': '抚摸',
+    'Use-quickly': '快速使用',
+    'View': '查看',
+    'Spy-on': '监视',
+    'Leave': '离开',
 
     // Item operations (inventory)
     'Wield': '装备',
@@ -61,9 +163,41 @@ const ZH_DICT: Record<string, string> = {
     'Equip': '装备',
     'Remove': '卸下',
     'Eat': '吃',
+    'eat': '吃',
     'Drink': '喝',
     'Bury': '埋葬',
     'Burn': '燃烧',
+    'Identify': '鉴定',
+    'Study': '研究',
+    'Inspect': '检查',
+    'Look': '查看',
+    'Look-at': '查看',
+    'Look through': '查看',
+    'Empty': '倒空',
+    'Empty Bowl': '倒空碗',
+    'Empty Dish': '倒空盘',
+    'Rub': '擦拭',
+    'Rub-together': '互相摩擦',
+    'Ring': '敲响',
+    'Blow': '吹',
+    'Blow-on': '向上吹',
+    'Dig': '挖掘',
+    'Swing': '挥动',
+    'Hold': '握持',
+    'Activate': '激活',
+    'Play-with': '玩耍',
+    'Plant': '种植',
+    'Release': '释放',
+    'Release All': '全部释放',
+    'Locate': '定位',
+    'Set-up': '放置',
+    'Move': '移动',
+    'Complete': '完成',
+    'Bail-with': '舀水',
+    'Cast Bloom': '施放绽放',
+    'Cast Spell': '施放法术',
+    'Check kills': '查看击杀',
+    'Remove-legs': '拆卸腿部',
 
     // Chat bar
     'Public chat': '公共聊天',
@@ -917,6 +1051,59 @@ const ZH_DICT: Record<string, string> = {
     "Diango's Toy Store.": '迪安戈的玩具店',
     "Wydin's Food Store.": '威丁的食品店',
 
+    // --- Examine descriptions (common) ---
+    'A rocky outcrop.': '一处岩石露头。',
+    "It's closed.": '关着的。',
+    'The door is closed.': '门是关着的。',
+    'A deposit of rocks.': '一片岩石矿床。',
+    'A wrought iron gate.': '一扇铸铁门。',
+    'This tree has been cut down.': '这棵树已经被砍倒了。',
+    'I can climb this.': '我可以攀爬这个。',
+    'A wooden gate.': '一扇木门。',
+    'I can climb down this.': '我可以爬下去。',
+    "It's open.": '开着的。',
+    "I wonder what's inside.": '不知道里面有什么。',
+    'A wooden crate for storage.': '一个存放物品的木箱。',
+    'A mysterious power emanates from this shrine.': '这座神殿散发着神秘的力量。',
+    'A leafy bush.': '一丛茂盛的灌木。',
+    'A leafy shrub.': '一丛绿叶灌木。',
+    'Some beautiful flowers.': '一些美丽的花。',
+    'Solid bars of iron.': '坚固的铁栅栏。',
+    'A huge lump of rock.': '一大块巨石。',
+    "It's a flight of stairs.": '一段楼梯。',
+    'A sturdy wooden door.': '一扇坚固的木门。',
+    'A large stone block.': '一块大石头。',
+    'Used for storage.': '用来存放东西的。',
+    'I can see fish swimming in the water.': '我能看到鱼在水里游。',
+    'I can climb down these stairs.': '我可以走下这段楼梯。',
+    'A nicely fitted door.': '一扇安装精良的门。',
+    'A clue!': '一条线索！',
+    "I hope there's treasure in it.": '希望里面有宝藏。',
+    'I should try cooking this.': '我应该试试把这个烤了。',
+    'It actually smells quite good.': '闻起来其实挺香的。',
+    "It's a slightly magical stick.": '一根有点魔力的棍子。',
+    'Some nicely cooked fish.': '一些烤得很好的鱼。',
+    'A two handed sword.': '一把双手剑。',
+    'A razor sharp sword.': '一把锋利的剑。',
+    'A razor sharp longsword.': '一把锋利的长剑。',
+    'A medium square shield.': '一面中型方盾。',
+    'A medium sized helmet.': '一顶中型头盔。',
+    'A large metal shield.': '一面大型金属盾。',
+    'A full face helmet.': '一顶全面头盔。',
+    'Used for mining.': '用来采矿的。',
+    'I need to cook this first.': '我需要先把这个烤了。',
+    "One of RuneScape's many citizens.": 'RuneScape 的众多居民之一。',
+    "One of RuneScapes' many citizens.": 'RuneScape 的众多居民之一。',
+    'A holy man.': '一个虔诚的牧师。',
+    'An ugly green creature.': '一只丑陋的绿色生物。',
+    'The walking dead!': '行走的死者！',
+    'The strong arm of the law.': '法律的铁腕。',
+    'A fully grown feline.': '一只成年猫。',
+    'A friendly little pet.': '一只友好的小宠物。',
+    'Yep, definitely a chicken.': '没错，就是一只鸡。',
+    'He can look after my money.': '他可以帮我保管钱。',
+    'Issued by RuneScape Council to all new citizens.': '由 RuneScape 议会发放给所有新居民。',
+
     // --- Report abuse ---
     'Report abuse': '举报滥用',
     'Close Window': '关闭窗口',
@@ -1225,6 +1412,7 @@ const ZH_NAMES: Record<string, string> = {
     'Shears': '剪刀',
     'Spade': '铲子',
     'Rope': '绳子',
+    'Newcomer map': '新手地图',
 
     // ===== Fishing =====
     'Small fishing net': '小渔网',
@@ -2803,6 +2991,22 @@ export function t(text: string, langSetting: number): string {
     if (sellMatch) {
         return '出售 ' + sellMatch[1] + ' 个';
     }
+    // Pattern: "ITEM: currently costs Xgp." (shop buy price)
+    const costMatch = text.match(/^(.+?): currently costs (\d+)gp\.$/);
+    if (costMatch) {
+        const itemZh = lookupName(costMatch[1]);
+        return itemZh + '：当前售价 ' + costMatch[2] + ' 金币。';
+    }
+    // Pattern: "ITEM: shop will buy for Xgp." (shop sell price)
+    const shopBuyMatch = text.match(/^(.+?): shop will buy for (\d+)gp\.$/);
+    if (shopBuyMatch) {
+        const itemZh = lookupName(shopBuyMatch[1]);
+        return itemZh + '：商店收购价 ' + shopBuyMatch[2] + ' 金币。';
+    }
+    // Pattern: "You can't sell this item to this shop."
+    if (text === "You can't sell this item to this shop.") {
+        return '你不能把这个物品卖给这家商店。';
+    }
     // Pattern: "The door won't open - you need at least X Quest Points."
     const questPointsMatch = text.match(/^The door won't open - you need at least (\d+) Quest Points\.$/);
     if (questPointsMatch) {
@@ -2827,7 +3031,13 @@ export function t(text: string, langSetting: number): string {
     // Pattern: "Word\nWord" → translate each part separated by \n
     if (text.includes('\\n')) {
         const parts = text.split('\\n');
-        const translated = parts.map(p => lookupDict(p) ?? p);
+        const translated = parts.map(p => {
+            const d = lookupDict(p);
+            if (d !== undefined) return d;
+            const n = lookupName(p);
+            if (n !== p) return n;
+            return p;
+        });
         if (translated.some((p, i) => p !== parts[i])) {
             return translated.join('\\n');
         }

@@ -7,11 +7,22 @@ type NpcAiAction =
     | { type: 'open_shop_for_player'; playerName: string }
     | { type: 'open_bank' }
     | { type: 'give_item'; itemId: number; count: number }
+    | { type: 'sell_item'; itemName: string; count: number; playerName: string }
     | { type: 'face_player'; playerName: string }
     | { type: 'walk_to'; x: number; z: number }
     | { type: 'attack'; playerName: string }
     | { type: 'call_backup'; message: string }
     | { type: 'end_conversation' };
+
+export interface PendingTrade {
+    playerName: string;
+    itemName: string;
+    itemId: number;
+    count: number;
+    unitPrice: number;
+    totalPrice: number;
+    createdAt: number; // world tick
+}
 
 interface ConversationEntry {
     speaker: string;
@@ -32,6 +43,15 @@ const CONVERSATION_IDLE_TIMEOUT = 50; // ~30 秒无对话则开始返回
 
 // 停留超时（ticks）—— 对话结束后原地停留多久再返回
 const LINGER_TIMEOUT = 50; // ~30 秒
+
+// 主动问候冷却（ticks）—— 同一玩家多久后才能再次被此 NPC 问候
+const GREET_COOLDOWN_TICKS = 500; // ~5 分钟
+
+// 主动问候扫描范围（格数）
+export const GREET_SCAN_RANGE = 4;
+
+// 每 tick 主动问候概率（2%）
+export const GREET_PROBABILITY = 0.02;
 
 export default class NpcAiController {
     // 对话状态
@@ -60,6 +80,15 @@ export default class NpcAiController {
 
     // 对话历史（最近10条）
     conversationHistory: ConversationEntry[] = [];
+
+    // 主动问候冷却：playerName → 上次打招呼的 tick
+    greetCooldowns: Map<string, number> = new Map();
+
+    // 当前对话是否由 NPC 主动问候发起（主动问候时 NPC 不跟随玩家）
+    greetInitiated: boolean = false;
+
+    // 待确认交易
+    pendingTrade: PendingTrade | null = null;
 
     /**
      * 尝试锁定此 NPC 与某个玩家的对话
@@ -104,6 +133,8 @@ export default class NpcAiController {
         this.lockedByPlayer = null;
         this.lockedAt = 0;
         this.pendingRequest = false;
+        this.greetInitiated = false;
+        this.pendingTrade = null;
         // 不清空 actionQueue，让剩余动作执行完
         this.lingerStartTick = currentTick;
         this.state = 'lingering';
@@ -218,6 +249,65 @@ export default class NpcAiController {
     }
 
     /**
+     * 设置待确认交易
+     */
+    setPendingTrade(trade: PendingTrade): void {
+        this.pendingTrade = trade;
+    }
+
+    /**
+     * 检查是否有针对指定玩家的待确认交易
+     */
+    hasPendingTradeFor(playerName: string): boolean {
+        return this.pendingTrade !== null && this.pendingTrade.playerName === playerName;
+    }
+
+    /**
+     * 检查待确认交易是否超时
+     */
+    isTradeExpired(currentTick: number, timeoutTicks: number = 50): boolean {
+        if (!this.pendingTrade) return false;
+        return currentTick - this.pendingTrade.createdAt >= timeoutTicks;
+    }
+
+    /**
+     * 清除待确认交易
+     */
+    clearPendingTrade(): void {
+        this.pendingTrade = null;
+    }
+
+    /**
+     * 检查是否可以主动问候某个玩家（冷却+状态检查）
+     */
+    canGreetPlayer(playerName: string, currentTick: number): boolean {
+        if (this.state !== 'idle') return false;
+        if (this.pendingRequest) return false;
+        if (this.hasActions()) return false;
+
+        const lastGreet = this.greetCooldowns.get(playerName);
+        if (lastGreet !== undefined && currentTick - lastGreet < GREET_COOLDOWN_TICKS) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * 记录主动问候时间，并清理过期条目
+     */
+    recordGreet(playerName: string, currentTick: number): void {
+        this.greetCooldowns.set(playerName, currentTick);
+
+        // 清理过期条目（超过冷却时间的2倍）
+        for (const [name, tick] of this.greetCooldowns) {
+            if (currentTick - tick > GREET_COOLDOWN_TICKS * 2) {
+                this.greetCooldowns.delete(name);
+            }
+        }
+    }
+
+    /**
      * 重置控制器状态
      */
     reset(): void {
@@ -229,5 +319,8 @@ export default class NpcAiController {
         this.streamingText = null;
         this.actionQueue = [];
         this.conversationHistory = [];
+        this.greetCooldowns.clear();
+        this.greetInitiated = false;
+        this.pendingTrade = null;
     }
 }

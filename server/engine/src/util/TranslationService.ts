@@ -93,7 +93,7 @@ export default class TranslationService {
             const prefix = congratsMatch[1] || '';
             const skill = congratsMatch[2];
             const skillZh = LEVELUP_SKILL_ZH[skill] ?? skill;
-            return `${prefix}恭喜你，你的${skillZh}等级提升了！`;
+            return `${prefix}恭喜你, 你的${skillZh}等级提升了!`;
         }
 
         // Dynamic pattern: "Your SKILL level is now NUMBER." or "Your hitpoints are now NUMBER."
@@ -102,7 +102,7 @@ export default class TranslationService {
             const skill = levelNowMatch[1];
             const level = levelNowMatch[2];
             const skillZh = LEVELUP_SKILL_ZH[skill] ?? skill;
-            return `你的${skillZh}等级现在是 ${level}。`;
+            return `你的${skillZh}等级现在是 ${level}.`;
         }
 
         // Dynamic pattern: "You need a @dbl@Prayer level of X to use Y."
@@ -112,14 +112,64 @@ export default class TranslationService {
             const level = prayerLevelMatch[2];
             const prayerName = prayerLevelMatch[3];
             const translatedName = TranslationService.translations.get(prayerName) ?? prayerName;
-            return `你需要${colorTag}${level}级祈祷才能使用${translatedName}。`;
+            return `你需要${colorTag}${level}级祈祷才能使用${translatedName}.`;
         }
 
         // Dynamic pattern: "You do not have enough X Runes to cast this spell."
         const runeMatch = text.match(/^You do not have enough (.+) Runes to cast this spell\.$/);
         if (runeMatch) {
             const runeName = runeMatch[1];
-            return `你没有足够的${runeName}符文来施放此法术。`;
+            return `你没有足够的${runeName}符文来施放此法术.`;
+        }
+
+        // Dynamic pattern: "ITEM: currently costs Xgp." (shop buy price)
+        const costMatch = text.match(/^(.+?): currently costs (\d+)gp\.$/);
+        if (costMatch) {
+            const itemName = costMatch[1];
+            const price = costMatch[2];
+            const itemZh = TranslationService.translations.get(itemName) ?? itemName;
+            return `${itemZh}: 当前售价 ${price} 金币.`;
+        }
+
+        // Dynamic pattern: "ITEM: shop will buy for Xgp." (shop sell price)
+        const shopBuyMatch = text.match(/^(.+?): shop will buy for (\d+)gp\.$/);
+        if (shopBuyMatch) {
+            const itemName = shopBuyMatch[1];
+            const price = shopBuyMatch[2];
+            const itemZh = TranslationService.translations.get(itemName) ?? itemName;
+            return `${itemZh}: 商店收购价 ${price} 金币.`;
+        }
+
+        // Dynamic pattern: "You pay the fare and hand X gold coins to NAME."
+        const fareMatch = text.match(/^You pay the fare and hand (\d+) gold coins to (.+)\.$/);
+        if (fareMatch) {
+            return `你支付了车费, 交给${fareMatch[2]} ${fareMatch[1]}金币.`;
+        }
+
+        // Dynamic pattern: "You pay the judge and he gives you X bronze arrows."
+        const judgeMatch = text.match(/^You pay the judge and he gives you (\d+) (.+)\.$/);
+        if (judgeMatch) {
+            const itemZh = TranslationService.translations.get(judgeMatch[2]) ?? judgeMatch[2];
+            return `你付了钱, 裁判给了你${judgeMatch[1]}个${itemZh}.`;
+        }
+
+        // Dynamic pattern: "You need a SKILL level of X to ..."
+        const skillLevelMatch = text.match(/^You need a (.+?) level of (\d+)(?: or above| or over)? to (.+)$/);
+        if (skillLevelMatch) {
+            const skill = skillLevelMatch[1];
+            const level = skillLevelMatch[2];
+            const action = skillLevelMatch[3];
+            const skillZh = LEVELUP_SKILL_ZH[skill.toLowerCase()] ?? TranslationService.translations.get(skill) ?? skill;
+            return `你需要${skillZh}等级达到${level}才能${action}`;
+        }
+
+        // Dynamic pattern: "You need a Woodcutting level of X."
+        const skillLevelMatch2 = text.match(/^You need a (.+?) level of (\d+)\.$/);
+        if (skillLevelMatch2) {
+            const skill = skillLevelMatch2[1];
+            const level = skillLevelMatch2[2];
+            const skillZh = LEVELUP_SKILL_ZH[skill.toLowerCase()] ?? TranslationService.translations.get(skill) ?? skill;
+            return `你需要${skillZh}等级达到${level}.`;
         }
 
         return text;

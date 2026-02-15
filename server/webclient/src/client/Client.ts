@@ -11022,7 +11022,7 @@ export class Client extends GameShell {
             this.objSelectedSlot = b;
             this.objSelectedInterface = c;
             this.objInterface = a;
-            this.objSelectedName = ObjType.get(a).name;
+            this.objSelectedName = tName(ObjType.get(a).name ?? '', this.languageSetting);
             this.spellSelected = 0;
             this.redrawSidebar = true;
             return;
