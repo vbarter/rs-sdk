@@ -876,6 +876,47 @@ const ZH_DICT: Record<string, string> = {
     'Perhaps someone at the observatory can teach me to navigate?': '也许天文台的人可以教我导航？',
     'Spikey!': '扎人的！',
 
+    // --- Shop (menus & messages) ---
+    'Value': '估价',
+
+    // --- Shop (names & UI) ---
+    "Gerrant's Fishy Business.": '杰兰特渔具店',
+    'Right-click on shop to buy item - Right-click on inventory to sell item': '右键点击商店物品购买 - 右键点击背包物品出售',
+    "You can't sell this item to this shop.": '你不能把这个物品卖给这家商店。',
+    "You can't buy this item.": '你不能购买这个物品。',
+    'You feel weakened.': '你感到虚弱了。',
+    "Lowe's Archery Emporium": '洛弓箭商城',
+    "Bob's Brilliant Axes": '鲍勃的精品斧头店',
+    "Zaff's Superior Staves!": '扎夫的高级法杖店！',
+    "Thessalia's Fine Clothes.": '塞萨利亚的精品服装店',
+    "Varrock Swordshop.": '瓦洛克剑店',
+    "Varrock General Store.": '瓦洛克杂货店',
+    "Horvik's Armour Shop.": '霍维克的盔甲店',
+    "Rommik's Crafty Supplies.": '罗米克的制作用品店',
+    "Nurmof's Pickaxe Shop.": '努尔莫夫的镐店',
+    "Falador General Store.": '法拉多杂货店',
+    "Flynn's Mace Market.": '弗林的锤市场',
+    "Cassie's Shield Shop.": '卡西的盾牌店',
+    "Wayne's Chains - Loss Prevention Specialists.": '韦恩锁链店',
+    "Herquin's Gems.": '赫昆的宝石店',
+    "General Store.": '杂货店',
+    "Lumbridge General Store.": '伦布里奇杂货店',
+    "Al Kharid General Store.": '阿尔卡里德杂货店',
+    "Dommik's Crafting Store.": '多米克的制作商店',
+    "Zeke's Superior Scimitars.": '泽克的高级弯刀店',
+    "Louie's Armoured Legs Bazaar.": '路易的板腿集市',
+    "Ranael's Super Skirt Store.": '拉奈尔的超级裙店',
+    "Betty's Magic Emporium.": '贝蒂的魔法商城',
+    "Brian's Battleaxe Bazaar.": '布莱恩的战斧集市',
+    "Hickton's Archery Emporium.": '希克顿的弓箭商城',
+    "Arhein's Store.": '阿赫因的商店',
+    "Harry's Fishing Shop.": '哈利的渔具店',
+    "Jatix's Herblore Shop.": '贾提克斯的草药店',
+    "Gaius's Two Handed Shop.": '盖乌斯的双手武器店',
+    "Peksa's Helmet Shop.": '佩克萨的头盔店',
+    "Diango's Toy Store.": '迪安戈的玩具店',
+    "Wydin's Food Store.": '威丁的食品店',
+
     // --- Report abuse ---
     'Report abuse': '举报滥用',
     'Close Window': '关闭窗口',
@@ -2753,6 +2794,15 @@ export function t(text: string, langSetting: number): string {
             return '你' + action + itemZh + '。';
         }
     }
+    // Pattern: "Buy X" / "Sell X" (shop options)
+    const buyMatch = text.match(/^Buy (\d+)$/);
+    if (buyMatch) {
+        return '购买 ' + buyMatch[1] + ' 个';
+    }
+    const sellMatch = text.match(/^Sell (\d+)$/);
+    if (sellMatch) {
+        return '出售 ' + sellMatch[1] + ' 个';
+    }
     // Pattern: "The door won't open - you need at least X Quest Points."
     const questPointsMatch = text.match(/^The door won't open - you need at least (\d+) Quest Points\.$/);
     if (questPointsMatch) {
@@ -2813,7 +2863,17 @@ export function tMenu(text: string, langSetting: number): string {
         const action = colorMatch[1];
         const color = colorMatch[2];
         const target = colorMatch[3];
-        const translatedAction = lookupDict(action) ?? action;
+        // Handle "Buy N" / "Sell N" actions with dynamic numbers
+        let translatedAction: string;
+        const buyActionMatch = action.match(/^Buy (\d+)$/);
+        const sellActionMatch = action.match(/^Sell (\d+)$/);
+        if (buyActionMatch) {
+            translatedAction = '购买' + buyActionMatch[1] + '个';
+        } else if (sellActionMatch) {
+            translatedAction = '出售' + sellActionMatch[1] + '个';
+        } else {
+            translatedAction = lookupDict(action) ?? action;
+        }
         const translatedTarget = lookupName(target);
         return translatedAction + ' @' + color + '@' + translatedTarget;
     }

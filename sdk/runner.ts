@@ -218,8 +218,8 @@ export async function runScript(
         onDisconnect = 'error',
         reconnectTimeout = 60000
     } = options;
-    // Default disconnectAfter to true for CLI (managed connections), false for MCP (external connections)
-    const disconnectAfter = options.disconnectAfter ?? !connection;
+    // Default disconnectAfter to false - keep connection alive so browser session stays active
+    const disconnectAfter = options.disconnectAfter ?? false;
 
     const startTime = Date.now();
     const logs: LogEntry[] = [];

@@ -385,9 +385,14 @@ export class BotSDK {
         }
 
         if (status.status === 'stale') {
-            console.log(`[BotSDK] Bot session is stale (no recent state updates)`);
-            // Note: this will trigger graceful takeover via save_and_disconnect
-            return true;
+            // Stale just means no controller has been polling state - the browser client
+            // may still be perfectly fine. Only re-launch if the bot is NOT in game.
+            if (!status.inGame) {
+                console.log(`[BotSDK] Bot session is stale and not in game, re-launching`);
+                return true;
+            }
+            console.log(`[BotSDK] Bot session is stale but still in game, skipping browser launch`);
+            return false;
         }
 
         console.log(`[BotSDK] Active client detected, skipping browser launch`);

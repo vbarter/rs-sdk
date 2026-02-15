@@ -2,12 +2,2055 @@
 [Gateway] Gateway running at http://localhost:7780
 [Gateway] Bot/SDK: ws://localhost:7780
 [Gateway] Authentication DISABLED (set LOGIN_SERVER=true to enable)
-[Gateway] Bot connected: b84j6b-1771147738269 (b84j6b)
-[Gateway] Bot connected: bc6ycb-1771147764264 (bc6ycb)
-[Gateway] Bot disconnected: bc6ycb-1771147764264 (bc6ycb)
-[Gateway] Bot disconnected: b84j6b-1771147738269 (b84j6b)
-[Gateway] Bot connected: b84j6b-1771148107818 (b84j6b)
-[Gateway] Bot disconnected: b84j6b-1771148107818 (b84j6b)
-[Gateway] Bot connected: b84j6b-1771148438626 (b84j6b)
-[Gateway] Bot disconnected: b84j6b-1771148438626 (b84j6b)
-[Gateway] Bot connected: b84j6b-1771148775818 (b84j6b)
+[Gateway] Bot connected: vbarter-1771150602826 (vbarter)
+[Gateway] Bot disconnected: vbarter-1771150602826 (vbarter)
+[Gateway] Bot connected: vbarter-1771150616459 (vbarter)
+[Gateway] SDK connected: sdk-1771150646414-xhhkxs -> vbarter (mode: control)
+[Gateway] SDK disconnected: sdk-1771150646414-xhhkxs
+[Gateway] SDK connected: sdk-1771150660528-w5k5w5 -> vbarter (mode: control)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150660723-a8uhhz)
+[Gateway] [vbarter] Action result: success - Walking to (3086, 3233)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150661308-3mg3qu)
+[Gateway] [vbarter] Action result: success - Walking to (3087, 3234)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150661714-36i8nq)
+[Gateway] [vbarter] Action result: success - Walking to (3087, 3240)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150663322-mf5rbz)
+[Gateway] [vbarter] Action result: success - Walking to (3085, 3242)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150664112-iisqr5)
+[Gateway] [vbarter] Action result: success - Walking to (3085, 3251)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150666119-vxuz75)
+[Gateway] [vbarter] Action result: success - Walking to (3083, 3253)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150666910-zsyvqb)
+[Gateway] [vbarter] Action result: success - Walking to (3083, 3254)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150666928-co0022)
+[Gateway] [vbarter] Action result: success - Walking to (3082, 3255)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150667712-j3hnp9)
+[Gateway] [vbarter] Action result: success - Walking to (3082, 3257)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150667731-dykjsr)
+[Gateway] [vbarter] Action result: success - Walking to (3074, 3265)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150670126-x6071c)
+[Gateway] [vbarter] Action result: success - Walking to (3074, 3273)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150671726-d8ieeh)
+[Gateway] [vbarter] Action result: success - Walking to (3071, 3276)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150672528-0jxrq6)
+[Gateway] [vbarter] Action result: success - Walking to (3066, 3276)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150673734-qcd40l)
+[Gateway] [vbarter] Action result: success - Walking to (3061, 3271)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150674935-l6pcg1)
+[Gateway] [vbarter] Action result: success - Walking to (3057, 3271)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150675732-wint46)
+[Gateway] [vbarter] Action result: success - Walking to (3056, 3270)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150676136-nw109w)
+[Gateway] [vbarter] Action result: success - Walking to (3054, 3270)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150676536-v5ngea)
+[Gateway] [vbarter] Action result: success - Walking to (3052, 3268)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150677342-avyid3)
+[Gateway] [vbarter] Action result: success - Walking to (3052, 3267)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150677358-5ya244)
+[Gateway] [vbarter] Action result: success - Walking to (3050, 3265)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150678137-h01zy0)
+[Gateway] [vbarter] Action result: success - Walking to (3049, 3265)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150678543-uv6832)
+[Gateway] [vbarter] Action result: success - Walking to (3048, 3264)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150678942-y9fdqi)
+[Gateway] [vbarter] Action result: success - Walking to (3046, 3264)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150679342-s4mlue)
+[Gateway] [vbarter] Action result: success - Walking to (3045, 3263)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150679746-toox2c)
+[Gateway] [vbarter] Action result: success - Walking to (3045, 3261)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150680145-gg6nik)
+[Gateway] [vbarter] Action result: success - Walking to (3044, 3260)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150680537-wjhr7e)
+[Gateway] [vbarter] Action result: success - Walking to (3043, 3260)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150680939-yheinh)
+[Gateway] [vbarter] Action result: success - Walking to (3043, 3257)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150681739-21kivf)
+[Gateway] [vbarter] Action result: success - Walking to (3037, 3251)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150683349-ts0b0o)
+[Gateway] [vbarter] Action result: success - Walking to (3036, 3251)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150683366-cwzklc)
+[Gateway] [vbarter] Action result: success - Walking to (3036, 3247)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150684547-phgk93)
+[Gateway] [vbarter] Action result: success - Walking to (3035, 3246)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150684945-udiplu)
+[Gateway] [vbarter] Action result: success - Walking to (3033, 3246)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150685354-9eaedt)
+[Gateway] [vbarter] Action result: success - Walking to (3031, 3244)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150686159-j8bxoi)
+[Gateway] [vbarter] Action result: success - Walking to (3028, 3244)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150686960-g9ogli)
+[Gateway] [vbarter] Action result: success - Walking to (3023, 3239)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150688152-3kvpgn)
+[Gateway] [vbarter] Action result: success - Walking to (3023, 3237)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150688561-a5govs)
+[Gateway] [vbarter] Action result: success - Walking to (3022, 3236)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150688965-qi2s0k)
+[Gateway] [vbarter] Action result: success - Walking to (3022, 3227)
+[Gateway] [vbarter] SDK action: walkTo (act-1771150690964-upy6vd)
+[Gateway] [vbarter] Action result: success - Walking to (3018, 3223)
+[Gateway] [vbarter] SDK action: interactNpc (act-1771150692159-x2o41q)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #3832
+[Gateway] [vbarter] SDK action: shopSell (act-1771150696974-gxncga)
+[Gateway] [vbarter] Action result: success - Selling from slot 3
+[Gateway] [vbarter] SDK action: shopSell (act-1771150697380-hipphp)
+[Gateway] [vbarter] Action result: success - Selling from slot 18
+[Gateway] [vbarter] SDK action: shopSell (act-1771150697400-5h28vy)
+[Gateway] [vbarter] Action result: success - Selling from slot 18
+[Gateway] [vbarter] SDK action: shopSell (act-1771150697415-dj73md)
+[Gateway] [vbarter] Action result: success - Selling from slot 18
+[Gateway] [vbarter] SDK action: shopSell (act-1771150697428-9sl0ms)
+[Gateway] [vbarter] Action result: success - Selling from slot 18
+[Gateway] [vbarter] SDK action: shopSell (act-1771150697442-ruvr9e)
+[Gateway] [vbarter] Action result: success - Selling from slot 18
+[Gateway] [vbarter] SDK action: shopSell (act-1771150697456-qvvtzg)
+[Gateway] [vbarter] Action result: success - Selling from slot 18
+[Gateway] [vbarter] SDK action: shopSell (act-1771150697469-vo747n)
+[Gateway] [vbarter] Action result: success - Selling from slot 18
+[Gateway] [vbarter] SDK action: shopSell (act-1771150697483-6sx8sb)
+[Gateway] [vbarter] Action result: success - Selling from slot 18
+[Gateway] SDK disconnected: sdk-1771150660528-w5k5w5
+[Gateway] Bot disconnected: vbarter-1771150616459 (vbarter)
+[Gateway] Bot connected: vbarter-1771151003618 (vbarter)
+[Gateway] Bot disconnected: vbarter-1771151003618 (vbarter)
+[Gateway] Bot connected: vbarter-1771151144807 (vbarter)
+[Gateway] SDK connected: sdk-1771151219063-xdtsj2 -> vbarter (mode: control)
+[Gateway] SDK disconnected: sdk-1771151219063-xdtsj2
+[Gateway] SDK connected: sdk-1771151258271-ub0ff7 -> vbarter (mode: control)
+[Gateway] SDK disconnected: sdk-1771151258271-ub0ff7
+[Gateway] SDK connected: sdk-1771151298504-iugov9 -> vbarter (mode: control)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151298750-ly5rhp)
+[Gateway] [vbarter] Action result: success - Walking to (3021, 3237)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151300394-ngwwab)
+[Gateway] [vbarter] Action result: success - Walking to (3025, 3241)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151301601-bvjp2c)
+[Gateway] [vbarter] Action result: success - Walking to (3029, 3241)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151302395-f1tuid)
+[Gateway] [vbarter] Action result: success - Walking to (3032, 3244)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151303201-fhpit1)
+[Gateway] [vbarter] Action result: success - Walking to (3033, 3244)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151303604-i1pfsq)
+[Gateway] [vbarter] Action result: success - Walking to (3035, 3246)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151304392-4ufl5i)
+[Gateway] [vbarter] Action result: success - Walking to (3035, 3248)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151304412-r0txvr)
+[Gateway] [vbarter] Action result: success - Walking to (3036, 3249)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151305206-mbb4kr)
+[Gateway] [vbarter] Action result: success - Walking to (3036, 3251)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151305593-at9v80)
+[Gateway] [vbarter] Action result: success - Walking to (3037, 3251)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151305994-nzx11a)
+[Gateway] [vbarter] Action result: success - Walking to (3037, 3254)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151306803-8ackcu)
+[Gateway] [vbarter] Action result: success - Walking to (3043, 3260)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151308392-p3vk8s)
+[Gateway] [vbarter] Action result: success - Walking to (3044, 3260)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151308411-10vav6)
+[Gateway] [vbarter] Action result: success - Walking to (3044, 3262)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151309205-z7psg5)
+[Gateway] [vbarter] Action result: success - Walking to (3045, 3263)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151309602-2if7ad)
+[Gateway] [vbarter] Action result: success - Walking to (3048, 3263)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151310393-045dgz)
+[Gateway] [vbarter] Action result: success - Walking to (3050, 3265)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151311204-cwi8uh)
+[Gateway] [vbarter] Action result: success - Walking to (3050, 3266)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151311210-aea8jg)
+[Gateway] [vbarter] Action result: success - Walking to (3052, 3268)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151312000-ailmlq)
+[Gateway] [vbarter] Action result: success - Walking to (3053, 3268)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151312392-qltfef)
+[Gateway] [vbarter] Action result: success - Walking to (3055, 3270)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151313193-vltaug)
+[Gateway] [vbarter] Action result: success - Walking to (3060, 3270)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151314402-emvv4n)
+[Gateway] [vbarter] Action result: success - Walking to (3064, 3274)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151315597-zc2ged)
+[Gateway] [vbarter] Action result: success - Walking to (3067, 3274)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151316398-m9cr7w)
+[Gateway] [vbarter] Action result: success - Walking to (3079, 3286)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151319200-kug1mx)
+[Gateway] [vbarter] Action result: success - Walking to (3080, 3286)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151319216-quumxn)
+[Gateway] [vbarter] Action result: success - Walking to (3083, 3289)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151320405-txfdm2)
+[Gateway] [vbarter] Action result: success - Walking to (3091, 3289)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151322003-215cqi)
+[Gateway] [vbarter] Action result: success - Walking to (3095, 3293)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151323203-5btjj4)
+[Gateway] [vbarter] Action result: success - Walking to (3096, 3293)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151323221-8k8buf)
+[Gateway] [vbarter] Action result: success - Walking to (3097, 3294)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151323998-bka8hf)
+[Gateway] [vbarter] Action result: success - Walking to (3120, 3294)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151328801-jk37ur)
+[Gateway] [vbarter] Action result: success - Walking to (3121, 3293)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151329206-9e9vi9)
+[Gateway] [vbarter] Action result: success - Walking to (3156, 3293)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151336395-vma4nz)
+[Gateway] [vbarter] Action result: success - Walking to (3160, 3289)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151337598-4qt9fy)
+[Gateway] [vbarter] Action result: success - Walking to (3168, 3289)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151339205-ay8i5a)
+[Gateway] [vbarter] Action result: success - Walking to (3169, 3288)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151339604-mof00f)
+[Gateway] [vbarter] Action result: success - Walking to (3187, 3288)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151343198-8b2kak)
+[Gateway] [vbarter] Action result: success - Walking to (3194, 3281)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151344803-c7qd32)
+[Gateway] [vbarter] Action result: success - Walking to (3210, 3281)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151348001-dquwiw)
+[Gateway] [vbarter] Action result: success - Walking to (3222, 3269)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151350800-0s05bh)
+[Gateway] [vbarter] Action result: success - Walking to (3224, 3269)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151350818-viwvrl)
+[Gateway] [vbarter] Action result: success - Walking to (3224, 3267)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151351597-0zyxcj)
+[Gateway] [vbarter] Action result: success - Walking to (3225, 3266)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151352398-pcsv3r)
+[Gateway] [vbarter] Action result: success - Walking to (3226, 3266)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151352415-iglhf1)
+[Gateway] [vbarter] Action result: success - Walking to (3230, 3262)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151353595-yqqm4y)
+[Gateway] [vbarter] Action result: success - Walking to (3240, 3262)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151355604-f9uxh0)
+[Gateway] [vbarter] Action result: success - Walking to (3240, 3292)
+[Gateway] [vbarter] SDK action: setCombatStyle (act-1771151361598-icl6jh)
+[Gateway] [vbarter] Action result: failed - Failed to set combat style
+[Gateway] [vbarter] SDK action: walkTo (act-1771151361615-27wopf)
+[Gateway] [vbarter] Action result: success - Walking to (3240, 3292)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151361631-vi0anx)
+[Gateway] [vbarter] Action result: success - Walking to (3236, 3294)
+[Gateway] [vbarter] SDK action: interactLoc (act-1771151363604-bmt1gc)
+[Gateway] [vbarter] Action result: success - Interacting with loc 1553
+[Gateway] [vbarter] SDK action: walkTo (act-1771151365600-atwl36)
+[Gateway] [vbarter] Action result: success - Walking to (3237, 3295)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151365620-33nb7f)
+[Gateway] [vbarter] Action result: success - Walking to (3234, 3295)
+[Gateway] [vbarter] SDK action: walkTo (act-1771151366398-jk6ryu)
+[Gateway] [vbarter] Action result: success - Walking to (3233, 3294)
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151366797-j6pykg)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368412-uvf90z)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368431-32x2zu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368446-45fb7q)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368459-u8pvvg)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368473-qk00wk)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368486-g8u2l2)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368499-97hmod)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368513-vl6tak)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368526-2pfdn7)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368540-ah9zba)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368553-5xacy3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368565-fqzedq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368578-5vfm5c)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368592-1milb3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368607-w5ej0c)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368620-frj09m)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368633-wb1mzx)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368647-51yoei)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368660-7aecw9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368674-0ve672)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368687-4zqwkx)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368700-n36rt1)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368713-l1ib1n)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368727-gi71dd)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368742-kimxb3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368755-3rmdbs)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368768-uynqs6)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368781-e1kt2o)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151368796-9bjol8)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369596-osnp6w)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369616-46t41y)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369628-0nffxw)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369642-xuyv3t)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369656-d53ki4)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369669-w65ccd)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369683-mhzmce)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369697-76szz8)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369711-mivozi)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369723-zawtky)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369738-to6o5o)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369751-3et9yz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369766-nd04ag)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369780-aju5x5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369794-85demu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369807-fmhvr3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369821-6ywzbk)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369833-0sspes)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369847-078dc9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369863-0n7pyu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369877-r1yvyq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369888-25suo9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369902-r6mz1t)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369916-u79imt)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369930-2cll16)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369942-grbcn5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369957-q8s8wg)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369970-9sl4li)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369983-5gz405)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151369997-u6tx53)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370010-aiubmx)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370025-7gu9f1)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370038-9so9j0)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370051-rnm6a3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370065-js8g3c)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370077-fts5lb)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370091-d13nsg)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370106-iro9cw)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370117-md6wj6)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370130-sfgcn9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370144-q01v7k)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370157-8dvsve)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370170-nkowoc)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370184-yrrrri)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370197-p503v6)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370210-3gggzc)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370224-xuzs2o)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370238-34po2l)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370251-u10hfe)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370264-0c13cu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370277-rginm5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370291-678lb1)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370304-hne7ot)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370317-dsuf8u)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370331-8sji3k)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370344-28oavi)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370358-t027gh)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370371-vxe2yz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151370399-gad8e3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371212-xjfeh1)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371229-ceb8zh)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371242-96fiyz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371256-vvf5td)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371268-vu945o)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371282-60nyw7)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371295-1r950d)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371308-xxrfer)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371321-55i5bj)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371335-91oby2)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371348-vhc2ou)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371362-h3r1tr)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371375-eze2ae)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371388-uqku7a)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371401-0egmqo)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371414-qh0b9x)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371427-q37i2y)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371441-aqhm11)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371454-4nrjsj)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371468-9ogjac)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371483-fpfnrf)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371497-ywfh1x)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371510-ejo5e4)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371523-eums58)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371536-snlqkf)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371549-i59w5x)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371562-hmd7k6)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371575-ly4pdg)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371590-of1cwb)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371601-ge74jv)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371614-julftj)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371627-t3e1a2)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371640-4vcntn)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371653-hfiau1)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371666-sqbkro)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371680-lr5eey)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371694-18f9jz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371707-pqvl3z)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371720-9exqez)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371733-pp8w64)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371745-2pxvk4)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371759-lf3dx5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371772-hw88tq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371785-lhs5on)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371799-geatmp)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371813-8dg1p3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371826-o5az6w)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371838-6iv411)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371850-zktejt)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371865-gvjoxz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371878-0krx06)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371892-txy0sj)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371905-i2rnor)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371918-royjt8)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371933-yug3ex)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371945-wjtis1)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371958-o11zh1)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371973-b89v8r)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151371992-yg8or5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151372809-4sq078)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151372830-g3ko5j)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151372843-ob7cmu)
+[Gateway] [vbarter] Action result: success - Clicked dialog option 0
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151372858-coi9zp)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151372872-8wn1si)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151372886-diztyy)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151372900-xiwe4g)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151372915-1zfvuh)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151372927-xuzaur)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151372940-aq0srq)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151372953-o14gs3)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151372966-0gc31z)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151372980-8p8jt1)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151372992-bxv90q)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151373006-i0fqw1)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151373019-3pnyjq)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151373033-uon4c3)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151373048-kl7yip)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151373062-zvlsv0)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151373077-tn334g)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151373092-5gbl9l)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151373105-pxuf78)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151373118-490smk)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373131-15htu8)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151373143-nrrj3e)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151373157-xro51i)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151373171-a4iywf)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151373183-tw2sag)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373211-225pzu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373224-997wun)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373237-7vv8lc)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373252-337w0t)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373264-59y0yk)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373278-b5qyb4)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373291-5y2dxy)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373306-h0652i)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373320-xz4f83)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373333-4s6gkv)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373347-ya1fpy)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373361-ts2ir3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373375-7fg6x6)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373388-hp1dh2)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373401-csgcl9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373416-ep1dbs)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373429-7fgjd4)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373442-en93vg)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373456-bbyv25)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373469-8svg34)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373483-etuipk)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373496-oucpmr)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373510-obtbkr)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373523-9k31ig)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373536-gjtesp)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373549-ziuv6j)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373561-ky2m9k)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373575-djoas6)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151373592-vcjhye)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374402-wzpw3q)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374420-jbmao7)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374434-dznhw3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374447-glqtw7)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374461-oaeay0)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374475-z77acp)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374490-944ht1)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374503-21lubg)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374516-o9kb59)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374529-zu3mab)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374542-zx7qjf)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374556-js1wvh)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374570-hzvr9e)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374583-6nywlr)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374597-hgnbbq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374610-hup9kr)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374624-kph3hw)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374638-fo7cyx)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374651-h6eq8r)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374666-90n02e)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374680-aa3x69)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374693-848oxr)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374706-c7hsb9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374720-ax0lau)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374732-ctv2xd)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374746-kqop00)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374760-f0f6hk)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374774-kxr725)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374791-wk4ziz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374799-ya2kwp)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374812-4cnwqd)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374825-diw55y)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374839-ghiw7w)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374852-x70zjw)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374866-atvn4m)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374880-wxa4t0)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374893-n4ddm1)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374906-j3u7zn)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374920-fzldto)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374933-poplqf)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374947-mul9tj)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374960-4u10pc)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374974-5plocu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151374987-5rim0b)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151375000-ye5suz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151375013-ezhkwm)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151375027-7no9dc)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151375041-h2lfo1)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151375054-5d80st)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151375067-5mt2dt)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151375081-krvk6x)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151375094-0r7am7)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151375106-g789wl)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151375120-7q2z5x)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151375133-m0ch2e)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151375146-tc6u2u)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151375160-tct1wl)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151375174-xo332v)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151375191-skiux3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376011-fv5h6l)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376028-5wz6ov)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376042-ln9zy5)
+[Gateway] [vbarter] Action result: success - Clicked dialog option 0
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376056-phwn3o)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376071-riymcp)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376082-7zsbgk)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376098-x6e33l)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376113-ntnn46)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376123-x8i31a)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376137-gzmd2i)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376149-wxygjy)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376163-hbio96)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376177-8bowmq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376189-fets6j)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376202-9o3oup)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376215-gscsi6)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376228-gzmb6z)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376242-xsauqc)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376255-4r64fi)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376274-6y6wk2)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376284-66xlkn)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376298-mvvz3g)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376312-01yfp8)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376324-4dlju7)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376338-4y996t)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376351-ugk7ke)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376366-2rneo0)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376380-yopnof)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151376394-wzub73)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376408-yc8ra5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376421-kjd265)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376434-rh496i)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376448-bekdgu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376461-dk5lor)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376475-nisock)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376490-1gxt9l)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376504-2lcqeu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376516-m0ab75)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376529-38dtan)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376544-gxuwju)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376558-wiwe9i)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376572-yza9oy)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376586-ctd28k)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376600-33xss5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376613-00kkqt)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376627-j9nmmp)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376641-wdl5s0)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376655-wbplwb)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376668-zg0f70)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376681-eiwxbt)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376694-b0ocsd)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376709-9kjwt5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376722-esa5t1)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376736-mltexe)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376749-ilkube)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376763-dd6oob)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376776-h6a3m0)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151376793-ogcw3m)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151377613-khaaiq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151377632-q9uy7p)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377648-65mfha)
+[Gateway] [vbarter] Action result: success - Clicked dialog option 0
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377663-b26id2)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377677-rroe87)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377690-28on0i)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377705-0ifb7p)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377717-e95ssj)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377731-wjep5l)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377746-pkwy5c)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377759-6naw8z)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377773-kh6v10)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151377787-4j6ogt)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377800-iotnm4)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377815-12l6um)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377827-nttpbc)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377841-x5sngl)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377854-8tmnqn)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377867-3ss4h6)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377881-xp7pko)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377895-j561t2)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377909-65urgj)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377923-slqjf7)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151377936-vgsjv7)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377949-ysqbxa)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377964-d6pib9)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377977-ahwxv6)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151377993-paq5j0)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378009-7vh4v9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378020-rnpyfa)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378033-vhawmi)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378045-f1qxvi)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378060-ifhafn)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378072-samdck)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378084-d0g81k)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378097-kongw6)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378111-qiio7r)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378124-30zp5z)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378137-ajkfpy)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378150-ygjxdt)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378164-6hm37l)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378178-zboscz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378193-2v5kxf)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378207-vmt4vx)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378222-oee514)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378234-0jpmbq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378248-0e2wtp)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378261-fiy1dk)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378275-dotebd)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378288-p55qll)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378302-j5ox8h)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378316-dr649u)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378329-dqfant)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378342-8zmwhs)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378356-3tt1sf)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378369-qbf6i0)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378382-uu4rmp)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378396-hbdxev)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378409-a3u27s)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378423-gmunw4)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378436-l5id4y)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378450-ias29b)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378463-p68s0c)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378477-5dr3wn)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378490-vd1ipv)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378505-5y6974)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378518-pprgxm)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378531-8eoz38)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378544-5sy5fk)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378558-uc40fa)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378570-schbd8)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378584-7uipbp)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378597-x6hm7s)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378612-kexntz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378625-yp69wq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378638-frul0i)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378651-ysqeak)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378664-zye1fl)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378678-cfuczf)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378692-asw0gg)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378705-ncra9m)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378719-gq4bm7)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378733-xfgxvd)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378745-pyybca)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378758-fcxcx2)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378772-tfumlo)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378792-yktfx0)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378813-3rom5i)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378826-gwp4lr)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1522
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378839-qhb24v)
+[Gateway] [vbarter] Action result: failed - Failed to interact with NPC
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378853-sss48y)
+[Gateway] [vbarter] Action result: failed - Failed to interact with NPC
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378867-k5kh6b)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378880-3rqkjg)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378893-v3kwdh)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378907-8zyd6n)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378920-msxsto)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378933-i3lw7r)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378946-1f86ve)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378959-154i6l)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378974-3qzp0i)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151378987-x2kr91)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379001-5o44lu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379014-cl2psn)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379028-wad4vq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379042-rxa5zw)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379056-lj4212)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379068-kpzc0y)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379082-g7oznw)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379095-u6lrpk)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379108-2j4iv5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379121-i9r7h2)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379134-3axd78)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379147-f9v1hg)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379160-qvdm0k)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379174-liw544)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379190-pm2vtu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379201-t1r7v8)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379214-ldmhj4)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379228-tqfifj)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379242-hc4sq0)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379256-bhw28o)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379269-sh3moy)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379282-7corb5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379296-b9xbj3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379310-0sx0pi)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379323-lt8uoc)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379335-o56mol)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379348-y2s23d)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379362-gcgzes)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379376-6r3x8r)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379390-p77itg)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379403-youbq8)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379417-y2xiwf)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379431-6k9avr)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379444-xjd1pb)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379457-bblvsz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379471-z7xv6j)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379483-hynqn4)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379495-bmzrzd)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379509-t5bo40)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379523-yp1ylq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379535-ij54u2)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379549-or6wu2)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379562-g5ciln)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379575-0n5s0t)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379591-ormdhb)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379602-4xkj7c)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379615-fuwp33)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379629-y6nphz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379642-uh18t0)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379656-yq6agn)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379670-clk9tx)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379683-mjai0w)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379696-1ybj8z)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379709-psugey)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379722-c9oel7)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379735-5e3cp6)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379750-xb03jg)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379764-ab8n5s)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379777-7rflt6)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379791-53ml34)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379804-ett2iw)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379818-na7ow3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379831-9iv2tq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379845-dgbt56)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379859-me4fpa)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379874-6ttu3l)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379887-kuk4cb)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379899-dv1ug0)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379913-ib4dvu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379926-9nu473)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379939-xd0plv)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379952-v8wpu2)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379964-nzhnas)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379977-6fxt2v)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151379991-qbkn2v)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380004-0o3bu0)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380016-zu7hyt)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380030-vx0489)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380046-7j0u66)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380060-tfmhiw)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380074-j1tnxl)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380087-yipy7j)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380099-ed313n)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380113-8v8an7)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380127-0gc3ld)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380140-k46cnq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380154-zu9psh)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380166-zltrr3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380180-wkjse7)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380193-dddb6t)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380207-266c9v)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380220-uhpde8)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380233-sct2wz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380247-6osppt)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380260-5o7cde)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380274-jee31s)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380287-q627g8)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380299-3jt904)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380313-glejgt)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380327-9i0lwb)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380341-lxozqk)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380355-s1xw9l)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380369-ju6fm2)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380382-ql7bup)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380397-f3pgfp)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380409-fx6y31)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380422-qdd37r)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380435-pd8u3d)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380449-i9snej)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380462-cqg7sp)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380475-9cbsx9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380489-ltejzq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380502-hen87z)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380515-m8aqxr)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380529-tlb241)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380542-e2swrp)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380555-x7kd7h)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380569-kdrytg)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380584-q7exjl)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380597-ffhdn9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380612-24yozp)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380625-5uaj8s)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380638-n847ut)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380651-cgsbic)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380666-3rn286)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380679-wntn7p)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380693-gxypwz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380707-czuvjt)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380720-lkryo1)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380733-t1o2iw)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380746-78cfvs)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380760-c7uk2x)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380771-r1ud8s)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380792-q4b4cr)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380798-q3tc8x)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380811-n8a88h)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380826-ih9ci9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380840-1muk5y)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380854-zgeenu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380866-qw6ibz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380879-pgd69x)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380892-yvoddt)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380906-8vqyg8)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380918-wle3gv)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380931-8cx1sk)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380944-vjawd3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380957-383v5x)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380970-3zav7d)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380984-rfyew8)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151380999-u4oe6v)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381013-nyvdtz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381025-ugg75l)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381042-shs6i2)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381055-2zihfg)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381068-cnk3ol)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381084-e8im90)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381097-qmzuq3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381111-pepft1)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381123-jtt59j)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381136-m1s6o0)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381149-7yrkjv)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381163-qzpjfq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381176-czcg5k)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381191-flx1ec)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381204-xaigye)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381217-b1yp9t)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381230-azt6os)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381245-9mbtc5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381258-hfoivg)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381271-pmqgqj)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381284-orguuy)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381298-d10nfk)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381311-1mkczy)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381324-6gkyh5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381337-qa6y3q)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381349-im3j6a)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381362-jxyrm0)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381375-oddzyw)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381389-srxazx)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381401-fch1fs)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381414-j3p3ma)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381430-m7fm1i)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381443-3svzbu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381457-sr79k6)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381469-9zntpz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381484-ojsxke)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381495-yx01su)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381508-qf3ak3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381522-sv6w1v)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381536-ivrp81)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381549-j7q07z)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381562-xwsy6u)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381576-ahgz7k)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381591-p8n6th)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381603-sv381p)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381616-fxzqm5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381629-4g3khg)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381643-d351mn)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381656-1im60f)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381669-xzoooo)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381682-0sflyu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381696-11eoad)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381709-hsy500)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381723-ifhybz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381736-yz61wz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381751-cdyryb)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381764-gixvxy)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381778-fvkz1q)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381792-he49qn)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381805-shnrvm)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381819-yidiha)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381832-123rv5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381846-rkxi6i)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381858-j69548)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381872-otzr8a)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381885-mwrctf)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381899-1egdiy)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381913-xuqk83)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381926-0pxupq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381939-w6fsas)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381952-5csb8l)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381965-ladyx6)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381978-mrbxny)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151381992-mn386h)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382004-dep0zp)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382017-wlm2as)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382030-m8mk5h)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382044-j2bwuu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382057-58zts8)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382070-qb6orh)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382084-7s8e5f)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382097-ab82y9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382110-p0erme)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382124-5osjci)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382137-kehqro)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382150-ozl66u)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382164-xsvdpa)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382177-ofk03t)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382191-yh6i9h)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382204-5gjw7m)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382217-wkxfz5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382229-akmrer)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382243-f49v9z)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382256-xo39i1)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382269-1012y2)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382282-utelph)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382296-6ef58v)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382309-eassw9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382324-xc98e3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382337-aysp9t)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382349-o0t071)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382362-u4f3c3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382376-zrch7z)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382394-3xdv2s)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382402-g8eiqb)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382417-7ck7nw)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382430-kyl31q)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382443-4zh60b)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382458-5mf3md)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382472-m9y872)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382484-f3dlgz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382498-zew49c)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382511-k68vxm)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382524-0i1hz3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382536-9weq4i)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382549-rh9g36)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1521
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382562-ozr2co)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382575-6rcxny)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382589-93ostm)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382601-v6g7t1)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382616-fp7e5h)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382629-nu14o4)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382643-8lgguu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382657-t0e7b5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382670-u6fgzb)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382682-d0p2nk)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382695-jl6p43)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382709-0jx9ym)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382722-zplwii)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382735-43xexa)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382747-c6lirn)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382761-oysrio)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382774-z3cgv8)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382794-xwgluf)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382815-ytn1du)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382828-41uuw2)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382842-8deybz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382855-0od33u)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382869-0vg56q)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382882-zfiuu5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382895-0ks58d)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382908-xt0z8r)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382922-n1q59s)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382933-1nfpk9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382946-lhfr7k)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382959-9h9epb)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382972-dk9yw7)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382984-rapfon)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151382998-canped)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383012-cdflkz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383027-wi29r0)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383041-087xcf)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383056-fxsnbi)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383070-b2e9h7)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383084-t1b2td)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383097-xivq8u)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383110-aeyux4)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383125-jh0zds)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383138-fhywsl)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383152-tczyam)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383166-elva5u)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383179-cgt1nl)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383194-32tgle)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383208-ulk8gg)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383221-skpm38)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383235-50xc35)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383252-ghwcqw)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383265-xmilr9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383278-h77z8t)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383291-6lipkc)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383303-sb2gx0)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383316-q9thox)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383328-zh467w)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383341-yhx3me)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383354-25avr9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383368-r7qozt)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383381-vvscg6)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383394-imx84x)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383407-5rmuhi)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383420-25blr5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383433-rhpicm)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383447-iy80rq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383461-i5vgqe)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383474-qzbryw)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383489-w3hd2z)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383501-kk5zhf)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383515-n6544f)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383528-0hgo77)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383541-754rns)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1520
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383555-l4dy7l)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1517
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383568-uj89z9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1517
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383581-umpmx5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1517
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151383594-7fa7iq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1517
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384405-iu64g9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384422-fyf4c0)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384436-69ap44)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384450-f73x2y)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384464-apagyw)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384478-wl1wee)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384492-0vc59x)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384506-rmufzm)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384521-1o2uuk)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384535-9tzzae)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384547-izupws)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384561-uiw6u8)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384575-t69xfv)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384588-mc2ghu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384602-61ynn3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384616-7osdlq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384630-rd6uaa)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384645-wbbx4b)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384660-6lrq3t)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384673-kj2zb9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384686-n5d2fa)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384699-16dudv)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384712-tfzckt)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384725-3rk0zx)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384738-qqlei7)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384750-o22a86)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384763-2gfcv4)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384777-d9kp60)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151384792-98rqv8)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151385614-hb1dvo)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151385632-zst857)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385646-2wb2dx)
+[Gateway] [vbarter] Action result: success - Clicked dialog option 0
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385661-cf4qjl)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385676-sar0qf)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385691-n5jxc1)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385704-31f081)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385716-zaoe96)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385731-7ol0yw)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385744-4qanxu)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385758-zqkv72)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385772-sr6715)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151385785-dpt9g3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385799-5tkyqb)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385813-wybnd9)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385827-n4jki5)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385842-bqb8vz)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385853-f9nive)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385866-fpn71d)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385878-lderqf)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385891-zlbfg2)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385903-2lmiow)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385915-mf2n3e)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151385929-s5ry34)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385942-kyrskp)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385957-3j7agr)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385972-23ty54)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: clickDialogOption (act-1771151385990-gzx20e)
+[Gateway] [vbarter] Action result: failed - Failed to click dialog option
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386000-3s9o5k)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386014-rzs3mp)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386028-vi6bck)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386042-vy3twp)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386055-jbsd39)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386068-wq0yu5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386081-gjo46d)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386095-oal28r)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386108-jyrn1y)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386122-ue72sx)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386136-7zmz61)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386149-cjypbh)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386162-rczc54)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386176-kql5tm)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386189-gdylli)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386202-cxegsp)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386214-qgwrmw)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386228-rpqjff)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386240-236qyy)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386254-bt5lpo)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386266-738uxk)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386279-3v2t5p)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386293-e3phxq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386308-wasp72)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386321-a68042)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386333-d65d64)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386346-vsvv4i)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386360-st0h18)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386373-zymggu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151386395-6kf3d5)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387196-jf230q)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387214-w46fw3)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387229-jixuxp)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387244-y4vq34)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387258-dqfz91)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387270-4vgceo)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387282-atwywm)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387295-7yf76p)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387309-73xczn)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387321-np60hv)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387334-kwoh4e)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387347-xgf6li)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387361-8unffz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387374-4fzsno)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387388-pakjfy)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387403-mpcx8s)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387415-d1tmt6)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387428-xcv9qx)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387442-nxia9g)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387455-tlk1y7)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387468-xgbnck)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387482-gqcrvg)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387496-rmnqry)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387509-zqzgzo)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387522-hpjfmo)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387535-bjahwo)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387548-5nqyfx)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387560-n7hg5o)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387574-qch0a7)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387590-k20hba)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387599-g4pchu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387613-ip639r)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387627-w370i0)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387639-a6ovhe)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387653-74fxd2)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387668-1kp8k1)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387681-adzkw4)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387694-2pq6pz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387708-9bjnz7)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387721-eut5iv)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387733-nnrvey)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387746-kjqy8l)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387760-rzg03s)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387774-0lkrpz)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387787-2sv11x)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387800-4kijoj)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387813-gvj9du)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387826-nunmuc)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387839-huwdd6)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387852-92f9t9)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387867-58rnmo)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387881-auvg0f)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387894-nzv7bu)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387908-thmayc)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387922-72d5uq)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387935-q9fhbs)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387947-r9pg0w)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387961-o5a9ve)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387975-yeimkd)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518
+[Gateway] [vbarter] SDK action: interactNpc (act-1771151387990-850ubm)
+[Gateway] [vbarter] Action result: success - Interacting with NPC #1518

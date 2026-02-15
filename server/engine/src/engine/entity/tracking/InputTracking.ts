@@ -146,14 +146,10 @@ export default class InputTracking {
             if (this.shouldSubmitTrackingDetails()) {
                 World.submitInputTracking(this.player.username, this.player instanceof NetworkPlayer ? this.player.client.uuid : 'headless', this.recordedBlobs);
             }
-        } else if (!Environment.NODE_DEBUG) {
-            // this means that:
-            // 1: the player is trying to avoid afk timer.
-            // 2: the player is on a very slow connection and the report packet never came in.
-            console.warn(`[LOGOUT DEBUG] InputTracking: Client did not submit input tracking report for ${this.player.username} - requesting idle logout`);
-            this.player.addSessionLog(LoggerEventType.ENGINE, 'Client did not submit an input tracking report');
-            this.player.requestIdleLogout = true;
         }
+        // Note: removed idle logout for missing input tracking reports.
+        // Bot clients controlled via SDK don't generate real mouse/keyboard input,
+        // so they never submit tracking reports. This was causing forced logouts.
         // This finalizes the tracking session, so reset initial state.
         this.waitingForRemainingData = false;
         this.recordedBlobs = [];
