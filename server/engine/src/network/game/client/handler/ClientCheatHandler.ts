@@ -49,6 +49,27 @@ export default class ClientCheatHandler extends ClientGameMessageHandler<ClientC
             return false;
         }
 
+        // Language toggle - available to all players
+        if (cmd === 'lang') {
+            const langArg: string | undefined = args.shift();
+            const varp = VarPlayerType.getByName('option_language');
+            if (varp) {
+                if (langArg === 'zh' || langArg === 'cn') {
+                    player.setVar(varp.id, 1);
+                    player.messageGame('Language set to Chinese / 语言已切换为中文');
+                } else if (langArg === 'en') {
+                    player.setVar(varp.id, 0);
+                    player.messageGame('Language set to English');
+                } else {
+                    // Toggle
+                    const current: number = player.getVar(varp.id) as number;
+                    player.setVar(varp.id, current === 0 ? 1 : 0);
+                    player.messageGame(current === 0 ? '语言已切换为中文' : 'Language set to English');
+                }
+            }
+            return true;
+        }
+
         if (player.staffModLevel >= 2) {
             player.addSessionLog(LoggerEventType.MODERATOR, 'Ran cheat', cheat);
         }

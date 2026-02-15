@@ -1,5 +1,7 @@
 import { LocLayer, LocAngle } from '@2004scape/rsmod-pathfinder';
 
+import VarPlayerType from '#/cache/config/VarPlayerType.js';
+import TranslationService from '#/util/TranslationService.js';
 import MesanimType from '#/cache/config/MesanimType.js';
 import { ParamHelper } from '#/cache/config/ParamHelper.js';
 import ParamType from '#/cache/config/ParamType.js';
@@ -216,6 +218,14 @@ const ServerOps: CommandHandlers = {
             text = text.substring(text.indexOf('>') + 1);
         } else {
             state.splitMesanim = -1;
+        }
+
+        // i18n: translate full text before splitting into lines
+        if (state.activePlayer) {
+            const langVarp = VarPlayerType.getByName('option_language');
+            if (langVarp && state.activePlayer.getVar(langVarp.id) === 1) {
+                text = TranslationService.translate(text);
+            }
         }
 
         state.splitPages = [];

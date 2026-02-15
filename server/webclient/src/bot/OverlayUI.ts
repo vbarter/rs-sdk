@@ -93,7 +93,8 @@ export class OverlayUI {
             font-weight: bold;
             font-size: 10px;
         `;
-        sdkHeader.textContent = 'WORLD STATE';
+        const isZh = typeof localStorage !== 'undefined' && localStorage.getItem('rs_language') === '1';
+        sdkHeader.textContent = isZh ? '世界状态' : 'WORLD STATE';
 
         // Create content area (world state)
         this.content = document.createElement('pre');
@@ -133,7 +134,7 @@ export class OverlayUI {
             position: relative;
         `;
         actionHeader.innerHTML = `
-            SDK ACTIONS
+            ${isZh ? 'SDK 操作' : 'SDK ACTIONS'}
             <button id="bot-packets" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: 1px solid #04A800; color: #04A800; cursor: pointer; padding: 2px 8px; font-size: 10px;">PKT</button>
         `;
 
@@ -153,7 +154,9 @@ export class OverlayUI {
             flex: 1;
             text-align: left;
         `;
-        this.actionLog.textContent = 'Download the SDK to get started:\ngithub.com/MaxBittker/rs-sdk\n\n(waiting for SDK actions...)';
+        this.actionLog.textContent = isZh
+            ? '下载 SDK 开始使用:\ngithub.com/MaxBittker/rs-sdk\n\n(等待 SDK 操作...)'
+            : 'Download the SDK to get started:\ngithub.com/MaxBittker/rs-sdk\n\n(waiting for SDK actions...)';
 
         actionsPanel.appendChild(actionHeader);
         actionsPanel.appendChild(this.actionLog);

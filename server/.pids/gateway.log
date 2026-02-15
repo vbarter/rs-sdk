@@ -1,0 +1,13 @@
+[Gateway] Starting Gateway Service on port 7780...
+[Gateway] Gateway running at http://localhost:7780
+[Gateway] Bot/SDK: ws://localhost:7780
+[Gateway] Authentication DISABLED (set LOGIN_SERVER=true to enable)
+[Gateway] Bot connected: b84j6b-1771147738269 (b84j6b)
+[Gateway] Bot connected: bc6ycb-1771147764264 (bc6ycb)
+[Gateway] Bot disconnected: bc6ycb-1771147764264 (bc6ycb)
+[Gateway] Bot disconnected: b84j6b-1771147738269 (b84j6b)
+[Gateway] Bot connected: b84j6b-1771148107818 (b84j6b)
+[Gateway] Bot disconnected: b84j6b-1771148107818 (b84j6b)
+[Gateway] Bot connected: b84j6b-1771148438626 (b84j6b)
+[Gateway] Bot disconnected: b84j6b-1771148438626 (b84j6b)
+[Gateway] Bot connected: b84j6b-1771148775818 (b84j6b)

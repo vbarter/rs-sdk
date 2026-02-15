@@ -12,6 +12,11 @@ export default class PixFont extends DoublyLinkable {
     static readonly CHARSET: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!"£$%^&*()-_=+[{]};:\'@#~,<.>/?\\| ';
     static readonly CHARCODESET: number[] = [];
 
+    // CJK fallback rendering
+    private static cjkCanvas: HTMLCanvasElement | null = null;
+    private static cjkCtx: CanvasRenderingContext2D | null = null;
+    private static cjkWidthCache: Map<string, number> = new Map();
+
     private readonly charMask: Int8Array[] = [];
     readonly charMaskWidth: Int32Array = new Int32Array(94);
     readonly charMaskHeight: Int32Array = new Int32Array(94);
@@ -41,6 +46,96 @@ export default class PixFont extends DoublyLinkable {
             }
 
             PixFont.CHARCODESET[i] = c;
+        }
+    }
+
+    private static initCJK(): void {
+        if (!PixFont.cjkCanvas) {
+            PixFont.cjkCanvas = document.createElement('canvas');
+            PixFont.cjkCanvas.width = 64;
+            PixFont.cjkCanvas.height = 64;
+            PixFont.cjkCtx = PixFont.cjkCanvas.getContext('2d', { willReadFrequently: true })!;
+        }
+    }
+
+    private getCJKAdvance(char: string): number {
+        const key: string = this.height2d + ':' + char;
+        let w: number | undefined = PixFont.cjkWidthCache.get(key);
+        if (w !== undefined) {
+            return w;
+        }
+        PixFont.initCJK();
+        const ctx: CanvasRenderingContext2D = PixFont.cjkCtx!;
+        ctx.font = this.height2d + 'px sans-serif';
+        w = Math.ceil(ctx.measureText(char).width);
+        if (w < 1) {
+            w = this.height2d;
+        }
+        PixFont.cjkWidthCache.set(key, w);
+        return w;
+    }
+
+    private drawCJKChar(char: string, x: number, y: number, color: number, shadow: boolean = false): void {
+        PixFont.initCJK();
+        const ctx: CanvasRenderingContext2D = PixFont.cjkCtx!;
+        const cvs: HTMLCanvasElement = PixFont.cjkCanvas!;
+
+        const size: number = this.height2d;
+        const advance: number = this.getCJKAdvance(char);
+        const pad: number = 4;
+
+        if (cvs.width < advance + pad || cvs.height < size + pad) {
+            cvs.width = advance + pad;
+            cvs.height = size + pad;
+        }
+
+        ctx.clearRect(0, 0, cvs.width, cvs.height);
+        ctx.font = size + 'px sans-serif';
+        ctx.textBaseline = 'top';
+
+        if (shadow) {
+            ctx.fillStyle = 'rgb(0,0,0)';
+            ctx.fillText(char, 1, 1);
+        }
+
+        const r: number = (color >> 16) & 0xff;
+        const g: number = (color >> 8) & 0xff;
+        const b: number = color & 0xff;
+        ctx.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
+        ctx.fillText(char, 0, 0);
+
+        const imgData: ImageData = ctx.getImageData(0, 0, advance + pad, size + pad);
+        const px: Uint8ClampedArray = imgData.data;
+
+        for (let py: number = 0; py < size + pad; py++) {
+            for (let ppx: number = 0; ppx < advance + pad; ppx++) {
+                const srcIdx: number = (py * (advance + pad) + ppx) * 4;
+                const alpha: number = px[srcIdx + 3];
+                if (alpha === 0) {
+                    continue;
+                }
+
+                const dstX: number = x + ppx;
+                const dstY: number = y + py;
+                if (dstX < Pix2D.left || dstX >= Pix2D.right || dstY < Pix2D.top || dstY >= Pix2D.bottom) {
+                    continue;
+                }
+
+                const dstIdx: number = dstX + dstY * Pix2D.width2d;
+                if (alpha >= 200) {
+                    Pix2D.pixels[dstIdx] = (px[srcIdx] << 16) | (px[srcIdx + 1] << 8) | px[srcIdx + 2];
+                } else {
+                    const dst: number = Pix2D.pixels[dstIdx];
+                    const dr: number = (dst >> 16) & 0xff;
+                    const dg: number = (dst >> 8) & 0xff;
+                    const db: number = dst & 0xff;
+                    const a: number = alpha / 255;
+                    const nr: number = (px[srcIdx] * a + dr * (1 - a)) | 0;
+                    const ng: number = (px[srcIdx + 1] * a + dg * (1 - a)) | 0;
+                    const nb: number = (px[srcIdx + 2] * a + db * (1 - a)) | 0;
+                    Pix2D.pixels[dstIdx] = (nr << 16) | (ng << 8) | nb;
+                }
+            }
         }
     }
 
@@ -132,13 +227,20 @@ export default class PixFont extends DoublyLinkable {
         const length: number = str.length;
         y -= this.height2d;
         for (let i: number = 0; i < length; i++) {
-            const c: number = PixFont.CHARCODESET[str.charCodeAt(i)];
+            const charCode: number = str.charCodeAt(i);
 
-            if (c !== 94) {
-                this.drawChar(this.charMask[c], x + this.charOffsetX[c], y + this.charOffsetY[c], this.charMaskWidth[c], this.charMaskHeight[c], color);
+            if (charCode > 255) {
+                this.drawCJKChar(str.charAt(i), x, y, color);
+                x += this.getCJKAdvance(str.charAt(i));
+            } else {
+                const c: number = PixFont.CHARCODESET[charCode];
+
+                if (c !== 94) {
+                    this.drawChar(this.charMask[c], x + this.charOffsetX[c], y + this.charOffsetY[c], this.charMaskWidth[c], this.charMaskHeight[c], color);
+                }
+
+                x += this.charAdvance[c];
             }
-
-            x += this.charAdvance[c];
         }
     }
 
@@ -153,16 +255,23 @@ export default class PixFont extends DoublyLinkable {
                 color = this.evaluateTag(str.substring(i + 1, i + 4));
                 i += 4;
             } else {
-                const c: number = PixFont.CHARCODESET[str.charCodeAt(i)];
+                const charCode: number = str.charCodeAt(i);
 
-                if (c !== 94) {
-                    if (shadowed) {
-                        this.drawChar(this.charMask[c], x + this.charOffsetX[c] + 1, y + this.charOffsetY[c] + 1, this.charMaskWidth[c], this.charMaskHeight[c], Colors.BLACK);
+                if (charCode > 255) {
+                    this.drawCJKChar(str.charAt(i), x, y, color, shadowed);
+                    x += this.getCJKAdvance(str.charAt(i));
+                } else {
+                    const c: number = PixFont.CHARCODESET[charCode];
+
+                    if (c !== 94) {
+                        if (shadowed) {
+                            this.drawChar(this.charMask[c], x + this.charOffsetX[c] + 1, y + this.charOffsetY[c] + 1, this.charMaskWidth[c], this.charMaskHeight[c], Colors.BLACK);
+                        }
+                        this.drawChar(this.charMask[c], x + this.charOffsetX[c], y + this.charOffsetY[c], this.charMaskWidth[c], this.charMaskHeight[c], color);
                     }
-                    this.drawChar(this.charMask[c], x + this.charOffsetX[c], y + this.charOffsetY[c], this.charMaskWidth[c], this.charMaskHeight[c], color);
-                }
 
-                x += this.charAdvance[c];
+                    x += this.charAdvance[c];
+                }
             }
         }
     }
@@ -178,7 +287,12 @@ export default class PixFont extends DoublyLinkable {
             if (str.charAt(i) === '@' && i + 4 < length && str.charAt(i + 4) === '@') {
                 i += 4;
             } else {
-                w += this.drawWidth[str.charCodeAt(i)];
+                const charCode: number = str.charCodeAt(i);
+                if (charCode > 255) {
+                    w += this.getCJKAdvance(str.charAt(i));
+                } else {
+                    w += this.drawWidth[charCode];
+                }
             }
         }
 
@@ -216,16 +330,23 @@ export default class PixFont extends DoublyLinkable {
                 color = this.evaluateTag(str.substring(i + 1, i + 4));
                 i += 4;
             } else {
-                const c: number = PixFont.CHARCODESET[str.charCodeAt(i)];
-                if (c !== 94) {
-                    if (shadowed) {
-                        this.drawCharAlpha(x + this.charOffsetX[c] + 1, offY + this.charOffsetY[c] + 1, this.charMaskWidth[c], this.charMaskHeight[c], Colors.BLACK, 192, this.charMask[c]);
+                const charCode: number = str.charCodeAt(i);
+
+                if (charCode > 255) {
+                    this.drawCJKChar(str.charAt(i), x, offY, color);
+                    x += this.getCJKAdvance(str.charAt(i));
+                } else {
+                    const c: number = PixFont.CHARCODESET[charCode];
+                    if (c !== 94) {
+                        if (shadowed) {
+                            this.drawCharAlpha(x + this.charOffsetX[c] + 1, offY + this.charOffsetY[c] + 1, this.charMaskWidth[c], this.charMaskHeight[c], Colors.BLACK, 192, this.charMask[c]);
+                        }
+
+                        this.drawCharAlpha(x + this.charOffsetX[c], offY + this.charOffsetY[c], this.charMaskWidth[c], this.charMaskHeight[c], color, rand, this.charMask[c]);
                     }
 
-                    this.drawCharAlpha(x + this.charOffsetX[c], offY + this.charOffsetY[c], this.charMaskWidth[c], this.charMaskHeight[c], color, rand, this.charMask[c]);
+                    x += this.charAdvance[c];
                 }
-
-                x += this.charAdvance[c];
                 if ((this.random.nextInt() & 0x3) === 0) {
                     x++;
                 }
@@ -255,13 +376,20 @@ export default class PixFont extends DoublyLinkable {
         const offY: number = y - this.height2d;
 
         for (let i: number = 0; i < str.length; i++) {
-            const c: number = PixFont.CHARCODESET[str.charCodeAt(i)];
+            const charCode: number = str.charCodeAt(i);
 
-            if (c != 94) {
-                this.drawChar(this.charMask[c], x + this.charOffsetX[c], offY + this.charOffsetY[c] + ((Math.sin(i / 2.0 + phase / 5.0) * 5.0) | 0), this.charMaskWidth[c], this.charMaskHeight[c], color);
+            if (charCode > 255) {
+                this.drawCJKChar(str.charAt(i), x, offY + ((Math.sin(i / 2.0 + phase / 5.0) * 5.0) | 0), color);
+                x += this.getCJKAdvance(str.charAt(i));
+            } else {
+                const c: number = PixFont.CHARCODESET[charCode];
+
+                if (c != 94) {
+                    this.drawChar(this.charMask[c], x + this.charOffsetX[c], offY + this.charOffsetY[c] + ((Math.sin(i / 2.0 + phase / 5.0) * 5.0) | 0), this.charMaskWidth[c], this.charMaskHeight[c], color);
+                }
+
+                x += this.charAdvance[c];
             }
-
-            x += this.charAdvance[c];
         }
     }
 

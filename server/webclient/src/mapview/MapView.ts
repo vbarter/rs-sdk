@@ -10,6 +10,183 @@ import { TypedArray1d, TypedArray2d } from '#/util/Arrays.js';
 import { canvas } from '#/graphics/Canvas.js';
 import { downloadUrl, sleep } from '#/util/JsUtil.js';
 
+// Map label translations (English text with / line breaks → Chinese)
+const MAP_LABELS_ZH: Record<string, string> = {
+    // Cities & Towns
+    'Lumbridge': '伦布里奇',
+    'Varrock': '瓦洛克',
+    'Al Kharid': '阿尔卡里德',
+    'Tutorial Island': '教程岛',
+    'Port/Sarim': '萨里姆港',
+    'Falador': '法拉多',
+    'Edgeville': '边缘维尔',
+    'Brimhaven': '布里姆黑文',
+    'Draynor/Village': '德雷诺村',
+    'Draynor Manor': '德雷诺庄园',
+    'Barbarian/Village': '野蛮人村',
+    'Rimmington': '里明顿',
+    'Shilo Village': '希洛村',
+    'Tai Bwo Wannai': '泰布沃瓦奈',
+    'Taverly': '塔维利',
+    'Catherby': '凯瑟比',
+    'Camelot/Castle': '卡默洛特/城堡',
+    "Seers'/Village": '先知村',
+    'East/Ardougne': '东/阿多格尼',
+    'West/Ardougne': '西/阿多格尼',
+    'Tree Gnome/Stronghold': '树地精/要塞',
+    'Tree Gnome/Village': '树地精村',
+    'Yanille': '亚尼勒',
+    'Port/Khazard': '卡扎德港',
+    'Canifis': '卡尼菲斯',
+    // Regions
+    'Kingdom Of/Misthalin': '密斯塔林/王国',
+    'Karamja': '卡拉姆贾',
+    'Crandor': '克兰多',
+    'Entrana': '恩特拉纳',
+    'Wilderness': '荒野',
+    'Kingdom of/Asgarnia': '阿斯加尼亚/王国',
+    'Kingdom of/Kandarin': '坎达林/王国',
+    'Feldip/Hills': '费尔迪普/丘陵',
+    'Morytania': '莫里坦尼亚',
+    'Kharazi Jungle': '卡拉兹丛林',
+    // Landmarks & Facilities
+    'Duel/Arena': '决斗/竞技场',
+    'Shantay/Pass': '尚泰/关卡',
+    'Toll/Gate': '收费门',
+    'Jail': '监狱',
+    'Market': '市场',
+    'Desert Mining/Camp': '沙漠矿营',
+    'Bedabin/Camp': '贝达宾/营地',
+    'Exam Centre': '考试中心',
+    'Dig Site': '挖掘场',
+    'Lumber Yard': '木材场',
+    'Palace': '宫殿',
+    "Cooks'/Guild": '厨师公会',
+    'Monastery': '修道院',
+    'Dwarven/Mine': '矮人/矿洞',
+    'Ice/Mountain': '冰山',
+    "Black Knights'/Castle": '黑骑士/城堡',
+    'Goblin/Village': '哥布林村',
+    "White Knights'/Castle": '白骑士/城堡',
+    'Park': '公园',
+    "Dark Wizards'/Tower": '黑暗巫师塔',
+    'Make Over/Mage': '变装法师',
+    "Melzar's/Maze": '梅尔扎/迷宫',
+    "Wizards' Tower": '巫师塔',
+    'Lumbridge/Swamp': '伦布里奇/沼泽',
+    'Fishing/Platform': '钓鱼平台',
+    'Ship Yard': '造船厂',
+    'Cairn Isle': '凯恩岛',
+    'Chaos/Temple': '混沌神殿',
+    'Graveyard of/Shadows': '暗影墓地',
+    'Bandit/Camp': '强盗营地',
+    'Dark Knight/Fortress': '黑骑士/要塞',
+    'Ruins': '废墟',
+    'The Forgotten/Cemetary': '被遗忘的/墓地',
+    'Bone Yard': '骸骨场',
+    'Red Dragon/Isle': '红龙岛',
+    'Lava Maze': '熔岩迷宫',
+    'Frozen Waste/Plateau': '冰冻荒原/高地',
+    'Agility Training/Area': '敏捷训练场',
+    "Pirates'/Hideout": '海盗窝点',
+    'Mage Arena': '法师竞技场',
+    'Deserted/Keep': '荒废要塞',
+    'Scorpion/Pit': '蝎子坑',
+    "Rogues' Castle": '游荡者/城堡',
+    'Demonic/Ruins': '恶魔废墟',
+    "Heros'/Guild": '英雄公会',
+    "Druids'/Circle": '德鲁伊/圆环',
+    'White Wolf/Mountain': '白狼山',
+    'Sinclair Mansion': '辛克莱尔/庄园',
+    'Flax': '亚麻田',
+    'Beehives': '蜂箱',
+    "Sorcerers' Tower": '巫师塔',
+    'Keep/Le Faye': '勒菲堡',
+    'Legends/Guild': '传说公会',
+    'Hemenster': '赫门斯特',
+    "McGrubor's/Wood": '麦格鲁博/森林',
+    'Coal/Trucks': '煤矿车',
+    'Fishing/Guild': '钓鱼公会',
+    'Combat/Training/Camp': '战斗/训练营',
+    'Grand Tree': '大树',
+    'Swamp': '沼泽',
+    'Gnome Ball/Field': '地精球场',
+    'Barbarian Outpost': '野蛮人/前哨',
+    'Underground/Pass': '地下通道',
+    'Battlefield': '战场',
+    'Baxtorian/Falls': '巴克斯托瑞安/瀑布',
+    "Wizards'/Guild": '巫师公会',
+    'Observatory': '天文台',
+    'Necromancer': '死灵法师',
+    "Gu'Tanoth": '古坦诺斯',
+    'Zoo': '动物园',
+    'Mort Myre/Swamp': '莫特迈尔/沼泽',
+    'River/Salve': '萨尔维河',
+    'River Lum': '卢姆河',
+    'Temple': '神殿',
+    'Fight/Arena': '竞技场',
+    // Region labels (hardcoded in draw)
+    'Underground': '地下世界',
+    'Misc': '其他',
+};
+
+// Key legend translations
+const KEY_NAMES_ZH: string[] = [
+    '杂货店',       // General Store
+    '剑店',         // Sword Shop
+    '魔法商店',     // Magic Shop
+    '斧头店',       // Axe Shop
+    '头盔店',       // Helmet Shop
+    '银行',         // Bank
+    '任务起点',     // Quest Start
+    '护符店',       // Amulet Shop
+    '采矿场',       // Mining Site
+    '熔炉',         // Furnace
+    '铁砧',         // Anvil
+    '战斗训练',     // Combat Training
+    '地牢',         // Dungeon
+    '法杖店',       // Staff Shop
+    '板甲店',       // Platebody Shop
+    '板腿店',       // Platelegs Shop
+    '弯刀店',       // Scimitar Shop
+    '弓箭店',       // Archery Shop
+    '盾牌店',       // Shield Shop
+    '祭坛',         // Altar
+    '草药师',       // Herbalist
+    '珠宝店',       // Jewelery
+    '宝石店',       // Gem Shop
+    '制作商店',     // Crafting Shop
+    '蜡烛店',       // Candle Shop
+    '渔具店',       // Fishing Shop
+    '钓鱼点',       // Fishing Spot
+    '服装店',       // Clothes Shop
+    '药剂师',       // Apothecary
+    '丝绸商人',     // Silk Trader
+    '烤肉串商人',   // Kebab Seller
+    '酒吧',         // Pub/Bar
+    '锤店',         // Mace Shop
+    '制革厂',       // Tannery
+    '稀有树木',     // Rare Trees
+    '纺车',         // Spinning Wheel
+    '食品店',       // Food Shop
+    '烹饪商店',     // Cookery Shop
+    '???',          // ???
+    '水源',         // Water Source
+    '烹饪灶台',     // Cooking Range
+    '裙子店',       // Skirt Shop
+    '陶轮',         // Potters Wheel
+    '风车',         // Windmill
+    '矿业商店',     // Mining Shop
+    '链甲店',       // Chainmail Shop
+    '银器店',       // Silver Shop
+    '毛皮商人',     // Fur Trader
+    '香料店',       // Spice Shop
+];
+
+function tMapLabel(text: string): string {
+    return MAP_LABELS_ZH[text] ?? text;
+}
+
 export class MapView extends GameShell {
     static shouldDrawBorders: boolean = false;
     static shouldDrawLabels: boolean = true;
@@ -202,7 +379,7 @@ export class MapView extends GameShell {
 
         const worldmap: Jagfile = await this.loadWorldmap();
 
-        await this.drawProgress(100, 'Please wait... Rendering Map');
+        await this.drawProgress(100, '请稍候... 正在渲染地图');
 
         const labelData: Packet = new Packet(worldmap.read('labels.dat'));
         this.labelCount = labelData.g2();
@@ -415,9 +592,9 @@ export class MapView extends GameShell {
             }
 
             if (this.showKey) {
-                this.drawString(this.keyX, this.keyY, this.keyWidth, 18, 0x999999, 0x777777, 0x555555, 'Prev page');
+                this.drawString(this.keyX, this.keyY, this.keyWidth, 18, 0x999999, 0x777777, 0x555555, '上一页');
                 this.drawString(this.keyX, this.keyY + 18, this.keyWidth, this.keyHeight - 36, 0x999999, 0x777777, 0x555555, '');
-                this.drawString(this.keyX, this.keyY + this.keyHeight - 18, this.keyWidth, 18, 0x999999, 0x777777, 0x555555, 'Next page');
+                this.drawString(this.keyX, this.keyY + this.keyHeight - 18, this.keyWidth, 18, 0x999999, 0x777777, 0x555555, '下一页');
 
                 let maxKeys: number = (this.keyHeight - 20) / 18;
                 let y: number = this.keyY + 18 + 3;
@@ -429,7 +606,8 @@ export class MapView extends GameShell {
                         }
 
                         this.imageMapfunction[row + this.lastKeyPage].draw(this.keyX + 3, y);
-                        this.b12?.drawString(this.keyX + 21, y + 14, this.keyNames[row + this.lastKeyPage], 0);
+                        const keyLabel: string = KEY_NAMES_ZH[row + this.lastKeyPage] ?? this.keyNames[row + this.lastKeyPage];
+                        this.b12?.drawString(this.keyX + 21, y + 14, keyLabel, 0);
 
                         let rgb: number = 0xffffff;
                         if (this.currentKeyHover == row + this.lastKeyPage) {
@@ -439,15 +617,15 @@ export class MapView extends GameShell {
                             rgb = 0xffff00;
                         }
 
-                        this.b12?.drawString(this.keyX + 20, y + 13, this.keyNames[row + this.lastKeyPage], rgb);
+                        this.b12?.drawString(this.keyX + 20, y + 13, keyLabel, rgb);
                     }
 
                     y += 17;
                 }
             }
 
-            this.drawString(this.overviewX, this.overviewY + this.imageOverviewHeight, this.imageOverviewWidth, 18, this.colorInactiveBorderTL, this.colorInactive, this.colorInactiveBorderBR, 'Overview');
-            this.drawString(this.keyX, this.keyY + this.keyHeight, this.keyWidth, 18, this.colorInactiveBorderTL, this.colorInactive, this.colorInactiveBorderBR, 'Key');
+            this.drawString(this.overviewX, this.overviewY + this.imageOverviewHeight, this.imageOverviewWidth, 18, this.colorInactiveBorderTL, this.colorInactive, this.colorInactiveBorderBR, '总览');
+            this.drawString(this.keyX, this.keyY + this.keyHeight, this.keyWidth, 18, this.colorInactiveBorderTL, this.colorInactive, this.colorInactiveBorderBR, '图例');
 
             let y = this.height - this.keyY - 20 + 1;
             if (this.targetZoom == 3.0) {
@@ -721,14 +899,14 @@ export class MapView extends GameShell {
 
         let retry: number = 5;
         while (!data) {
-            await this.drawProgress(0, 'Requesting map');
+            await this.drawProgress(0, '正在请求地图');
 
             try {
                 data = await downloadUrl('/worldmap.jag');
             } catch (e) {
                 data = undefined;
                 for (let i: number = retry; i > 0; i--) {
-                    await this.drawProgress(0, `Error loading - Will retry in ${i} secs.`);
+                    await this.drawProgress(0, `加载失败 - ${i} 秒后重试`);
                     await sleep(1000);
                 }
 
@@ -1279,7 +1457,7 @@ export class MapView extends GameShell {
                 }
 
                 if (font !== null) {
-                    let label = this.labelText[i];
+                    let label = tMapLabel(this.labelText[i]);
 
                     let lineCount = 1;
                     for (let j = 0; j < label.length; j++) {
@@ -1318,8 +1496,9 @@ export class MapView extends GameShell {
                 const ry: number = this.originZ + this.sizeZ - rl.z;
                 const rdx: number = (widthOffset + ((width - widthOffset) * (rx - left)) / (right - left)) | 0;
                 const rdy: number = (heightOffset + ((height - heightOffset) * (ry - top)) / (bottom - top)) | 0;
-                this.b12?.drawStringCenter(rdx + 1, rdy + 1, rl.label, 0);
-                this.b12?.drawStringCenter(rdx, rdy, rl.label, 0xffaa00);
+                const rlLabel: string = tMapLabel(rl.label);
+                this.b12?.drawStringCenter(rdx + 1, rdy + 1, rlLabel, 0);
+                this.b12?.drawStringCenter(rdx, rdy, rlLabel, 0xffaa00);
             }
         }
 

@@ -1,3 +1,99 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Common Commands
+
+```bash
+# Install dependencies (Bun workspace - includes mcp/)
+bun install
+
+# Create a new bot
+bun scripts/create-bot.ts {username}           # remote server
+bun scripts/create-bot.ts {username} --local    # local server
+
+# Check bot world state
+bun sdk/cli.ts {username}
+
+# Run a bot script
+bun bots/{username}/script.ts
+
+# Regenerate API docs from source
+bun scripts/generate-api-docs.ts
+
+# Run test scripts (these are integration tests against a running server)
+bun sdk/test/{test-name}.ts
+
+# Local server development
+cd server/engine && bun run dev         # Engine with hot-reload
+cd server/webclient && bun run build    # Build web client
+cd server/gateway && bun run gateway    # Gateway relay service
+
+# Engine linting
+cd server/engine && bun run lint
+```
+
+## Architecture
+
+### Two-Layer SDK Design
+
+The SDK has two distinct layers in `sdk/`:
+
+- **BotSDK** (`sdk/index.ts`) — Plumbing layer. Low-level protocol mapping where actions resolve when the game **acknowledges** them. Manages WebSocket connections, state tracking, pathfinding. Methods prefixed with `send*` (e.g. `sendWalk`, `sendInteractNpc`).
+
+- **BotActions** (`sdk/actions.ts`) — Porcelain layer. High-level domain-aware API where actions resolve when the **effect completes** (e.g. `chopTree()` waits until logs appear in inventory, `walkTo()` waits until arrival). All "smart" multi-step behavior lives here.
+
+Supporting files: `sdk/types.ts` (type definitions), `sdk/runner.ts` (script execution framework), `sdk/pathfinding.ts` (local collision-based pathfinding using rsmod), `sdk/actions-helpers.ts` (shared helper functions), `sdk/formatter.ts` (human-readable state output), `sdk/cli.ts` (CLI state checker).
+
+### Connection Flow
+
+```
+Script (BotActions/BotSDK) → WebSocket → Gateway (server/gateway/) → Browser Bot Client → Game Server
+```
+
+The SDK cannot talk directly to the game server; it communicates through a browser-based bot client via the gateway relay. The gateway URL is derived from the `SERVER` env var:
+- Empty → `ws://localhost:7780`
+- `localhost` → plain WebSocket
+- Hostname → `wss://hostname/gateway` (TLS)
+
+### Script Runner (`sdk/runner.ts`)
+
+All bot scripts use `runScript()` which handles connection management, credential loading (from sibling `bot.env`), log capture, timeouts, and formatted state output after execution. Returns `RunResult` with `success`, `result`, `duration`, `logs`, `finalState`.
+
+### MCP Server (`mcp/`)
+
+Separate workspace (`package.json` workspaces: `["mcp"]`). Auto-discovered via `.mcp.json`. Provides `execute_code`, `list_bots`, `disconnect_bot` tools for interactive bot control from Claude Code.
+
+## Key Patterns
+
+- **Entity types matter**: Fishing spots are **NPCs** (`nearbyNpcs`), not locations. Trees/doors/anvils are **locations** (`nearbyLocs`).
+- **Regex precision**: Use `/^tree$/i` not `/tree/i` (avoids matching "tree stump").
+- **Dialog dismissal**: Always call `await bot.dismissBlockingUI()` in main loops — level-up dialogs block all actions.
+- **Action results**: Most `bot.*` methods return `{ success: boolean, message: string }`. Always check `success`.
+- **Animation state**: `player.animId === -1` means idle.
+- **Pathfinding**: `bot.walkTo()` auto-opens doors along the path. Watch for "I can't reach" — often means a closed gate.
+- **Inventory limit**: 28 slots. For gathering loops, drop items when near full.
+- **Game messages persist** in buffer — filter by tick when checking recent messages.
+
+## Project Layout
+
+- `sdk/` — Core SDK library (no external dependencies beyond bundled rsmod pathfinder)
+- `sdk/test/` — Integration test scripts (run against a live server, not unit tests)
+- `mcp/` — MCP server for Claude Code interactive control (separate workspace)
+- `scripts/` — Example automation scripts organized by skill (each in its own directory with `script.ts` + `lab_log.md`)
+- `bots/` — Per-user bot directories (created by `create-bot.ts`, contains `bot.env`, scripts)
+- `learnings/` — Game mechanics documentation (banking, combat, fishing, etc.)
+- `server/engine/` — Game server (Kotlin/JS, LostCity fork)
+- `server/webclient/` — Browser game client (TypeScript)
+- `server/gateway/` — WebSocket relay between SDK and bot client
+- `benchmark/` — Harbor-based benchmark tasks for evaluation
+
+## TypeScript Config
+
+Bun runtime, ESNext target, strict mode, bundler module resolution. The SDK and scripts are included; `server/engine` and `server/webclient` are excluded from the root tsconfig.
+
+---
+
 # RS-Agent Bot Guide
 
 You're here to play the mmo game through the progressive development of botting scripts, starting small then adapting to your desires and ideas.

@@ -9,6 +9,17 @@ export const SKILL_NAMES: string[] = [
     'Runecraft'
 ];
 
+// Chinese skill name mapping (for i18n display)
+export const SKILL_NAMES_ZH: Record<string, string> = {
+    'Attack': '攻击', 'Defence': '防御', 'Strength': '力量',
+    'Hitpoints': '生命', 'Ranged': '远程', 'Prayer': '祈祷',
+    'Magic': '魔法', 'Cooking': '烹饪', 'Woodcutting': '伐木',
+    'Fletching': '制箭', 'Fishing': '钓鱼', 'Firemaking': '生火',
+    'Crafting': '制作', 'Smithing': '锻造', 'Mining': '采矿',
+    'Herblore': '草药学', 'Agility': '敏捷', 'Thieving': '盗窃',
+    'Runecraft': '符文制作'
+};
+
 // Interface IDs for common inventories
 export const INVENTORY_INTERFACE_ID = 3214; // Main backpack inventory
 export const EQUIPMENT_INTERFACE_ID = 1688; // Equipped items

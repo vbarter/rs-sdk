@@ -3,6 +3,7 @@ import { playWave, setWaveVolume, stopMidi, setMidiVolume, playMidi } from '#3rd
 import GameShell from '#/client/GameShell.js';
 import InputTracking from '#/client/InputTracking.js';
 import { ClientCode } from '#/client/ClientCode.js';
+import { t, tName, tMenu } from '#/util/I18n.js';
 
 import FloType from '#/config/FloType.js';
 import SeqType, { PostanimMove, PreanimMove, RestartMode } from '#/config/SeqType.js';
@@ -522,6 +523,7 @@ export class Client extends GameShell {
     sceneLoadStartTime: number = 0;
     viewportOverlayInterfaceId: number = -1;
     bankArrangeMode: number = 0;
+    languageSetting: number = parseInt(typeof localStorage !== 'undefined' ? localStorage.getItem('rs_language') || '0' : '0', 10); // 0 = English, 1 = Chinese
     field1264: number = 0;
     warnMembersInNonMembers: number = 0;
     membersAccount: number = 0;
@@ -3489,6 +3491,18 @@ export class Client extends GameShell {
                 this.menuVisible = false;
                 this.idleCycles = performance.now();
 
+                // Sync language setting to server on login
+                if (this.languageSetting === 1) {
+                    setTimeout(() => {
+                        if (this.out) {
+                            this.out.p1isaac(ClientProt.CLIENT_CHEAT);
+                            const cmd = 'lang zh';
+                            this.out.p1(cmd.length + 1);
+                            this.out.pjstr(cmd);
+                        }
+                    }, 1000);
+                }
+
                 for (let i: number = 0; i < 100; i++) {
                     this.messageText[i] = null;
                 }
@@ -5500,7 +5514,8 @@ export class Client extends GameShell {
                         }
                     } else if (this.chatInterfaceId === -1) {
                         // custom: when typing a command, you can use the debugproc character (tilde)
-                        if (key >= 32 && (key <= 122 || (this.chatTyped.startsWith('::') && key <= 126)) && this.chatTyped.length < 80) {
+                        // also accept CJK characters (charCode > 255) for i18n support
+                        if (((key >= 32 && (key <= 122 || (this.chatTyped.startsWith('::') && key <= 126))) || key > 255) && this.chatTyped.length < 80) {
                             this.chatTyped = this.chatTyped + String.fromCharCode(key);
                             this.redrawChatback = true;
                         }
@@ -6294,17 +6309,17 @@ export class Client extends GameShell {
                 this.fontPlain11?.drawStringTaggableCenter(w / 2, extraY, this.onDemand.message, 0x75a9a9, true);
             }
 
-            this.fontBold12?.drawStringTaggableCenter(w / 2, y, 'Welcome to RuneScape', Colors.YELLOW, true);
+            this.fontBold12?.drawStringTaggableCenter(w / 2, y, t('Welcome to RuneScape', this.languageSetting), Colors.YELLOW, true);
             y += 30;
 
             let x = ((w / 2) | 0) - 80;
             y = ((h / 2) | 0) + 20;
             this.imageTitlebutton?.draw(x - 73, y - 20);
-            this.fontBold12?.drawStringTaggableCenter(x, y + 5, 'New user', Colors.WHITE, true);
+            this.fontBold12?.drawStringTaggableCenter(x, y + 5, t('New user', this.languageSetting), Colors.WHITE, true);
 
             x = ((w / 2) | 0) + 80;
             this.imageTitlebutton?.draw(x - 73, y - 20);
-            this.fontBold12?.drawStringTaggableCenter(x, y + 5, 'Existing User', Colors.WHITE, true);
+            this.fontBold12?.drawStringTaggableCenter(x, y + 5, t('Existing User', this.languageSetting), Colors.WHITE, true);
         } else if (this.titleScreenState === 2) {
             let x: number = ((w / 2) | 0) - 80;
             let y: number = ((h / 2) | 0) - 40;
@@ -6317,42 +6332,42 @@ export class Client extends GameShell {
                 y += 30;
             }
 
-            this.fontBold12?.drawStringTaggable(w / 2 - 90, y, `Username: ${this.username}${this.titleLoginField === 0 && this.loopCycle % 40 < 20 ? '@yel@|' : ''}`, Colors.WHITE, true);
+            this.fontBold12?.drawStringTaggable(w / 2 - 90, y, `${t('Username:', this.languageSetting)} ${this.username}${this.titleLoginField === 0 && this.loopCycle % 40 < 20 ? '@yel@|' : ''}`, Colors.WHITE, true);
             y += 15;
 
-            this.fontBold12?.drawStringTaggable(w / 2 - 88, y, `Password: ${JString.toAsterisks(this.password)}${this.titleLoginField === 1 && this.loopCycle % 40 < 20 ? '@yel@|' : ''}`, Colors.WHITE, true);
+            this.fontBold12?.drawStringTaggable(w / 2 - 88, y, `${t('Password:', this.languageSetting)} ${JString.toAsterisks(this.password)}${this.titleLoginField === 1 && this.loopCycle % 40 < 20 ? '@yel@|' : ''}`, Colors.WHITE, true);
             y += 15;
 
             x = ((w / 2) | 0) - 80;
             y = ((h / 2) | 0) + 50;
             this.imageTitlebutton?.draw(x - 73, y - 20);
-            this.fontBold12?.drawStringTaggableCenter(x, y + 5, 'Login', Colors.WHITE, true);
+            this.fontBold12?.drawStringTaggableCenter(x, y + 5, t('Login', this.languageSetting), Colors.WHITE, true);
 
             x = ((w / 2) | 0) + 80;
             this.imageTitlebutton?.draw(x - 73, y - 20);
-            this.fontBold12?.drawStringTaggableCenter(x, y + 5, 'Cancel', Colors.WHITE, true);
+            this.fontBold12?.drawStringTaggableCenter(x, y + 5, t('Cancel', this.languageSetting), Colors.WHITE, true);
         } else if (this.titleScreenState === 3) {
             let x: number = (w / 2) | 0;
             let y: number = ((h / 2) | 0) - 60;
-            this.fontBold12?.drawStringTaggableCenter(x, y, 'Create a free account', Colors.YELLOW, true);
+            this.fontBold12?.drawStringTaggableCenter(x, y, t('Create a free account', this.languageSetting), Colors.YELLOW, true);
 
             y = ((h / 2) | 0) - 35;
-            this.fontBold12?.drawStringTaggableCenter(x, y, 'To create a new account you need to', Colors.WHITE, true);
+            this.fontBold12?.drawStringTaggableCenter(x, y, t('To create a new account you need to', this.languageSetting), Colors.WHITE, true);
             y += 15;
 
-            this.fontBold12?.drawStringTaggableCenter(x, y, 'go back to the main RuneScape webpage', Colors.WHITE, true);
+            this.fontBold12?.drawStringTaggableCenter(x, y, t('go back to the main RuneScape webpage', this.languageSetting), Colors.WHITE, true);
             y += 15;
 
-            this.fontBold12?.drawStringTaggableCenter(x, y, "and choose the red 'create account'", Colors.WHITE, true);
+            this.fontBold12?.drawStringTaggableCenter(x, y, t("and choose the red 'create account'", this.languageSetting), Colors.WHITE, true);
             y += 15;
 
-            this.fontBold12?.drawStringTaggableCenter(x, y, 'button at the top right of that page.', Colors.WHITE, true);
+            this.fontBold12?.drawStringTaggableCenter(x, y, t('button at the top right of that page.', this.languageSetting), Colors.WHITE, true);
             y += 15;
 
             x = (w / 2) | 0;
             y = ((h / 2) | 0) + 50;
             this.imageTitlebutton?.draw(x - 73, y - 20);
-            this.fontBold12?.drawStringTaggableCenter(x, y + 5, 'Cancel', Colors.WHITE, true);
+            this.fontBold12?.drawStringTaggableCenter(x, y + 5, t('Cancel', this.languageSetting), Colors.WHITE, true);
         }
 
         this.imageTitle4?.draw(202, 171);
@@ -6604,43 +6619,43 @@ export class Client extends GameShell {
             this.areaBackbase1?.bind();
             this.imageBackbase1?.draw(0, 0);
 
-            this.fontPlain12?.drawStringTaggableCenter(55, 28, 'Public chat', Colors.WHITE, true);
+            this.fontPlain12?.drawStringTaggableCenter(55, 28, t('Public chat', this.languageSetting), Colors.WHITE, true);
             if (this.chatPublicMode === 0) {
-                this.fontPlain12?.drawStringTaggableCenter(55, 41, 'On', Colors.GREEN, true);
+                this.fontPlain12?.drawStringTaggableCenter(55, 41, t('On', this.languageSetting), Colors.GREEN, true);
             }
             if (this.chatPublicMode === 1) {
-                this.fontPlain12?.drawStringTaggableCenter(55, 41, 'Friends', Colors.YELLOW, true);
+                this.fontPlain12?.drawStringTaggableCenter(55, 41, t('Friends', this.languageSetting), Colors.YELLOW, true);
             }
             if (this.chatPublicMode === 2) {
-                this.fontPlain12?.drawStringTaggableCenter(55, 41, 'Off', Colors.RED, true);
+                this.fontPlain12?.drawStringTaggableCenter(55, 41, t('Off', this.languageSetting), Colors.RED, true);
             }
             if (this.chatPublicMode === 3) {
-                this.fontPlain12?.drawStringTaggableCenter(55, 41, 'Hide', Colors.CYAN, true);
+                this.fontPlain12?.drawStringTaggableCenter(55, 41, t('Hide', this.languageSetting), Colors.CYAN, true);
             }
 
-            this.fontPlain12?.drawStringTaggableCenter(184, 28, 'Private chat', Colors.WHITE, true);
+            this.fontPlain12?.drawStringTaggableCenter(184, 28, t('Private chat', this.languageSetting), Colors.WHITE, true);
             if (this.chatPrivateMode === 0) {
-                this.fontPlain12?.drawStringTaggableCenter(184, 41, 'On', Colors.GREEN, true);
+                this.fontPlain12?.drawStringTaggableCenter(184, 41, t('On', this.languageSetting), Colors.GREEN, true);
             }
             if (this.chatPrivateMode === 1) {
-                this.fontPlain12?.drawStringTaggableCenter(184, 41, 'Friends', Colors.YELLOW, true);
+                this.fontPlain12?.drawStringTaggableCenter(184, 41, t('Friends', this.languageSetting), Colors.YELLOW, true);
             }
             if (this.chatPrivateMode === 2) {
-                this.fontPlain12?.drawStringTaggableCenter(184, 41, 'Off', Colors.RED, true);
+                this.fontPlain12?.drawStringTaggableCenter(184, 41, t('Off', this.languageSetting), Colors.RED, true);
             }
 
-            this.fontPlain12?.drawStringTaggableCenter(324, 28, 'Trade/duel', Colors.WHITE, true);
+            this.fontPlain12?.drawStringTaggableCenter(324, 28, t('Trade/duel', this.languageSetting), Colors.WHITE, true);
             if (this.chatTradeMode === 0) {
-                this.fontPlain12?.drawStringTaggableCenter(324, 41, 'On', Colors.GREEN, true);
+                this.fontPlain12?.drawStringTaggableCenter(324, 41, t('On', this.languageSetting), Colors.GREEN, true);
             }
             if (this.chatTradeMode === 1) {
-                this.fontPlain12?.drawStringTaggableCenter(324, 41, 'Friends', Colors.YELLOW, true);
+                this.fontPlain12?.drawStringTaggableCenter(324, 41, t('Friends', this.languageSetting), Colors.YELLOW, true);
             }
             if (this.chatTradeMode === 2) {
-                this.fontPlain12?.drawStringTaggableCenter(324, 41, 'Off', Colors.RED, true);
+                this.fontPlain12?.drawStringTaggableCenter(324, 41, t('Off', this.languageSetting), Colors.RED, true);
             }
 
-            this.fontPlain12?.drawStringTaggableCenter(458, 33, 'Report abuse', Colors.WHITE, true);
+            this.fontPlain12?.drawStringTaggableCenter(458, 33, t('Report abuse', this.languageSetting), Colors.WHITE, true);
 
             this.areaBackbase1?.draw(0, 453);
 
@@ -7591,15 +7606,15 @@ export class Client extends GameShell {
 
         let tooltip: string;
         if (this.objSelected === 1 && this.menuSize < 2) {
-            tooltip = 'Use ' + this.objSelectedName + ' with...';
+            tooltip = t('Use', this.languageSetting) + ' ' + this.objSelectedName + ' ' + (this.languageSetting === 1 ? '...' : 'with...');
         } else if (this.spellSelected === 1 && this.menuSize < 2) {
             tooltip = this.spellCaption + '...';
         } else {
-            tooltip = this.menuOption[this.menuSize - 1];
+            tooltip = tMenu(this.menuOption[this.menuSize - 1], this.languageSetting);
         }
 
         if (this.menuSize > 2) {
-            tooltip = tooltip + '@whi@ / ' + (this.menuSize - 2) + ' more options';
+            tooltip = tooltip + '@whi@ / ' + (this.languageSetting === 1 ? '还有 ' + (this.menuSize - 2) + ' 个选项' : (this.menuSize - 2) + ' more options');
         }
 
         this.fontBold12?.drawStringTooltip(4, 15, tooltip, Colors.WHITE, true, (this.loopCycle / 1000) | 0);
@@ -7616,7 +7631,7 @@ export class Client extends GameShell {
         Pix2D.fillRect2d(x + 1, y + 1, w - 2, 16, Colors.BLACK);
         Pix2D.drawRect(x + 1, y + 18, w - 2, h - 19, Colors.BLACK);
 
-        this.fontBold12?.drawString(x + 3, y + 14, 'Choose Option', background);
+        this.fontBold12?.drawString(x + 3, y + 14, t('Choose Option', this.languageSetting), background);
 
         let mouseX: number = this.mouseX;
         let mouseY: number = this.mouseY;
@@ -7639,7 +7654,7 @@ export class Client extends GameShell {
                 rgb = Colors.YELLOW;
             }
 
-            this.fontBold12?.drawStringTaggable(x + 3, optionY, this.menuOption[i], rgb, true);
+            this.fontBold12?.drawStringTaggable(x + 3, optionY, tMenu(this.menuOption[i], this.languageSetting), rgb, true);
         }
     }
 
@@ -10423,10 +10438,10 @@ export class Client extends GameShell {
     private showContextMenu(): void {
         let width: number = 0;
         if (this.fontBold12) {
-            width = this.fontBold12.stringWidth('Choose Option');
+            width = this.fontBold12.stringWidth(t('Choose Option', this.languageSetting));
             let maxWidth: number;
             for (let i: number = 0; i < this.menuSize; i++) {
-                maxWidth = this.fontBold12.stringWidth(this.menuOption[i]);
+                maxWidth = this.fontBold12.stringWidth(tMenu(this.menuOption[i], this.languageSetting));
                 if (maxWidth > width) {
                     width = maxWidth;
                 }
@@ -11012,7 +11027,13 @@ export class Client extends GameShell {
                 suffix = suffix.substring(suffix.indexOf(' ') + 1);
             }
 
-            this.spellCaption = prefix + ' ' + com.targetText + ' ' + suffix;
+            if (this.languageSetting === 1) {
+                const translatedPrefix = t(prefix || '', this.languageSetting);
+                const name = com.targetText ? t(com.targetText, this.languageSetting) : t(suffix || '', this.languageSetting);
+                this.spellCaption = translatedPrefix + ' ' + name;
+            } else {
+                this.spellCaption = prefix + ' ' + com.targetText + ' ' + suffix;
+            }
 
             if (this.activeSpellFlags === 16) {
                 this.redrawSidebar = true;
@@ -11261,9 +11282,10 @@ export class Client extends GameShell {
             return;
         }
 
-        let tooltip: string | null = npc.name;
+        let tooltip: string | null = this.languageSetting === 1 ? tName(npc.name ?? '', this.languageSetting) : npc.name;
         if (npc.vislevel !== 0 && this.localPlayer) {
-            tooltip = tooltip + this.getCombatLevelTag(this.localPlayer.combatLevel, npc.vislevel) + ' (level-' + npc.vislevel + ')';
+            const levelLabel = this.languageSetting === 1 ? '等级' : 'level';
+            tooltip = tooltip + this.getCombatLevelTag(this.localPlayer.combatLevel, npc.vislevel) + ' (' + levelLabel + '-' + npc.vislevel + ')';
         }
 
         if (this.objSelected === 1) {
@@ -11353,7 +11375,8 @@ export class Client extends GameShell {
 
         let tooltip: string | null = null;
         if (this.localPlayer) {
-            tooltip = player.name + this.getCombatLevelTag(this.localPlayer.combatLevel, player.combatLevel) + ' (level-' + player.combatLevel + ')';
+            const levelLabel = this.languageSetting === 1 ? '等级' : 'level';
+            tooltip = player.name + this.getCombatLevelTag(this.localPlayer.combatLevel, player.combatLevel) + ' (' + levelLabel + '-' + player.combatLevel + ')';
         }
 
         if (this.objSelected === 1) {
@@ -11652,7 +11675,7 @@ export class Client extends GameShell {
                 }
 
                 if (child.buttonType === ButtonType.BUTTON_CONTINUE && this.pressedContinueOption) {
-                    text = 'Please wait...';
+                    text = this.languageSetting === 1 ? '请稍候...' : 'Please wait...';
                     colour = child.colour;
                 }
 
@@ -11668,6 +11691,11 @@ export class Client extends GameShell {
 
                 if (!font || !text) {
                     continue;
+                }
+
+                // i18n: translate template text BEFORE %1-%5 replacement
+                if (this.languageSetting === 1) {
+                    text = t(text, this.languageSetting);
                 }
 
                 for (let lineY: number = childY + font.height2d; text.length > 0; lineY += font.height2d) {
@@ -12443,6 +12471,13 @@ export class Client extends GameShell {
             this.redrawChatback = true;
         } else if (clientcode === 9) {
             this.bankArrangeMode = value;
+        } else if (clientcode === 10) {
+            // Language setting: 0 = English, 1 = Chinese
+            this.languageSetting = value;
+            this.redrawPrivacySettings = true;
+            this.redrawChatback = true;
+            this.redrawSidebar = true;
+            this.redrawFrame = true;
         }
     }
 
@@ -12879,7 +12914,8 @@ export class Client extends GameShell {
 
                 if (type === 0) {
                     if (y > 0 && y < 110) {
-                        font?.drawString(4, y, message, Colors.BLACK);
+                        const displayMsg = this.languageSetting === 1 ? t(message, this.languageSetting) : message;
+                        font?.drawString(4, y, displayMsg, Colors.BLACK);
                     }
 
                     line++;

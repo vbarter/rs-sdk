@@ -177,14 +177,17 @@ export default class Packet extends DoublyLinkable {
     }
 
     gjstr(): string {
+        const start: number = this.pos;
         const view: DataView = this.view;
         const length: number = view.byteLength;
-        let str: string = '';
-        let b: number;
-        while ((b = view.getUint8(this.pos++)) !== 10 && this.pos < length) {
-            str += String.fromCharCode(b);
+        while (this.pos < length && view.getUint8(this.pos) !== 10) {
+            this.pos++;
         }
-        return str;
+        const bytes: Uint8Array = this.data.subarray(start, this.pos);
+        if (this.pos < length) {
+            this.pos++; // skip terminator
+        }
+        return new TextDecoder().decode(bytes);
     }
 
     gdata(length: number, offset: number, dest: Uint8Array | Int8Array): void {
@@ -232,12 +235,10 @@ export default class Packet extends DoublyLinkable {
     }
 
     pjstr(str: string): void {
-        const view: DataView = this.view;
-        const length: number = str.length;
-        for (let i: number = 0; i < length; i++) {
-            view.setUint8(this.pos++, str.charCodeAt(i));
-        }
-        view.setUint8(this.pos++, 10);
+        const encoded: Uint8Array = new TextEncoder().encode(str);
+        this.data.set(encoded, this.pos);
+        this.pos += encoded.length;
+        this.view.setUint8(this.pos++, 10);
     }
 
     pdata(src: Uint8Array, length: number, offset: number): void {

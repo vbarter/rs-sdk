@@ -89,6 +89,7 @@ import {
     trackSessionEventsPublished
 } from '#/server/Metrics.js';
 import Environment from '#/util/Environment.js';
+import TranslationService from '#/util/TranslationService.js';
 import { fromBase37, toBase37, toSafeName } from '#/util/JString.js';
 import LinkList from '#/util/LinkList.js';
 import { printDebug, printError, printInfo } from '#/util/Logger.js';
@@ -311,6 +312,9 @@ class World {
 
         // todo: check if any jag files changed (transmitted) then reload crcs, instead of always
         makeCrcs();
+
+        // Load i18n translations
+        TranslationService.reload();
     }
 
     async start(skipMaps = false, startCycle = true): Promise<void> {

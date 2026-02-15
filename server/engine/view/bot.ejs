@@ -182,6 +182,62 @@
             document.getElementById('screenshot').href = document.getElementById('canvas').toDataURL('image/png').replace(/^data:image\/[^;]/, 'data:application/octet-stream');
         }
 
+        function toggleLanguage() {
+            const current = localStorage.getItem('rs_language') || '0';
+            const next = current === '0' ? '1' : '0';
+            localStorage.setItem('rs_language', next);
+            applyLanguage(next);
+
+            // Sync to game client if running
+            if (window.gameClient && window.gameClient.ingame && window.gameClient.out) {
+                const client = window.gameClient;
+                client.languageSetting = parseInt(next, 10);
+                client.redrawPrivacySettings = true;
+                client.redrawChatback = true;
+                client.redrawSidebar = true;
+                client.redrawFrame = true;
+                // Send to server
+                try {
+                    client.out.p1isaac(11); // CLIENT_CHEAT
+                    const cmd = next === '1' ? 'lang zh' : 'lang en';
+                    client.out.p1(cmd.length + 1);
+                    client.out.pjstr(cmd);
+                } catch(e) {}
+            } else if (window.gameClient) {
+                window.gameClient.languageSetting = parseInt(next, 10);
+            }
+        }
+
+        function applyLanguage(lang) {
+            const isZh = lang === '1';
+            // Update translatable elements
+            document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+                el.textContent = isZh ? el.getAttribute('data-zh') : el.getAttribute('data-en');
+            });
+            // Update login area
+            const usernameField = document.getElementById('bot-username');
+            const passwordField = document.getElementById('bot-password');
+            const loginBtn = document.querySelector('button[onclick="quickLogin();"]');
+            const skipBtn = document.querySelector('button[onclick="skipTutorial();"]');
+            const statusEl = document.getElementById('bot-status');
+            if (usernameField) usernameField.placeholder = isZh ? '用户名' : 'username';
+            if (passwordField) passwordField.placeholder = isZh ? '密码' : 'password';
+            if (loginBtn) loginBtn.textContent = isZh ? '登录' : 'Login';
+            if (skipBtn) skipBtn.textContent = isZh ? '跳过教程' : 'Skip Tutorial';
+            if (statusEl && (statusEl.textContent === '就绪' || statusEl.textContent === 'Ready')) {
+                statusEl.textContent = isZh ? '就绪' : 'Ready';
+            }
+            // Update player count
+            const countEl = document.getElementById('player-count');
+            if (countEl) {
+                const num = countEl.textContent.match(/\d+/)?.[0] || '0';
+                countEl.textContent = num + (isZh ? ' 在线' : ' online');
+            }
+            // Toggle button label
+            const langBtn = document.getElementById('lang-toggle');
+            if (langBtn) langBtn.textContent = isZh ? '🌐 EN/中文' : '🌐 中文/EN';
+        }
+
         function loadSettings() {
             const urlParams = new URLSearchParams(window.location.search);
 
@@ -222,6 +278,9 @@
                 password: urlPassword,
                 fps: urlParams.has('fps') ? parseInt(urlParams.get('fps'), 10) : null
             };
+
+            // Apply saved language
+            applyLanguage(localStorage.getItem('rs_language') || '0');
         }
 
         // Auto-initialize based on URL params (called after client is ready)
@@ -360,37 +419,33 @@
         </div>
 
         <div class="centered" id="controls">
-            <select id="size" name="size" onchange="setSize();">
+            <a class="green" href="#" id="lang-toggle" onclick="toggleLanguage(); return false;" style="font-weight:bold;">🌐 中文/EN</a> |
+            <a class="green" href="#" id="fullscreen" onclick="toggleFullscreen();" data-en="Fullscreen" data-zh="全屏">全屏</a> |
+            <a class="green" href="#" id="screenshot" onclick="saveScreenshot();" data-en="Screenshot" data-zh="截图">截图</a> |
+            <a class="green" href="/mapview/" target="_blank" data-en="Map" data-zh="地图">地图</a> |
+            <a class="green" href="/hiscores" data-en="Hiscores" data-zh="排行榜">排行榜</a> |
+            <span class="green" id="player-count">0 在线</span>
+            <select id="size" name="size" onchange="setSize();" style="display:none;">
                 <optgroup>
-                <option value="1" id="1">1x Size</option>
-                <option value="2" id="2">2x Size</option>
-                <option value="3" id="3">3x Size</option>
-                <option value="auto" id="auto" selected>Auto Sizing</option>
+                <option value="auto" id="auto" selected>Auto</option>
                 </optgroup>
-            </select> |
-            <a class="green" href="#" id="fullscreen" onclick="toggleFullscreen();">Go Fullscreen</a> |
-            <a class="green" href="#" id="screenshot" onclick="saveScreenshot();">Take screenshot</a> |
-            <a class="green" href="/mapview/" target="_blank">Map</a> |
-            <a class="green" href="/hiscores">Hiscores</a> |
-            <a class="green" href="https://discord.gg/3DcuU5cMJN" target="_blank">Discord</a> |
-            <a class="green" href="https://github.com/LostCityRS" target="_blank">GitHub</a> |
-            <span class="green" id="player-count">0 online</span>
+            </select>
         </div>
 
         <!-- Bot Controls -->
         <div id="bot-controls">
             <div>
                 <span id="login-controls">
-                    <input type="text" id="bot-username" placeholder="username" value="" onblur="syncUsernameToUrl();" onchange="syncUsernameToUrl();">
-                    <button onclick="randomUsername();" title="Generate random name" style="background:#333;color:#04A800;padding:4px 8px;">🎲</button>
-                    <input type="password" id="bot-password" placeholder="password" value="test">
-                    <button onclick="quickLogin();" style="background:#04A800;">Login</button>
+                    <input type="text" id="bot-username" placeholder="用户名" value="" onblur="syncUsernameToUrl();" onchange="syncUsernameToUrl();">
+                    <button onclick="randomUsername();" title="随机生成名称" style="background:#333;color:#04A800;padding:4px 8px;">🎲</button>
+                    <input type="password" id="bot-password" placeholder="密码" value="test">
+                    <button onclick="quickLogin();" style="background:#04A800;">登录</button>
                 </span>
                 <span id="tutorial-controls" style="display: none;">
-                    <button onclick="skipTutorial();">Skip Tutorial</button>
+                    <button onclick="skipTutorial();">跳过教程</button>
                 </span>
             </div>
-            <div class="bot-status" id="bot-status">Ready</div>
+            <div class="bot-status" id="bot-status">就绪</div>
         </div>
 
         <!-- SDK Panel container -->
@@ -407,7 +462,7 @@
             ctx.fillStyle = '#04A800';
             ctx.font = 'bold 20px Arial';
             ctx.textAlign = 'center';
-            ctx.fillText('Bot Client Loading...', canvas.width / 2, canvas.height / 2);
+            ctx.fillText('客户端加载中...', canvas.width / 2, canvas.height / 2);
         }
     </script>
 
@@ -744,7 +799,8 @@
                 const response = await fetch('/playercount');
                 const data = await response.json();
                 const count = data.count ?? 0;
-                document.getElementById('player-count').textContent = count + ' online';
+                const isZh = localStorage.getItem('rs_language') === '1';
+                document.getElementById('player-count').textContent = count + (isZh ? ' 在线' : ' online');
             } catch {
                 // Ignore errors
             }

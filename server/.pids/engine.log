@@ -1,0 +1,24 @@
+2/15/2026 5:28:52 PM	 DEBUG	 Checking for compiler update
+2/15/2026 5:28:54 PM	 DEBUG	 Compiler is up to date
+2/15/2026 5:28:54 PM	 INFO	 Starting world
+2/15/2026 5:28:54 PM	 DEBUG	 Loaded 8337 scripts.
+[i18n] Loaded 12877 translations for locale: zh
+2/15/2026 5:28:54 PM	 DEBUG	 Loading game map
+2/15/2026 5:28:54 PM	 DEBUG	 6053/8191 static NPCs added
+2/15/2026 5:28:54 PM	 INFO	 World ready: Visit http://localhost:8888/rs2.cgi
+Agent SDK WebSocket error: ErrorEvent {
+  type: "error",
+  message: "WebSocket connection to 'ws://localhost:7780/' failed: Failed to connect",
+  error: null,
+}
+[LOGOUT DEBUG] InputTracking: Client did not submit input tracking report for bc6ycb - requesting idle logout
+[LOGOUT DEBUG] processLogouts: Setting loggingOut=true for bc6ycb (requestLogout=false, requestIdleLogout=true)
+[LOGOUT DEBUG] Server removePlayer() called for bc6ycb
+[LOGOUT DEBUG] InputTracking: Client did not submit input tracking report for b84j6b - requesting idle logout
+[LOGOUT DEBUG] processLogouts: Setting loggingOut=true for b84j6b (requestLogout=false, requestIdleLogout=true)
+[LOGOUT DEBUG] Server removePlayer() called for b84j6b
+[LOGOUT DEBUG] NetworkPlayer.logout() sending LOGOUT packet for b84j6b
+[LOGOUT DEBUG] InputTracking: Client did not submit input tracking report for b84j6b - requesting idle logout
+[LOGOUT DEBUG] processLogouts: Setting loggingOut=true for b84j6b (requestLogout=false, requestIdleLogout=true)
+[LOGOUT DEBUG] Server removePlayer() called for b84j6b
+[LOGOUT DEBUG] NetworkPlayer.logout() sending LOGOUT packet for b84j6b

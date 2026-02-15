@@ -14,6 +14,7 @@ import ParamType from '#/cache/config/ParamType.js';
 import ScriptVarType from '#/cache/config/ScriptVarType.js';
 import SeqType from '#/cache/config/SeqType.js';
 import VarPlayerType from '#/cache/config/VarPlayerType.js';
+import TranslationService from '#/util/TranslationService.js';
 import { CoordGrid } from '#/engine/CoordGrid.js';
 import { BlockWalk } from '#/engine/entity/BlockWalk.js';
 import BuildArea from '#/engine/entity/BuildArea.js';
@@ -2212,6 +2213,10 @@ export default class Player extends PathingEntity {
     }
 
     messageGame(msg: string) {
+        const langVarp = VarPlayerType.getByName('option_language');
+        if (langVarp && this.getVar(langVarp.id) === 1) {
+            msg = TranslationService.translate(msg);
+        }
         this.write(new MessageGame(msg));
     }
 

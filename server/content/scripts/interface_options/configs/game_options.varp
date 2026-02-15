@@ -36,3 +36,9 @@ clientcode=8
 transmit=yes
 scope=perm
 protect=no
+
+[option_language]
+clientcode=10
+transmit=yes
+scope=perm
+protect=no

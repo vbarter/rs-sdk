@@ -1,45 +1,73 @@
 // formatters.ts - State formatting functions for display and agent consumption
 
 import type { BotState, BotWorldState } from './types.js';
+import { tName, t } from '../util/I18n.js';
+
+function isZhLang(): boolean {
+    return typeof localStorage !== 'undefined' && localStorage.getItem('rs_language') === '1';
+}
+
+function langSetting(): number {
+    return isZhLang() ? 1 : 0;
+}
+
+function zh(en: string, zhText: string): string {
+    return isZhLang() ? zhText : en;
+}
+
+// Translate entity name if Chinese mode
+function trName(name: string): string {
+    return tName(name, langSetting());
+}
+
+// Translate option text if Chinese mode
+function trOpt(text: string): string {
+    return t(text, langSetting());
+}
 
 // Format state as text for display (fixed-width columns for alignment)
 export function formatBotState(state: BotState): string {
     const lines: string[] = [];
 
-    lines.push('=== BOT SDK STATE ===');
-    lines.push(`Tick: ${state.tick}  In Game: ${state.inGame}`);
+    lines.push(zh('=== BOT SDK STATE ===', '=== Bot SDK 状态 ==='));
+    lines.push(`${zh('Tick', '游戏刻')}: ${state.tick}  ${zh('In Game', '游戏中')}: ${state.inGame}`);
     lines.push('');
 
     // Player info
     if (state.player) {
         const p = state.player;
-        lines.push('--- PLAYER ---');
-        lines.push(`${p.name} (Combat ${p.combatLevel})`);
-        lines.push(`Pos: (${p.worldX}, ${p.worldZ})  Level: ${p.level}`);
-        lines.push(`Run: ${p.runEnergy}%  Weight: ${p.runWeight}kg`);
+        lines.push(zh('--- PLAYER ---', '--- 玩家 ---'));
+        lines.push(`${p.name} (${zh('Combat', '战斗')} ${p.combatLevel})`);
+        lines.push(`${zh('Pos', '位置')}: (${p.worldX}, ${p.worldZ})  ${zh('Level', '层级')}: ${p.level}`);
+        lines.push(`${zh('Run', '奔跑')}: ${p.runEnergy}%  ${zh('Weight', '重量')}: ${p.runWeight}kg`);
         lines.push('');
     }
 
-    // Key stats (Hitpoints, Attack, Strength, Defence)
-    lines.push('--- KEY STATS ---');
+    // Key stats
+    lines.push(zh('--- KEY STATS ---', '--- 关键属性 ---'));
     const keySkills = ['Hitpoints', 'Attack', 'Strength', 'Defence', 'Magic', 'Ranged', 'Prayer'];
+    const skillZh: Record<string, string> = {
+        'Hitpoints': '生命值', 'Attack': '攻击', 'Strength': '力量',
+        'Defence': '防御', 'Magic': '魔法', 'Ranged': '远程', 'Prayer': '祈祷'
+    };
     for (const skillName of keySkills) {
         const skill = state.skills.find(s => s.name === skillName);
         if (skill) {
             const xpStr = skill.experience.toLocaleString().padStart(10);
-            lines.push(`${skillName.padEnd(10)} ${String(skill.level).padStart(2)}/${String(skill.baseLevel).padEnd(2)} ${xpStr} xp`);
+            const displayName = isZhLang() ? (skillZh[skillName] ?? skillName) : skillName;
+            lines.push(`${displayName.padEnd(10)} ${String(skill.level).padStart(2)}/${String(skill.baseLevel).padEnd(2)} ${xpStr} xp`);
         }
     }
     lines.push('');
 
     // Inventory summary
-    lines.push('--- INVENTORY ---');
+    lines.push(zh('--- INVENTORY ---', '--- 背包 ---'));
     if (state.inventory.length === 0) {
-        lines.push('Empty');
+        lines.push(zh('Empty', '空'));
     } else {
         const itemCounts: Map<string, number> = new Map();
         for (const item of state.inventory) {
-            const key = item.name;
+            const key = trName(item.name);
             itemCounts.set(key, (itemCounts.get(key) || 0) + item.count);
         }
         for (const [name, qty] of itemCounts) {
@@ -49,79 +77,80 @@ export function formatBotState(state: BotState): string {
     lines.push('');
 
     // Nearby NPCs
-    lines.push('--- NEARBY NPCS ---');
+    lines.push(zh('--- NEARBY NPCS ---', '--- 附近NPC ---'));
     if (state.nearbyNpcs.length === 0) {
-        lines.push('None');
+        lines.push(zh('None', '无'));
     } else {
         for (let i = 0; i < Math.min(5, state.nearbyNpcs.length); i++) {
             const npc = state.nearbyNpcs[i];
-            const name = npc.name.padEnd(16);
+            const name = trName(npc.name).padEnd(16);
             const lvl = npc.combatLevel > 0 ? `Lv${String(npc.combatLevel).padStart(2)}` : '    ';
             const hp = npc.maxHp > 0 ? `${String(npc.hp).padStart(2)}/${String(npc.maxHp).padEnd(2)}` : '     ';
             const dist = `${npc.distance}t`.padStart(3);
-            const opts = npc.optionsWithIndex.map(o => o.text);
+            const opts = npc.optionsWithIndex.map(o => trOpt(o.text));
             const opStr = opts.length > 0 ? `[${opts.join(',')}]` : '';
             lines.push(`${name} ${lvl} ${hp} ${dist} ${opStr}`);
         }
         if (state.nearbyNpcs.length > 5) {
-            lines.push(`... +${state.nearbyNpcs.length - 5} more`);
+            lines.push(`... +${state.nearbyNpcs.length - 5} ${zh('more', '更多')}`);
         }
     }
     lines.push('');
 
     // Nearby Players
-    lines.push('--- NEARBY PLAYERS ---');
+    lines.push(zh('--- NEARBY PLAYERS ---', '--- 附近玩家 ---'));
     if (state.nearbyPlayers.length === 0) {
-        lines.push('None');
+        lines.push(zh('None', '无'));
     } else {
         for (let i = 0; i < Math.min(5, state.nearbyPlayers.length); i++) {
             const pl = state.nearbyPlayers[i];
             lines.push(`${pl.name.padEnd(12)} Cb${String(pl.combatLevel).padStart(3)} ${pl.distance}t`);
         }
         if (state.nearbyPlayers.length > 5) {
-            lines.push(`... +${state.nearbyPlayers.length - 5} more`);
+            lines.push(`... +${state.nearbyPlayers.length - 5} ${zh('more', '更多')}`);
         }
     }
     lines.push('');
 
     // Nearby Locations (interactable objects)
-    lines.push('--- NEARBY OBJECTS ---');
+    lines.push(zh('--- NEARBY OBJECTS ---', '--- 附近物体 ---'));
     if (state.nearbyLocs.length === 0) {
-        lines.push('None');
+        lines.push(zh('None', '无'));
     } else {
         for (let i = 0; i < Math.min(8, state.nearbyLocs.length); i++) {
             const loc = state.nearbyLocs[i];
-            const name = loc.name.padEnd(16);
+            const name = trName(loc.name).padEnd(16);
             const coords = `(${loc.x},${loc.z})`.padEnd(12);
             const dist = `${loc.distance}t`.padStart(3);
-            const opStr = loc.options.length > 0 ? `[${loc.options.join(',')}]` : '';
+            const opts = loc.options.map(o => trOpt(o));
+            const opStr = opts.length > 0 ? `[${opts.join(',')}]` : '';
             lines.push(`${name} ${coords} ${dist} ${opStr}`);
         }
         if (state.nearbyLocs.length > 8) {
-            lines.push(`... +${state.nearbyLocs.length - 8} more`);
+            lines.push(`... +${state.nearbyLocs.length - 8} ${zh('more', '更多')}`);
         }
     }
     lines.push('');
 
     // Ground items
-    lines.push('--- GROUND ITEMS ---');
+    lines.push(zh('--- GROUND ITEMS ---', '--- 地面物品 ---'));
     if (state.groundItems.length === 0) {
-        lines.push('None');
+        lines.push(zh('None', '无'));
     } else {
         for (let i = 0; i < Math.min(5, state.groundItems.length); i++) {
             const item = state.groundItems[i];
-            lines.push(`${item.name.padEnd(20)} x${String(item.count).padEnd(4)} ${item.distance}t`);
+            lines.push(`${trName(item.name).padEnd(20)} x${String(item.count).padEnd(4)} ${item.distance}t`);
         }
         if (state.groundItems.length > 5) {
-            lines.push(`... +${state.groundItems.length - 5} more`);
+            lines.push(`... +${state.groundItems.length - 5} ${zh('more', '更多')}`);
         }
     }
     lines.push('');
 
     // Recent game messages
-    lines.push('--- RECENT MESSAGES ---');
+    lines.push(zh('--- RECENT MESSAGES ---', '--- 最近消息 ---'));
     if (state.gameMessages.length === 0) {
-        lines.push('None');
+        lines.push(zh('None', '无'));
     } else {
         for (const msg of state.gameMessages) {
             // Strip color tags
@@ -136,9 +165,9 @@ export function formatBotState(state: BotState): string {
     lines.push('');
 
     // Recent dialogs (NPC chat, popups, etc.)
-    lines.push('--- RECENT DIALOGS ---');
+    lines.push(zh('--- RECENT DIALOGS ---', '--- 最近对话 ---'));
     if (!state.recentDialogs || state.recentDialogs.length === 0) {
-        lines.push('None');
+        lines.push(zh('None', '无'));
     } else {
         for (const dialog of state.recentDialogs.slice(0, 5)) {
             const textPreview = dialog.text.join(' | ').substring(0, 80);
@@ -149,7 +178,7 @@ export function formatBotState(state: BotState): string {
 
     // Current menu actions (if menu is visible)
     if (state.menuActions.length > 1) {
-        lines.push('--- AVAILABLE ACTIONS ---');
+        lines.push(zh('--- AVAILABLE ACTIONS ---', '--- 可用操作 ---'));
         for (let i = 0; i < Math.min(8, state.menuActions.length); i++) {
             const action = state.menuActions[i];
             // Strip color tags like @whi@, @cya@, etc.
@@ -164,32 +193,32 @@ export function formatBotState(state: BotState): string {
     // Shop state (if open)
     if (state.shop && state.shop.isOpen) {
         lines.push('');
-        lines.push('--- SHOP OPEN ---');
-        lines.push(`Title: ${state.shop.title}`);
+        lines.push(zh('--- SHOP OPEN ---', '--- 商店已开 ---'));
+        lines.push(`${zh('Title', '标题')}: ${state.shop.title}`);
         lines.push('');
-        lines.push('Shop Items (Buy):');
+        lines.push(zh('Shop Items (Buy):', '商店物品 (购买):'));
         if (state.shop.shopItems.length === 0) {
-            lines.push('  None');
+            lines.push(zh('  None', '  无'));
         } else {
             for (const item of state.shop.shopItems.slice(0, 10)) {
                 const slot = `[${item.slot}]`.padEnd(4);
-                lines.push(`  ${slot} ${item.name.padEnd(18)} x${item.count}`);
+                lines.push(`  ${slot} ${trName(item.name).padEnd(18)} x${item.count}`);
             }
             if (state.shop.shopItems.length > 10) {
-                lines.push(`  ... +${state.shop.shopItems.length - 10} more`);
+                lines.push(`  ... +${state.shop.shopItems.length - 10} ${zh('more', '更多')}`);
             }
         }
         lines.push('');
-        lines.push('Your Items (Sell):');
+        lines.push(zh('Your Items (Sell):', '你的物品 (出售):'));
         if (state.shop.playerItems.length === 0) {
-            lines.push('  None');
+            lines.push(zh('  None', '  无'));
         } else {
             for (const item of state.shop.playerItems.slice(0, 10)) {
                 const slot = `[${item.slot}]`.padEnd(4);
-                lines.push(`  ${slot} ${item.name.padEnd(18)} x${item.count}`);
+                lines.push(`  ${slot} ${trName(item.name).padEnd(18)} x${item.count}`);
             }
             if (state.shop.playerItems.length > 10) {
-                lines.push(`  ... +${state.shop.playerItems.length - 10} more`);
+                lines.push(`  ... +${state.shop.playerItems.length - 10} ${zh('more', '更多')}`);
             }
         }
     }
