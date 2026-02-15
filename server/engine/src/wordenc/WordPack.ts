@@ -12,6 +12,14 @@ export default class WordPack {
     ];
 
     static unpack(packet: Packet, length: number): string {
+        // UTF-8 模式：首字节 0xFF 标记
+        if (length > 0 && packet.data[packet.pos] === 0xFF) {
+            packet.pos++; // 跳过标记
+            const data = packet.data.slice(packet.pos, packet.pos + length - 1);
+            packet.pos += length - 1;
+            return new TextDecoder().decode(data);
+        }
+
         const charBuffer: string[] = [];
         let pos: number = 0;
         let carry: number = -1;
@@ -44,6 +52,18 @@ export default class WordPack {
         if (input.length > 80) {
             input = input.substring(0, 80);
         }
+
+        // 检测是否包含非 ASCII 字符，使用 UTF-8 模式
+        const hasUnicode = [...input].some(ch => ch.charCodeAt(0) > 127);
+        if (hasUnicode) {
+            packet.p1(0xFF); // UTF-8 标记
+            const encoded = new TextEncoder().encode(input);
+            for (let i = 0; i < encoded.length; i++) {
+                packet.p1(encoded[i]);
+            }
+            return;
+        }
+
         input = input.toLowerCase();
         let carry: number = -1;
         for (let i: number = 0; i < input.length; i++) {

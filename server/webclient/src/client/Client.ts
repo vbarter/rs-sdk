@@ -5624,14 +5624,7 @@ export class Client extends GameShell {
                                     this.localPlayer.chatColour = color;
                                     this.localPlayer.chatEffect = effect;
                                     this.localPlayer.chatTimer = 150;
-
-                                    if (this.staffmodlevel === 2) {
-                                        this.addMessage(2, this.localPlayer.chatMessage, '@cr2@' + this.localPlayer.name);
-                                    } else if (this.staffmodlevel === 1) {
-                                        this.addMessage(2, this.localPlayer.chatMessage, '@cr1@' + this.localPlayer.name);
-                                    } else {
-                                        this.addMessage(2, this.localPlayer.chatMessage, this.localPlayer.name);
-                                    }
+                                    // 聊天面板由服务端 messageGame 统一处理，此处只保留头顶气泡
                                 }
 
                                 if (this.chatPublicMode === 2) {
@@ -6486,6 +6479,11 @@ export class Client extends GameShell {
             this.redrawChatback = true;
         }
 
+        // 每 30 tick 触发重绘以实现光标闪烁
+        if (this.loopCycle % 30 === 0) {
+            this.redrawChatback = true;
+        }
+
         if (this.redrawChatback) {
             this.drawChat();
             this.redrawChatback = false;
@@ -7117,8 +7115,17 @@ export class Client extends GameShell {
                 this.projectFromEntity(entity, entity.height);
 
                 if (this.projectX > -1 && this.chatCount < Constants.MAX_CHATS && this.fontBold12) {
-                    this.chatWidth[this.chatCount] = (this.fontBold12.stringWidth(entity.chatMessage) / 2) | 0;
-                    this.chatHeight[this.chatCount] = this.fontBold12.height2d;
+                    // 支持换行: 用 | 分割多行，计算最大宽度和总高度
+                    const lines: string[] = (entity.chatMessage as string).split('|');
+                    let maxWidth: number = 0;
+                    for (let li: number = 0; li < lines.length; li++) {
+                        const lw: number = this.fontBold12.stringWidth(lines[li]);
+                        if (lw > maxWidth) {
+                            maxWidth = lw;
+                        }
+                    }
+                    this.chatWidth[this.chatCount] = (maxWidth / 2) | 0;
+                    this.chatHeight[this.chatCount] = this.fontBold12.height2d * lines.length;
                     this.chatX[this.chatCount] = this.projectX;
                     this.chatY[this.chatCount] = this.projectY;
 
@@ -7239,8 +7246,14 @@ export class Client extends GameShell {
                 }
 
                 if (this.chatEffect[i] === 0) {
-                    this.fontBold12?.drawStringCenter(this.projectX, this.projectY + 1, message, Colors.BLACK);
-                    this.fontBold12?.drawStringCenter(this.projectX, this.projectY, message, color);
+                    // 支持 | 换行的多行气泡渲染
+                    const chatLines: string[] = message ? message.split('|') : [message || ''];
+                    const lineH: number = this.fontBold12?.height2d ?? 14;
+                    for (let li: number = 0; li < chatLines.length; li++) {
+                        const ly: number = this.projectY - (chatLines.length - 1 - li) * lineH;
+                        this.fontBold12?.drawStringCenter(this.projectX, ly + 1, chatLines[li], Colors.BLACK);
+                        this.fontBold12?.drawStringCenter(this.projectX, ly, chatLines[li], color);
+                    }
                 } else if (this.chatEffect[i] === 1) {
                     this.fontBold12?.drawCenteredWave(this.projectX, this.projectY + 1, message, Colors.BLACK, this.sceneCycle);
                     this.fontBold12?.drawCenteredWave(this.projectX, this.projectY, message, color, this.sceneCycle);
@@ -7253,8 +7266,14 @@ export class Client extends GameShell {
                     Pix2D.resetBounds();
                 }
             } else {
-                this.fontBold12?.drawStringCenter(this.projectX, this.projectY + 1, message, Colors.BLACK);
-                this.fontBold12?.drawStringCenter(this.projectX, this.projectY, message, Colors.YELLOW);
+                // 默认模式也支持换行
+                const chatLines2: string[] = message ? message.split('|') : [message || ''];
+                const lineH2: number = this.fontBold12?.height2d ?? 14;
+                for (let li: number = 0; li < chatLines2.length; li++) {
+                    const ly: number = this.projectY - (chatLines2.length - 1 - li) * lineH2;
+                    this.fontBold12?.drawStringCenter(this.projectX, ly + 1, chatLines2[li], Colors.BLACK);
+                    this.fontBold12?.drawStringCenter(this.projectX, ly, chatLines2[li], Colors.YELLOW);
+                }
             }
         }
     }
@@ -10389,7 +10408,7 @@ export class Client extends GameShell {
 
             if ((mask & NpcUpdate.SAY) !== 0) {
                 npc.chatMessage = buf.gjstr();
-                npc.chatTimer = 100;
+                npc.chatTimer = 200;
             }
 
             if ((mask & NpcUpdate.DAMAGE) !== 0) {
@@ -12915,7 +12934,7 @@ export class Client extends GameShell {
                 if (type === 0) {
                     if (y > 0 && y < 110) {
                         const displayMsg = this.languageSetting === 1 ? t(message, this.languageSetting) : message;
-                        font?.drawString(4, y, displayMsg, Colors.BLACK);
+                        font?.drawStringTaggable(4, y, displayMsg, Colors.BLACK, false);
                     }
 
                     line++;
@@ -13003,10 +13022,14 @@ export class Client extends GameShell {
                 username = this.localPlayer.name;
             }
 
-            font?.drawString(4, 90, username + ':', Colors.BLACK);
-            font?.drawString(font.stringWidth(username + ': ') + 6, 90, this.chatTyped + '*', Colors.BLUE);
-
+            // 输入区域高亮背景（聚焦效果）
+            Pix2D.fillRectAlpha(0, 78, 463, 18, 0x000000, 30);
             Pix2D.drawHorizontalLine(0, 77, Colors.BLACK, 479);
+
+            // 闪烁光标：每 30 tick 切换显示
+            const cursor = (this.loopCycle % 60) < 30 ? '|' : '';
+            font?.drawString(4, 90, username + ':', Colors.BLACK);
+            font?.drawString(font.stringWidth(username + ': ') + 6, 90, this.chatTyped + cursor, Colors.BLUE);
         }
 
         if (this.menuVisible && this.menuArea === 2) {

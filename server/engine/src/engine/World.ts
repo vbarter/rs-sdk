@@ -100,6 +100,8 @@ import InputTrackingBlob from './entity/tracking/InputTrackingBlob.js';
 import OnDemand from './OnDemand.js';
 import { ObjDelayedRequest } from './entity/ObjDelayedRequest.js';
 import DbTableIndex from '#/cache/config/DbTableIndex.js';
+import { initAiBridge, isAiNpc } from '#/ai/index.js';
+import { setAiEnabled } from '#/ai/AiNpcRegistry.js';
 
 const priv = forge.pki.privateKeyFromPem(Environment.STANDALONE_BUNDLE ? await (await fetch('data/config/private.pem')).text() : fs.readFileSync('data/config/private.pem', 'ascii'));
 
@@ -320,6 +322,13 @@ class World {
     async start(skipMaps = false, startCycle = true): Promise<void> {
         printInfo('Starting world');
 
+        // === AI NPC: 在加载 NPC 之前启用标记，确保 addNpc() 能正确标记 AI NPC ===
+        const aiServiceUrl = process.env.AI_SERVICE_URL;
+        const aiEnabled = !!(aiServiceUrl || process.env.ENABLE_AI_NPCS === 'true');
+        if (aiEnabled) {
+            setAiEnabled(true);
+        }
+
         if (!Environment.STANDALONE_BUNDLE) {
             FontType.load('data/pack');
             WordEnc.load('data/pack');
@@ -355,6 +364,12 @@ class World {
             } else {
                 printInfo(kleur.green().bold('World ready') + kleur.white().bold(': Visit http://localhost:' + Environment.WEB_PORT + '/rs2.cgi'));
             }
+        }
+
+        // === AI NPC: 启动 WebSocket 连接到 AI 服务 ===
+        if (aiEnabled) {
+            printInfo(kleur.cyan().bold('[AI] 正在初始化 AI NPC 系统...'));
+            initAiBridge(aiServiceUrl);
         }
 
         if (startCycle) {
@@ -1361,6 +1376,15 @@ class World {
 
         npc.resetEntity(true);
         npc.playAnimation(-1, 0);
+
+        // 标记 AI NPC
+        if (firstSpawn) {
+            const npcType = NpcType.get(npc.type);
+            npc.isAiNpc = isAiNpc(npc.type, npcType.name);
+            if (npc.isAiNpc) {
+                printDebug(`[AI] NPC 已标记为 AI: ${npcType.name} (type=${npc.type}, nid=${npc.nid})`);
+            }
+        }
 
         // Queue spawn trigger
         const type = NpcType.get(npc.type);

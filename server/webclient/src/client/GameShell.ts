@@ -37,6 +37,10 @@ export default abstract class GameShell {
     protected keyQueueReadPos: number = 0;
     protected keyQueueWritePos: number = 0;
 
+    // IME 中文输入支持
+    private imeInput: HTMLInputElement | null = null;
+    private isComposing: boolean = false;
+
     // custom
     protected slowestMS: number = 0.0;
     protected averageMS: number[] = [];
@@ -138,6 +142,9 @@ export default abstract class GameShell {
                 canvas.style.touchAction = 'none';
             }
         }
+
+        // IME 中文输入支持：创建隐藏 input 捕获 IME 合成事件
+        this.initIMEInput();
 
         // Preventing mouse events from bubbling up to the context menu in the browser for our canvas.
         // This may need to be hooked up to our own context menu in the future.
@@ -636,8 +643,86 @@ export default abstract class GameShell {
         }
     }
 
+    private initIMEInput(): void {
+        const input = document.createElement('input');
+        input.id = 'imeInput';
+        input.type = 'text';
+        input.style.position = 'absolute';
+        input.style.left = '-9999px';
+        input.style.top = '0';
+        input.style.opacity = '0';
+        input.style.width = '1px';
+        input.style.height = '1px';
+        input.style.pointerEvents = 'none';
+        input.autocomplete = 'off';
+        document.body.appendChild(input);
+        this.imeInput = input;
+
+        input.addEventListener('compositionstart', () => {
+            this.isComposing = true;
+        });
+
+        input.addEventListener('compositionend', (e: CompositionEvent) => {
+            this.isComposing = false;
+            const text = e.data;
+            if (text) {
+                for (const ch of text) {
+                    const code = ch.codePointAt(0);
+                    if (code && code > 0) {
+                        this.keyQueue[this.keyQueueWritePos] = code;
+                        this.keyQueueWritePos = (this.keyQueueWritePos + 1) & 0x7f;
+                    }
+                }
+            }
+            input.value = '';
+        });
+
+        // 非 IME 合成期间的直接输入（如日文直接输入模式）
+        input.addEventListener('input', (e: Event) => {
+            if (this.isComposing) return;
+            const ie = e as InputEvent;
+            if (ie.data) {
+                for (const ch of ie.data) {
+                    const code = ch.codePointAt(0);
+                    if (code && code > 127) {
+                        this.keyQueue[this.keyQueueWritePos] = code;
+                        this.keyQueueWritePos = (this.keyQueueWritePos + 1) & 0x7f;
+                    }
+                }
+                input.value = '';
+            }
+        });
+
+        // 将 keydown/keyup 也从 imeInput 转发到 canvas 处理
+        input.addEventListener('keydown', (e: KeyboardEvent) => {
+            if (this.isComposing || e.isComposing || e.keyCode === 229) return;
+            this.onkeydown(e);
+        });
+
+        input.addEventListener('keyup', (e: KeyboardEvent) => {
+            if (this.isComposing || e.isComposing || e.keyCode === 229) return;
+            this.onkeyup(e);
+        });
+
+        // 点击 canvas 时聚焦到隐藏 input（激活 IME）
+        canvas.addEventListener('mousedown', () => {
+            if (this.imeInput) {
+                // 短暂延迟，避免与 canvas 焦点冲突
+                setTimeout(() => this.imeInput?.focus(), 0);
+            }
+        });
+    }
+
     private onkeydown(e: KeyboardEvent) {
         this.idleCycles = performance.now();
+
+        // IME 合成中，不处理常规按键（让 IME 接管）
+        // 注意：首次按键的 keydown 会先于 compositionstart 触发，
+        // 此时 this.isComposing 仍为 false，但浏览器会设置 e.isComposing 或 keyCode=229
+        if (this.isComposing || e.isComposing || e.keyCode === 229) {
+            e.preventDefault();
+            return;
+        }
 
         const keyCode = KeyCodes.get(e.key);
         if (!keyCode || (e.code.length === 0 && !e.isTrusted)) {

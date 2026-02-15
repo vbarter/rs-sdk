@@ -232,7 +232,7 @@ export default class WordEnc {
     }
 
     private static isCharacterAllowed(char: string): boolean {
-        return (char >= ' ' && char <= '\u007f') || char == ' ' || char == '\n' || char == '\t' || char == '£' || char == '€';
+        return (char >= ' ' && char <= '\u007f') || char.charCodeAt(0) > 127 || char == '\n' || char == '\t';
     }
 
     private static replaceUppercases(chars: string[], comparison: string[]): void {

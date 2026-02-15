@@ -37,6 +37,9 @@ import ServerTriggerType from '#/engine/script/ServerTriggerType.js';
 import World from '#/engine/World.js';
 import LinkList from '#/util/LinkList.js';
 import { printError } from '#/util/Logger.js';
+import { getController as getAiController } from '#/ai/AiBridge.js';
+import { executeAiAction, formatBubbleText } from '#/ai/AiActionExecutor.js';
+import TranslationService from '#/util/TranslationService.js';
 
 export default class Npc extends PathingEntity {
     // constructor properties
@@ -74,6 +77,9 @@ export default class Npc extends PathingEntity {
     wanderCounter: number = 0;
 
     heroPoints: HeroPoints = new HeroPoints(16); // be sure to reset when stats are recovered/reset
+
+    // AI NPC 标记
+    isAiNpc: boolean = false;
 
     constructor(level: number, x: number, z: number, width: number, length: number, lifecycle: EntityLifeCycle, nid: number, type: number, moveRestrict: MoveRestrict, blockWalk: BlockWalk) {
         super(level, x, z, width, length, lifecycle, moveRestrict, blockWalk, MoveStrategy.NAIVE, NpcInfoProt.FACE_COORD, NpcInfoProt.FACE_ENTITY);
@@ -178,10 +184,148 @@ export default class Npc extends PathingEntity {
         this.processTimers();
         // Queue
         this.processQueue();
+        // AI NPC: 处理 AI 动作队列和状态机
+        if (this.isAiNpc) {
+            this.processAiActions();
+            // 对话中、停留中或返回中，跳过默认的移动交互逻辑（防止 NPC 乱走）
+            const aiCtrl = getAiController(this.uid);
+            if (aiCtrl && (aiCtrl.isEngaged() || aiCtrl.isLingering() || aiCtrl.isReturning())) {
+                this.updateMovement();
+                this.validateDistanceWalked();
+                return;
+            }
+        }
         // Movement-Interactions
         this.processMovementInteraction();
         // Dev note: Is this necessary?
         this.validateDistanceWalked();
+    }
+
+    /**
+     * 处理 AI 动作队列 + 对话状态机
+     *
+     * 状态流转:
+     *   idle → engaged（玩家说话触发）
+     *   engaged: NPC 停住不动，执行 AI 动作，面向玩家
+     *   engaged → lingering（对话超时/结束）
+     *   lingering: NPC 原地停留 30 秒
+     *   lingering → returning（停留超时）
+     *   returning: NPC 走回出生点
+     *   returning → idle（到达出生点）
+     */
+    private processAiActions(): void {
+        const controller = getAiController(this.uid);
+        if (!controller) return;
+
+        // 任何状态下都检查并执行有动作的队列（防止状态不匹配丢失动作）
+        if (controller.hasActions()) {
+            // 如果有动作但不在 engaged 状态，强制恢复到 engaged
+            if (!controller.isEngaged()) {
+                controller.state = 'engaged';
+            }
+            const action = controller.dequeueAction();
+            if (action) {
+                // 说话或开店时停步——NPC 不应该边走边说
+                if (action.type === 'say' || action.type === 'open_shop_for_player') {
+                    this.clearWaypoints();
+                }
+                executeAiAction(this, action);
+                if (action.type === 'end_conversation') {
+                    controller.endConversation(World.currentTick);
+                }
+                if (action.type === 'say') {
+                    const npcType = NpcType.get(this.type);
+                    controller.addToHistory(TranslationService.translate(npcType.name || 'NPC'), action.text);
+                    // 刷新锁时间防止超时
+                    controller.lockedAt = World.currentTick;
+                }
+            }
+            return;
+        }
+
+        // === engaged 状态: 对话中（无动作等待） ===
+        if (controller.isEngaged()) {
+            // 检查空闲超时（30秒无对话）
+            if (controller.shouldTimeout(World.currentTick)) {
+                controller.endConversation(World.currentTick);
+                return;
+            }
+
+            // 检查玩家是否走远（超过8格则结束对话）
+            if (controller.lockedByPlayer) {
+                let playerNearby = false;
+                for (const player of World.players) {
+                    if (player.displayName === controller.lockedByPlayer) {
+                        const dist = CoordGrid.distanceToSW(this, player);
+                        if (dist <= 8 && player.level === this.level) {
+                            playerNearby = true;
+                            controller.setTargetPlayerPos(player.x, player.z);
+
+                            // 跟随玩家：如果距离 > 1（不相邻）或 === 0（重叠），走到玩家旁边
+                            if (dist !== 1 && !this.hasWaypoints()) {
+                                const dx = this.x - player.x;
+                                const dz = this.z - player.z;
+                                let stepX = 0;
+                                let stepZ = 0;
+                                if (dx === 0 && dz === 0) {
+                                    stepX = 1; // 重叠时往 +x 退开
+                                } else if (Math.abs(dx) >= Math.abs(dz)) {
+                                    stepX = dx > 0 ? 1 : -1;
+                                } else {
+                                    stepZ = dz > 0 ? 1 : -1;
+                                }
+                                this.queueWaypoint(player.x + stepX, player.z + stepZ);
+                            }
+                        }
+                        break;
+                    }
+                }
+                if (!playerNearby) {
+                    controller.endConversation(World.currentTick);
+                    return;
+                }
+            }
+
+            // 流式文本气泡：AI 正在生成时，每 tick 刷新气泡显示累积文本
+            if (controller.streamingText) {
+                this.say(formatBubbleText(controller.streamingText));
+            }
+
+            // 对话中持续面向玩家
+            if (!this.hasWaypoints()) {
+                this.faceSquare(controller.targetPlayerX, controller.targetPlayerZ);
+            }
+            return;
+        }
+
+        // === lingering 状态: 对话结束后原地停留 ===
+        if (controller.isLingering()) {
+            // 停留超时（30秒），开始返回
+            if (controller.shouldEndLinger(World.currentTick)) {
+                controller.startReturning();
+                return;
+            }
+            // 停留中不移动，保持原地
+            return;
+        }
+
+        // === returning 状态: 走回出生点 ===
+        if (controller.isReturning()) {
+            // 检查是否已到达出生点附近
+            const distToSpawn = Math.max(Math.abs(this.x - this.startX), Math.abs(this.z - this.startZ));
+            if (distToSpawn <= 1) {
+                controller.returnComplete();
+                return;
+            }
+
+            // 还没走回去，排队走回出生点（每隔几个 tick 刷新路径）
+            if (!this.hasWaypoints()) {
+                this.queueWaypoint(this.startX, this.startZ);
+            }
+            return;
+        }
+
+        // === idle 状态: 不做特殊处理，让引擎默认行为接管 ===
     }
 
     cleanup(): void {

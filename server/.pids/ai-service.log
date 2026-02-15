@@ -1,0 +1,323 @@
+$ bun run --watch service.ts
+[AI] Pi-Agent 初始化完成, provider=openrouter, model=minimax/minimax-m2.5
+[AI Service] 启动中，端口 7781...
+[AI Service] 已启动: ws://localhost:7781
+[AI Service] 状态页面: http://localhost:7781/status
+[AI Service] AI 模型: minimax/minimax-m2.5
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "Hi"
+[AI Service] 回复: Shop keeper -> "嘿，欢迎光临！我是 Lumbridge 杂货店的老板。看看有什么需要的吧！"
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 收到请求: Shop assistant <- 玩家 Vbarter: "Hi"
+[AI Service] 回复: Shop assistant -> "嘿，欢迎光临！想买点什么？杂货店有锅、水壶、剪刀、桶、火种箱，还有凿子和锤子！"
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 收到请求: Shop assistant <- 玩家 Vbarter: "Hi"
+[AI Service] 回复: Shop assistant -> "嘿，又见面了！需要买点什么吗？还是来看看我的木匠工具？"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "What's your name?"
+[AI Service] 回复: Shop keeper -> "嘿，我叫布隆，是这 Lumbridge 杂货店的老板！顺便说，我也是个木匠学徒嘞。哈！"
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI] Pi-Agent 初始化完成, provider=openrouter, model=minimax/minimax-m2.5
+[AI Service] 启动中，端口 7781...
+[AI Service] 已启动: ws://localhost:7781
+[AI Service] 状态页面: http://localhost:7781/status
+[AI Service] AI 模型: minimax/minimax-m2.5
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI] Pi-Agent 初始化完成, provider=openrouter, model=minimax/minimax-m2.5
+[AI Service] 启动中，端口 7781...
+[AI Service] 已启动: ws://localhost:7781
+[AI Service] 状态页面: http://localhost:7781/status
+[AI Service] AI 模型: minimax/minimax-m2.5
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI] Pi-Agent 初始化完成, provider=openrouter, model=minimax/minimax-m2.5
+[AI Service] 启动中，端口 7781...
+[AI Service] 已启动: ws://localhost:7781
+[AI Service] 状态页面: http://localhost:7781/status
+[AI Service] AI 模型: minimax/minimax-m2.5
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI] Pi-Agent 初始化完成, provider=openrouter, model=minimax/minimax-m2.5
+[AI Service] 启动中，端口 7781...
+[AI Service] 已启动: ws://localhost:7781
+[AI Service] 状态页面: http://localhost:7781/status
+[AI Service] AI 模型: minimax/minimax-m2.5
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "Hi"
+[AI Service] 回复: Shop keeper -> "嘿，欢迎来到 Lumbridge 杂货店！需要买点什么吗？锤子、斧头、火种我这儿都有！"
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "Hi"
+[AI Service] 回复: Shop keeper -> "嘿，欢迎来到 Lumbridge 杂货店！需要买点什么？"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "What's your name?"
+[AI Service] 回复: Shop keeper -> "哈，我叫杂货店老板，在这开店有些年头了。有需要尽管叫我！"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "Ni mai shenme ?"
+[AI Service] 回复: Shop keeper -> "我这里卖的都是日用品！锅、水罐、剪刀、桶、火种盒、凿子、锤子，还有 Lumbridge 新手地图！"
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 收到请求: Shop assistant <- 玩家 Vbarter: "Hi"
+[AI Service] 回复: Shop assistant -> "嘿，欢迎来到 Lumbridge 杂货店！需要点什么？"
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "Hi"
+[AI Service] 回复: Shop keeper -> "嘿，欢迎光临！我是这里的杂货店老板。想买些什么？锤子、凿子、地图我这儿都有！"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "Hi"
+[AI Service] 回复: Shop keeper -> "嘿，又见面了！想看看我的货吗？都是些实用的家伙事儿！"
+[AI Service] 收到请求: Shop assistant <- 玩家 Vbarter: "l来r人"
+[AI Service] 回复: Shop assistant -> "嘿，冒险者！欢迎来到杂货店！想买点什么？锤子和剪刀都有，还有地图出售哦！"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "n你好"
+[AI Service] 回复: Shop keeper -> "哈，你好！欢迎欢迎，想买点什么？我这儿东西齐全，工具、容器都有！"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "你好"
+[AI Service] 回复: Shop keeper -> "哈，你好！欢迎来到Lumbridge杂货店！想看看有什么好东西吗？"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "你这里有啥东西?"
+[AI Service] 回复: Shop keeper -> "哈，看看吧！锅、桶、剪刀、凿子、锤子、火种盒、新手地图，都有！"
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 收到请求: Shop assistant <- 玩家 Vbarter: "你好"
+[AI Service] 回复: Shop assistant -> "嘿，欢迎光临！我是这家杂货店的老板。看看需要些什么？"
+[AI Service] 收到请求: Shop assistant <- 玩家 Vbarter: "你卖什么?"
+[AI Service] 回复: Shop assistant -> "哈，我这儿东西可不少！锅啊、桶啊、剪刀、锤子和火种盒都有。来看看吧！"
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "你好"
+[AI Service] 回复: Shop keeper -> "嘿，欢迎欢迎！来看看我店里有什么需要的吧，杂货斧头都有！"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "你卖什么?"
+[AI Service] 回复: Shop keeper -> "我这儿有锅、桶、剪刀、火种盒、凿子、锤子，还有 Lumbridge 新手地图！"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "打开"
+[AI Service] 回复: Shop keeper -> "好嘞，看看有没有需要的，挑好了告诉我一声！"
+[AI] Pi-Agent 初始化完成, provider=openrouter, model=minimax/minimax-m2.5
+[AI Service] 启动中，端口 7781...
+[AI Service] 已启动: ws://localhost:7781
+[AI Service] 状态页面: http://localhost:7781/status
+[AI Service] AI 模型: minimax/minimax-m2.5
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI] Pi-Agent 初始化完成, provider=openrouter, model=minimax/minimax-m2.5
+[AI Service] 启动中，端口 7781...
+[AI Service] 已启动: ws://localhost:7781
+[AI Service] 状态页面: http://localhost:7781/status
+[AI Service] AI 模型: minimax/minimax-m2.5
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "打开交易"
+[AI Service] 回复: Shop keeper -> "哈，欢迎光临！看看有啥需要的，杂货都在这儿了。"
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 收到请求: Shop assistant <- 玩家 Vbarter: "打开交易"
+[AI Service] 回复: Shop assistant -> "嘿，欢迎光临！来看看我这儿有什么需要的吧！"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "打开商品交易"
+[AI Service] 回复: Shop keeper -> "嘿，Vbarter！欢迎来看看我的杂货店。需要锅、水壶、剪刀还是别的什么？价格都很实惠！"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "交易"
+[AI Service] 回复: Shop keeper -> "哈哈，商店界面已经打开了！看中什么就直接买吧。需要帮忙推荐点什么吗？"
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "Hi"
+[AI Service] 回复: Shop keeper -> "嘿，Vbarter！欢迎光临 Lumbridge 杂货店！想买点什么？我这儿锅啊、水壶啊、地图啊都有！"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "打开交易"
+[AI Service] 回复: Shop keeper -> "哈，商店界面已经打开了！看看有没有需要的东西，看中什么就买吧！"
+32 | let model: any;
+33 | 
+34 | export function initAgentPool() {
+35 |     registerBuiltInApiProviders();
+36 |     model = getModel(AI_PROVIDER as any, AI_MODEL_ID as any);
+37 |     console.log(`[AI] Pi-Agent 初始化完成, provider=${AI_PROVIDER}, model=${model.id}`);
+                                                                           ^
+TypeError: undefined is not an object (evaluating 'model.id')
+      at initAgentPool (/Users/caijunjie/Dev/rs-sdk/server/ai-service/AgentPool.ts:37:71)
+      at /Users/caijunjie/Dev/rs-sdk/server/ai-service/service.ts:11:1
+[AI] Kimi/Moonshot 初始化完成, model=moonshot-v1-128k, baseUrl=https://api.moonshot.cn/v1
+[AI Service] 启动中，端口 7781...
+[AI Service] 已启动: ws://localhost:7781
+[AI Service] 状态页面: http://localhost:7781/status
+[AI Service] AI 模型: moonshot-v1-128k
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI] Kimi/Moonshot 初始化完成, model=moonshot-v1-128k, baseUrl=https://api.moonshot.cn/v1
+[AI Service] 启动中，端口 7781...
+[AI Service] 已启动: ws://localhost:7781
+[AI Service] 状态页面: http://localhost:7781/status
+[AI Service] AI 模型: moonshot-v1-128k
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI] Kimi/Moonshot 初始化完成, model=moonshot-v1-128k, baseUrl=https://api.moonshot.cn/v1
+[AI Service] 启动中，端口 7781...
+[AI Service] 已启动: ws://localhost:7781
+[AI Service] 状态页面: http://localhost:7781/status
+[AI Service] AI 模型: moonshot-v1-128k (provider: moonshot)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "Hi"
+[AI Service] 回复: Shop keeper -> "嘿，Vbarter！欢迎回来！需要点什么？"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "今天天气怎么样?"
+[AI Service] 回复: Shop keeper -> "..."
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "你卖啥?"
+[AI Service] 回复: Shop keeper -> "..."
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "?"
+[AI Service] 回复: Shop keeper -> "..."
+[AI] Kimi/Moonshot 初始化完成, model=kimi-k2-turbo-preview, baseUrl=https://api.moonshot.cn/v1
+[AI Service] 启动中，端口 7781...
+[AI Service] 已启动: ws://localhost:7781
+[AI Service] 状态页面: http://localhost:7781/status
+[AI Service] AI 模型: kimi-k2-turbo-preview (provider: moonshot)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "Hi"
+[AI Debug] 无 say action, 消息数=2, last.role=assistant, last.content type=object, content=[{"type":"text","text":"嘿，Vbarter！又见面啦！今天想淘点啥？我这儿有新进的锤子和火种盒，实用得很！"}]
+[AI Service] 回复: Shop keeper -> "嘿，Vbarter！又见面啦！今天想淘点啥？我这儿有新进的锤子和火种盒，实用得很！"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "交易"
+[AI Debug] 无 say action, 消息数=4, last.role=assistant, last.content type=object, content=[{"type":"text","text":"好嘞，给你打开商店界面，慢慢挑！"}]
+[AI Service] 回复: Shop keeper -> "好嘞，给你打开商店界面，慢慢挑！"
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "Hi"
+[AI Debug] 无 say action, 消息数=6, last.role=assistant, last.content type=object, content=[{"type":"text","text":"嘿，Vbarter！商店还开着呢，再来逛逛？"}]
+[AI Service] 回复: Shop keeper -> "嘿，Vbarter！商店还开着呢，再来逛逛？"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "交易"
+[AI Debug] 无 say action, 消息数=8, last.role=assistant, last.content type=object, content=[{"type":"text","text":"好嘞，马上给你打开商店界面，慢慢挑！"}]
+[AI Service] 回复: Shop keeper -> "好嘞，马上给你打开商店界面，慢慢挑！"
+[AI] Kimi/Moonshot 初始化完成, model=kimi-k2-turbo-preview, baseUrl=https://api.moonshot.cn/v1
+[AI Service] 启动中，端口 7781...
+[AI Service] 已启动: ws://localhost:7781
+[AI Service] 状态页面: http://localhost:7781/status
+[AI Service] AI 模型: kimi-k2-turbo-preview (provider: moonshot)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI] Kimi/Moonshot 初始化完成, model=kimi-k2-turbo-preview, baseUrl=https://api.moonshot.cn/v1
+[AI Service] 启动中，端口 7781...
+[AI Service] 已启动: ws://localhost:7781
+[AI Service] 状态页面: http://localhost:7781/status
+[AI Service] AI 模型: kimi-k2-turbo-preview (provider: moonshot)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI] Kimi/Moonshot 初始化完成, model=kimi-k2-turbo-preview, baseUrl=https://api.moonshot.cn/v1
+[AI Service] 启动中，端口 7781...
+[AI Service] 已启动: ws://localhost:7781
+[AI Service] 状态页面: http://localhost:7781/status
+[AI Service] AI 模型: kimi-k2-turbo-preview (provider: moonshot)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "Hi"
+[AI Service] 回复: Shop keeper -> "嘿，Vbarter！又见面了，今天想买点啥？还是来聊木头的？"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "￿交易"
+[AI Service] 回复: Shop keeper -> "好嘞，马上给你打开商店界面，慢慢挑！"
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "Hi"
+[AI Service] 回复: Shop keeper -> "嘿，新来的冒险者！欢迎来到Lumbridge杂货店，需要点什么？敲敲这橡木柜台，结实着呢！"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "交易"
+[AI Service] 回复: Shop keeper -> "哈，货架都摆好啦！新手必备，便宜实用，挑点啥？"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "今天上海天气怎么样?"
+[AI Service] 回复: Shop keeper -> "嘿，我只懂木头和杂货，天气问风去！要买把锤子吗？1金币就结实好用。"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "哈哈哈"
+[AI Service] 回复: Shop keeper -> "哈！笑声比鸡叫好听多了！来张新手指路图？1金币，迷路不怕！"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "你还挺幽默啊"
+[AI Service] 回复: Shop keeper -> "嘿，守着橡木柜台不幽默点就发霉啦！要剪羊毛不，剪刀给你1金币带走！"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "你给我讲个笑话吧"
+[AI Service] 回复: Shop keeper -> "有棵橡树对斧头说：咱们是老乡，别砍我行不？斧头答：行，我先砍你邻居松木！哈哈哈！"
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 引擎客户端已断开 (总数: 0)
+[AI Service] 引擎客户端已连接 (总数: 1)
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "Hi"
+[AI Service] 回复: Shop keeper -> "嘿，又见面啦！这次要点啥？还是来听木头段子？"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "我刚才是不是来过?"
+[AI Service] 回复: Shop keeper -> "哈，当然！橡木柜台记得你笑声呢！要不再带把锤子？木料敲敲更结实！"
+[AI Service] 收到请求: Shop keeper <- 玩家 Vbarter: "我来之前说了啥"
+[AI Service] 回复: Shop keeper -> "你问天气，我让你问风去，然后讲了橡树和斧头的笑话呀！记得不？"
