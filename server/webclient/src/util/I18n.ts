@@ -233,10 +233,10 @@ const ZH_DICT: Record<string, string> = {
     'Logout': '退出',
     'Click here to logout': '点击此处安全退出',
     'Please wait...': '请稍候...',
-    'Loading - please wait.': '加载中 - 请稍候。',
+    'Loading - please wait.': '加载中 - 请稍候.',
     'When you have finished playing': '当你结束游戏时',
     'RuneScape, always use the': '请务必使用下方按钮',
-    'button below to logout safely.': '安全退出 RuneScape。',
+    'button below to logout safely.': '安全退出 RuneScape.',
 
     // ===== Stats panel =====
     'Combat Lvl: %1': '战斗等级: %1',
@@ -380,6 +380,7 @@ const ZH_DICT: Record<string, string> = {
     "Witch's Potion": '女巫的药水',
 
     // ===== Magic panel =====
+    // Spell names (title case - as shown in UI)
     'Wind Strike': '风之打击',
     'Water Strike': '水之打击',
     'Earth Strike': '土之打击',
@@ -422,7 +423,6 @@ const ZH_DICT: Record<string, string> = {
     'Crumble Undead': '粉碎亡灵',
     'Magic Dart': '魔法飞镖',
     'Saradomin Strike': '萨拉多明之击',
-    'Saradomin strike': '萨拉多明之击',
     'Claws of Guthix': '古斯克斯之爪',
     'Flames of Zamorak': '扎莫拉克之焰',
     'Enchant Lvl-1 Jewelry': '附魔1级饰品',
@@ -434,6 +434,34 @@ const ZH_DICT: Record<string, string> = {
     'Charge Earth Orb': '充能土宝珠',
     'Charge Fire Orb': '充能火宝珠',
     'Charge Air Orb': '充能风宝珠',
+    // Spell names (exact case from .if action= fields)
+    'Wind strike': '风之打击',
+    'Water strike': '水之打击',
+    'Earth strike': '土之打击',
+    'Fire strike': '火之打击',
+    'Wind bolt': '风之闪电',
+    'Water bolt': '水之闪电',
+    'Earth bolt': '土之闪电',
+    'Fire bolt': '火之闪电',
+    'Wind blast': '风之爆破',
+    'Water blast': '水之爆破',
+    'Earth blast': '土之爆破',
+    'Fire blast': '火之爆破',
+    'Wind wave': '风之波浪',
+    'Water wave': '水之波浪',
+    'Earth wave': '土之波浪',
+    'Fire wave': '火之波浪',
+    'Low level alchemy': '低级炼金术',
+    'High level alchemy': '高级炼金术',
+    'Telekinetic grab': '隔空取物',
+    'Crumble undead': '粉碎亡灵',
+    'Iban blast': '伊班爆破',
+    'Saradomin strike': '萨拉多明之击',
+    'Enchant Lvl-1 Jewelry': '附魔1级饰品',
+    'Charge water orb': '充能水宝珠',
+    'Charge earth orb': '充能土宝珠',
+    'Charge fire orb': '充能火宝珠',
+    'Charge air orb': '充能风宝珠',
     'Level %1 :': '等级 %1 :',
     // Magic spell descriptions
     'A basic Air missile': '基础风系飞弹',
@@ -591,13 +619,13 @@ const ZH_DICT: Record<string, string> = {
     'Password:': '密码:',
     'Login': '登录',
     'Create a free account': '创建免费账号',
-    'To create a new account you need to': '要创建新账号，你需要',
+    'To create a new account you need to': '要创建新账号,你需要',
     'go back to the main RuneScape webpage': '返回 RuneScape 主页',
     "and choose the red 'create account'": '并点击页面右上角的',
-    'button at the top right of that page.': '红色「创建账号」按钮。',
+    'button at the top right of that page.': '红色「创建账号」按钮.',
 
     // ===== Welcome & system =====
-    'Welcome to RuneScape.': '欢迎来到 RuneScape。',
+    'Welcome to RuneScape.': '欢迎来到 RuneScape.',
     'Click to continue': '点击继续',
     'Click here to continue': '点击此处继续',
     'Select an Option': '选择一个选项',
@@ -621,7 +649,7 @@ const ZH_DICT: Record<string, string> = {
     'AUTO': '自动',
     'MAN': '手动',
     'MANUAL': '手动',
-    'Click the tune to play.': '点击曲名播放。',
+    'Click the tune to play.': '点击曲名播放.',
     'Green=Unlocked': '绿色=已解锁',
     'Red=Locked': '红色=未解锁',
     'Unlocked': '已解锁',
@@ -705,310 +733,310 @@ const ZH_DICT: Record<string, string> = {
 
     // ===== Game messages (mes) =====
     // --- Interaction ---
-    'Nothing interesting happens.': '没有什么有趣的事情发生。',
-    'But nothing interesting happens.': '但没有什么有趣的事情发生。',
-    'But nothing happens.': '但什么也没发生。',
-    "You can't reach that!": '你够不到那里！',
-    "I can't reach that!": '我够不到那里！',
-    'You find nothing of interest.': '你没发现什么有趣的东西。',
-    'You find nothing.': '你什么也没找到。',
-    'But you find nothing.': '但你什么也没找到。',
-    "You don't find anything interesting.": '你没有发现任何有趣的东西。',
-    'You notice nothing significant about this.': '你没有注意到什么特别的东西。',
-    'These may have something in them.': '这些里面可能有东西。',
-    "There's nothing interesting in these sacks.": '这些麻袋里没有什么有趣的东西。',
+    'Nothing interesting happens.': '没有什么有趣的事情发生.',
+    'But nothing interesting happens.': '但没有什么有趣的事情发生.',
+    'But nothing happens.': '但什么也没发生.',
+    "You can't reach that!": '你够不到那里!',
+    "I can't reach that!": '我够不到那里!',
+    'You find nothing of interest.': '你没发现什么有趣的东西.',
+    'You find nothing.': '你什么也没找到.',
+    'But you find nothing.': '但你什么也没找到.',
+    "You don't find anything interesting.": '你没有发现任何有趣的东西.',
+    'You notice nothing significant about this.': '你没有注意到什么特别的东西.',
+    'These may have something in them.': '这些里面可能有东西.',
+    "There's nothing interesting in these sacks.": '这些麻袋里没有什么有趣的东西.',
 
     // --- Doors & locks ---
-    'The door is locked.': '门被锁上了。',
-    'This door is locked.': '这扇门被锁上了。',
-    'This door is securely locked.': '这扇门被牢牢锁住了。',
-    'The chest is locked.': '箱子被锁上了。',
-    'You open the chest.': '你打开了箱子。',
-    'You close the chest.': '你关上了箱子。',
+    'The door is locked.': '门被锁上了.',
+    'This door is locked.': '这扇门被锁上了.',
+    'This door is securely locked.': '这扇门被牢牢锁住了.',
+    'The chest is locked.': '箱子被锁上了.',
+    'You open the chest.': '你打开了箱子.',
+    'You close the chest.': '你关上了箱子.',
     'You search the crate...': '你搜索了板条箱...',
-    'You search the crate.': '你搜索了板条箱。',
-    'You manage to pick the lock.': '你成功撬开了锁。',
-    'But it refuses to open.': '但它拒绝打开。',
-    "But it's magically sealed.": '但它被魔法封印了。',
+    'You search the crate.': '你搜索了板条箱.',
+    'You manage to pick the lock.': '你成功撬开了锁.',
+    'But it refuses to open.': '但它拒绝打开.',
+    "But it's magically sealed.": '但它被魔法封印了.',
 
     // --- Woodcutting ---
-    'You swing your axe at the tree.': '你挥动斧头砍向树木。',
-    'You get some logs.': '你获得了一些原木。',
-    'You get some oak logs.': '你获得了一些橡木原木。',
-    'You get some willow logs.': '你获得了一些柳木原木。',
-    'You get some maple logs.': '你获得了一些枫木原木。',
-    'You get some yew logs.': '你获得了一些紫杉原木。',
-    'You get some magic logs.': '你获得了一些魔法原木。',
-    'Your inventory is too full to hold any more logs.': '你的背包已满，无法容纳更多原木。',
+    'You swing your axe at the tree.': '你挥动斧头砍向树木.',
+    'You get some logs.': '你获得了一些原木.',
+    'You get some oak logs.': '你获得了一些橡木原木.',
+    'You get some willow logs.': '你获得了一些柳木原木.',
+    'You get some maple logs.': '你获得了一些枫木原木.',
+    'You get some yew logs.': '你获得了一些紫杉原木.',
+    'You get some magic logs.': '你获得了一些魔法原木.',
+    'Your inventory is too full to hold any more logs.': '你的背包已满,无法容纳更多原木.',
 
     // --- Mining ---
-    'You swing your pickaxe at the rock.': '你挥动镐子凿向岩石。',
-    'You manage to mine some copper.': '你成功开采了一些铜矿。',
-    'You manage to mine some tin.': '你成功开采了一些锡矿。',
-    'You manage to mine some iron.': '你成功开采了一些铁矿。',
-    'You manage to mine some coal.': '你成功开采了一些煤矿。',
-    'You manage to mine some gold.': '你成功开采了一些金矿。',
-    'You manage to mine some silver.': '你成功开采了一些银矿。',
-    'You manage to mine some mithril.': '你成功开采了一些秘银矿。',
-    'You manage to mine some adamantite.': '你成功开采了一些精金矿。',
-    'You manage to mine some runite.': '你成功开采了一些符文矿。',
-    'There is currently no rocks available to mine.': '目前没有可以开采的岩石。',
-    'There is no ore currently available in this rock.': '这块岩石中目前没有矿石。',
-    'Your inventory is too full to hold any more ore.': '你的背包已满，无法容纳更多矿石。',
+    'You swing your pickaxe at the rock.': '你挥动镐子凿向岩石.',
+    'You manage to mine some copper.': '你成功开采了一些铜矿.',
+    'You manage to mine some tin.': '你成功开采了一些锡矿.',
+    'You manage to mine some iron.': '你成功开采了一些铁矿.',
+    'You manage to mine some coal.': '你成功开采了一些煤矿.',
+    'You manage to mine some gold.': '你成功开采了一些金矿.',
+    'You manage to mine some silver.': '你成功开采了一些银矿.',
+    'You manage to mine some mithril.': '你成功开采了一些秘银矿.',
+    'You manage to mine some adamantite.': '你成功开采了一些精金矿.',
+    'You manage to mine some runite.': '你成功开采了一些符文矿.',
+    'There is currently no rocks available to mine.': '目前没有可以开采的岩石.',
+    'There is no ore currently available in this rock.': '这块岩石中目前没有矿石.',
+    'Your inventory is too full to hold any more ore.': '你的背包已满,无法容纳更多矿石.',
 
     // --- Fishing ---
     'You cast out your line...': '你抛出了鱼线...',
-    'You attempt to catch a fish.': '你尝试捕鱼。',
-    'You catch a shrimp.': '你抓到了一只虾。',
-    'You catch a sardine.': '你抓到了一条沙丁鱼。',
-    'You catch a herring.': '你抓到了一条鲱鱼。',
-    'You catch an anchovy.': '你抓到了一条凤尾鱼。',
-    'You catch a trout.': '你抓到了一条鳟鱼。',
-    'You catch a salmon.': '你抓到了一条鲑鱼。',
-    'You catch a tuna.': '你抓到了一条金枪鱼。',
-    'You catch a lobster.': '你抓到了一只龙虾。',
-    'You catch a swordfish.': '你抓到了一条旗鱼。',
-    'Your inventory is too full to hold any more fish.': '你的背包已满，无法容纳更多鱼。',
+    'You attempt to catch a fish.': '你尝试捕鱼.',
+    'You catch a shrimp.': '你抓到了一只虾.',
+    'You catch a sardine.': '你抓到了一条沙丁鱼.',
+    'You catch a herring.': '你抓到了一条鲱鱼.',
+    'You catch an anchovy.': '你抓到了一条凤尾鱼.',
+    'You catch a trout.': '你抓到了一条鳟鱼.',
+    'You catch a salmon.': '你抓到了一条鲑鱼.',
+    'You catch a tuna.': '你抓到了一条金枪鱼.',
+    'You catch a lobster.': '你抓到了一只龙虾.',
+    'You catch a swordfish.': '你抓到了一条旗鱼.',
+    'Your inventory is too full to hold any more fish.': '你的背包已满,无法容纳更多鱼.',
 
     // --- Cooking ---
-    'You cook the shrimp.': '你烹饪了虾。',
-    'You accidentally burn the shrimp.': '你不小心把虾烧焦了。',
-    'You cook the meat.': '你烹饪了肉。',
-    'You accidentally burn the meat.': '你不小心把肉烧焦了。',
-    'You successfully cook a pie.': '你成功烹饪了一个馅饼。',
-    'You successfully bake a cake.': '你成功烤了一个蛋糕。',
-    'You successfully bake some bread.': '你成功烤了一些面包。',
-    'You accidentally burn the bread.': '你不小心把面包烧焦了。',
+    'You cook the shrimp.': '你烹饪了虾.',
+    'You accidentally burn the shrimp.': '你不小心把虾烧焦了.',
+    'You cook the meat.': '你烹饪了肉.',
+    'You accidentally burn the meat.': '你不小心把肉烧焦了.',
+    'You successfully cook a pie.': '你成功烹饪了一个馅饼.',
+    'You successfully bake a cake.': '你成功烤了一个蛋糕.',
+    'You successfully bake some bread.': '你成功烤了一些面包.',
+    'You accidentally burn the bread.': '你不小心把面包烧焦了.',
 
     // --- Firemaking ---
-    "You can't light a fire here.": '你不能在这里生火。',
-    'You need a tinderbox to light a fire.': '你需要火绒盒来生火。',
-    'The fire catches and the logs begin to burn.': '火点着了，原木开始燃烧。',
+    "You can't light a fire here.": '你不能在这里生火.',
+    'You need a tinderbox to light a fire.': '你需要火绒盒来生火.',
+    'The fire catches and the logs begin to burn.': '火点着了,原木开始燃烧.',
 
     // --- Combat ---
-    'You eat the shrimp.': '你吃了虾。',
-    'You eat the bread.': '你吃了面包。',
-    'You bury the bones.': '你埋葬了骨头。',
-    'Oh dear, you are dead!': '天哪，你死了！',
-    'You are dead.': '你死了。',
+    'You eat the shrimp.': '你吃了虾.',
+    'You eat the bread.': '你吃了面包.',
+    'You bury the bones.': '你埋葬了骨头.',
+    'Oh dear, you are dead!': '天哪,你死了!',
+    'You are dead.': '你死了.',
 
     // --- Movement & traversal ---
-    'You climb down the ladder.': '你顺着梯子爬了下去。',
-    'You climb up the ladder.': '你顺着梯子爬了上去。',
-    'You climb the stairs.': '你走上了楼梯。',
-    'You walk down the stairs.': '你走下了楼梯。',
-    'You open the gate.': '你打开了大门。',
-    'You close the gate.': '你关上了大门。',
+    'You climb down the ladder.': '你顺着梯子爬了下去.',
+    'You climb up the ladder.': '你顺着梯子爬了上去.',
+    'You climb the stairs.': '你走上了楼梯.',
+    'You walk down the stairs.': '你走下了楼梯.',
+    'You open the gate.': '你打开了大门.',
+    'You close the gate.': '你关上了大门.',
     'You pull the lever...': '你拉动了拉杆...',
-    'You slip and fall!': '你滑倒了！',
-    'You fall!': '你掉下去了！',
-    'You skillfully swing across.': '你灵巧地荡了过去。',
-    '...You make it safely to the other side.': '...你安全到达了另一边。',
-    '...you manage to cross safely.': '...你成功安全穿过了。',
+    'You slip and fall!': '你滑倒了!',
+    'You fall!': '你掉下去了!',
+    'You skillfully swing across.': '你灵巧地荡了过去.',
+    '...You make it safely to the other side.': '...你安全到达了另一边.',
+    '...you manage to cross safely.': '...你成功安全穿过了.',
     'You walk carefully across the slippery log...': '你小心翼翼地走过湿滑的木头...',
-    'You decide to stay where you are.': '你决定留在原地。',
+    'You decide to stay where you are.': '你决定留在原地.',
 
     // --- Inventory & items ---
-    "You don't have enough space in your inventory to do that.": '你的背包没有足够的空间来做这件事。',
-    'You do not have enough money.': '你没有足够的金币。',
-    'You can only make that on a members\' server.': '你只能在会员服务器上制作那个。',
-    'You are not a high enough level to use this item.': '你的等级不够高，无法使用此物品。',
-    "That isn't your cannon!": '那不是你的大炮！',
-    'I need the guards\' permission to do that.': '我需要得到卫兵的许可才能那样做。',
+    "You don't have enough space in your inventory to do that.": '你的背包没有足够的空间来做这件事.',
+    'You do not have enough money.': '你没有足够的金币.',
+    'You can only make that on a members\' server.': '你只能在会员服务器上制作那个.',
+    'You are not a high enough level to use this item.': '你的等级不够高,无法使用此物品.',
+    "That isn't your cannon!": '那不是你的大炮!',
+    'I need the guards\' permission to do that.': '我需要得到卫兵的许可才能那样做.',
 
     // --- Smithing ---
-    'You smelt the ore into a bar.': '你将矿石冶炼成了一根金属条。',
-    'You hammer the metal and make a dagger.': '你锤打金属，制作了一把匕首。',
+    'You smelt the ore into a bar.': '你将矿石冶炼成了一根金属条.',
+    'You hammer the metal and make a dagger.': '你锤打金属,制作了一把匕首.',
 
     // --- Thieving ---
-    'You pick the pocket.': '你扒窃了口袋。',
-    'You steal some coins.': '你偷到了一些金币。',
-    'You fail to pick the pocket.': '你扒窃失败了。',
-    'You have been stunned!': '你被击晕了！',
+    'You pick the pocket.': '你扒窃了口袋.',
+    'You steal some coins.': '你偷到了一些金币.',
+    'You fail to pick the pocket.': '你扒窃失败了.',
+    'You have been stunned!': '你被击晕了!',
 
     // --- Prayer ---
-    'You have run out of prayer points.': '你的祈祷点数已用完。',
-    'Recharge at an altar, or drink a prayer potion.': '在祭坛充能，或喝一瓶祈祷药水。',
+    'You have run out of prayer points.': '你的祈祷点数已用完.',
+    'Recharge at an altar, or drink a prayer potion.': '在祭坛充能,或喝一瓶祈祷药水.',
 
     // --- Quest ---
-    'Congratulations! Quest complete!': '恭喜！任务完成！',
-    'All quests have been completed.': '所有任务已完成。',
+    'Congratulations! Quest complete!': '恭喜!任务完成!',
+    'All quests have been completed.': '所有任务已完成.',
 
     // --- Bank ---
-    'You deposit your items.': '你存入了物品。',
-    'You withdraw your items.': '你取出了物品。',
+    'You deposit your items.': '你存入了物品.',
+    'You withdraw your items.': '你取出了物品.',
 
     // --- Skills (additional) ---
-    'You do not have an axe which you have the level to use.': '你没有达到等级要求的斧头。',
-    'You need an axe to chop down this tree.': '你需要一把斧头来砍树。',
-    'You do not have a pickaxe which you have the level to use.': '你没有达到等级要求的镐子。',
-    'You need a pickaxe to mine this rock.': '你需要一把镐子来开采这块岩石。',
+    'You do not have an axe which you have the level to use.': '你没有达到等级要求的斧头.',
+    'You need an axe to chop down this tree.': '你需要一把斧头来砍树.',
+    'You do not have a pickaxe which you have the level to use.': '你没有达到等级要求的镐子.',
+    'You need a pickaxe to mine this rock.': '你需要一把镐子来开采这块岩石.',
     'The pipe is being used': '这个管道正在被使用',
-    'You must make a selection from both categories.': '你必须从两个类别中各选一项。',
-    'You successfully cook a trout.': '你成功烹饪了鳟鱼。',
-    'You successfully cook a salmon.': '你成功烹饪了鲑鱼。',
-    'You successfully cook a lobster.': '你成功烹饪了龙虾。',
-    'You successfully cook a swordfish.': '你成功烹饪了旗鱼。',
-    'You successfully cook a tuna.': '你成功烹饪了金枪鱼。',
-    'You roast the meat.': '你烤了肉。',
-    'You manage to smelt a bronze bar.': '你成功冶炼了一根青铜条。',
-    'You manage to smelt an iron bar.': '你成功冶炼了一根铁条。',
-    'You manage to smelt a steel bar.': '你成功冶炼了一根钢条。',
-    'You manage to smelt a gold bar.': '你成功冶炼了一根金条。',
-    'You manage to smelt a silver bar.': '你成功冶炼了一根银条。',
-    'You manage to smelt a mithril bar.': '你成功冶炼了一根秘银条。',
-    'You retrieve a bar of iron.': '你取出了一根铁条。',
-    'You retrieve a bar of bronze.': '你取出了一根青铜条。',
-    'You retrieve a bar of steel.': '你取出了一根钢条。',
-    'You spin the flax into a bow string.': '你把亚麻纺成了弓弦。',
-    'You spin the wool into a ball of wool.': '你把羊毛纺成了毛线球。',
+    'You must make a selection from both categories.': '你必须从两个类别中各选一项.',
+    'You successfully cook a trout.': '你成功烹饪了鳟鱼.',
+    'You successfully cook a salmon.': '你成功烹饪了鲑鱼.',
+    'You successfully cook a lobster.': '你成功烹饪了龙虾.',
+    'You successfully cook a swordfish.': '你成功烹饪了旗鱼.',
+    'You successfully cook a tuna.': '你成功烹饪了金枪鱼.',
+    'You roast the meat.': '你烤了肉.',
+    'You manage to smelt a bronze bar.': '你成功冶炼了一根青铜条.',
+    'You manage to smelt an iron bar.': '你成功冶炼了一根铁条.',
+    'You manage to smelt a steel bar.': '你成功冶炼了一根钢条.',
+    'You manage to smelt a gold bar.': '你成功冶炼了一根金条.',
+    'You manage to smelt a silver bar.': '你成功冶炼了一根银条.',
+    'You manage to smelt a mithril bar.': '你成功冶炼了一根秘银条.',
+    'You retrieve a bar of iron.': '你取出了一根铁条.',
+    'You retrieve a bar of bronze.': '你取出了一根青铜条.',
+    'You retrieve a bar of steel.': '你取出了一根钢条.',
+    'You spin the flax into a bow string.': '你把亚麻纺成了弓弦.',
+    'You spin the wool into a ball of wool.': '你把羊毛纺成了毛线球.',
 
     // --- Interaction (additional) ---
-    'The man seems to be in a weak state of mind.': '这个人似乎精神状态不太好。',
+    'The man seems to be in a weak state of mind.': '这个人似乎精神状态不太好.',
     "It's not after you...": '它不是在追你...',
-    'The gem soon begins to fade.': '宝石很快开始褪色。',
-    "The cog doesn't seem to fit.": '齿轮似乎不合适。',
-    'Some earth falls down and fills in the fissure.': '一些泥土掉下来填满了裂缝。',
-    'You search the crate but find nothing.': '你搜索了板条箱但什么也没找到。',
-    'You search the sacks but find nothing.': '你搜索了麻袋但什么也没找到。',
-    'You search the chest but find nothing.': '你搜索了箱子但什么也没找到。',
-    'You manage to pick the lock - you find nothing of interest.': '你撬开了锁——但没发现什么有趣的东西。',
+    'The gem soon begins to fade.': '宝石很快开始褪色.',
+    "The cog doesn't seem to fit.": '齿轮似乎不合适.',
+    'Some earth falls down and fills in the fissure.': '一些泥土掉下来填满了裂缝.',
+    'You search the crate but find nothing.': '你搜索了板条箱但什么也没找到.',
+    'You search the sacks but find nothing.': '你搜索了麻袋但什么也没找到.',
+    'You search the chest but find nothing.': '你搜索了箱子但什么也没找到.',
+    'You manage to pick the lock - you find nothing of interest.': '你撬开了锁——但没发现什么有趣的东西.',
     'You cautiously peek inside the barrel...': '你小心翼翼地朝桶里看去...',
-    'You open the door.': '你打开了门。',
-    'You close the door.': '你关上了门。',
-    'You go through the door.': '你走过了门。',
-    'The gate opens.': '大门打开了。',
-    'The gate is locked.': '大门被锁上了。',
-    "The door won't open.": '门打不开。',
-    "The door won't open. No one seems to be in.": '门打不开。里面似乎没有人。',
-    'You fail to pick the lock.': '你撬锁失败了。',
-    'You take a sip of the potion.': '你喝了一口药水。',
-    'You open the trapdoor.': '你打开了活板门。',
-    '...You make it safely to the other side.': '...你安全到达了另一边。',
-    '...you manage to cross safely.': '...你成功安全穿过了。',
+    'You open the door.': '你打开了门.',
+    'You close the door.': '你关上了门.',
+    'You go through the door.': '你走过了门.',
+    'The gate opens.': '大门打开了.',
+    'The gate is locked.': '大门被锁上了.',
+    "The door won't open.": '门打不开.',
+    "The door won't open. No one seems to be in.": '门打不开.里面似乎没有人.',
+    'You fail to pick the lock.': '你撬锁失败了.',
+    'You take a sip of the potion.': '你喝了一口药水.',
+    'You open the trapdoor.': '你打开了活板门.',
+    '...You make it safely to the other side.': '...你安全到达了另一边.',
+    '...you manage to cross safely.': '...你成功安全穿过了.',
     'You walk carefully across the slippery log...': '你小心翼翼地走过湿滑的圆木...',
-    'You carefully cross the bridge.': '你小心地过了桥。',
-    'You squeeze through the gap in the fence.': '你挤过了栅栏的缝隙。',
-    'You jump over the stile.': '你跳过了阶梯。',
-    'You climb up the rocks.': '你爬上了岩石。',
-    'You climb down the rocks.': '你爬下了岩石。',
-    'You just barely make it across.': '你勉强过去了。',
+    'You carefully cross the bridge.': '你小心地过了桥.',
+    'You squeeze through the gap in the fence.': '你挤过了栅栏的缝隙.',
+    'You jump over the stile.': '你跳过了阶梯.',
+    'You climb up the rocks.': '你爬上了岩石.',
+    'You climb down the rocks.': '你爬下了岩石.',
+    'You just barely make it across.': '你勉强过去了.',
 
     // --- Combat (additional) ---
-    'You are poisoned!': '你中毒了！',
-    'You have been poisoned!': '你已经中毒了！',
-    "You can't attack this NPC.": '你不能攻击这个NPC。',
-    'You are already under attack.': '你已经在战斗中了。',
-    "I can't attack that.": '我不能攻击那个。',
-    "I'm already under attack.": '我已经在战斗中了。',
-    'Eating heals 3 hitpoints.': '进食恢复了3点生命值。',
-    'It heals some health.': '它恢复了一些生命值。',
+    'You are poisoned!': '你中毒了!',
+    'You have been poisoned!': '你已经中毒了!',
+    "You can't attack this NPC.": '你不能攻击这个NPC.',
+    'You are already under attack.': '你已经在战斗中了.',
+    "I can't attack that.": '我不能攻击那个.',
+    "I'm already under attack.": '我已经在战斗中了.',
+    'Eating heals 3 hitpoints.': '进食恢复了3点生命值.',
+    'It heals some health.': '它恢复了一些生命值.',
 
     // --- Inventory (additional) ---
-    'Your inventory is too full to hold any more items.': '你的背包已满，无法容纳更多物品。',
-    "You can't carry any more items.": '你不能携带更多物品了。',
-    "You don't have enough inventory space.": '你没有足够的背包空间。',
-    'You do not have enough coins.': '你没有足够的金币。',
+    'Your inventory is too full to hold any more items.': '你的背包已满,无法容纳更多物品.',
+    "You can't carry any more items.": '你不能携带更多物品了.',
+    "You don't have enough inventory space.": '你没有足够的背包空间.',
+    'You do not have enough coins.': '你没有足够的金币.',
 
     // --- Examine (common) ---
-    'A heap of sacks.': '一堆麻袋。',
-    'A pile of rocks.': '一堆岩石。',
-    'A large table.': '一张大桌子。',
-    'A wooden door.': '一扇木门。',
-    'A very old looking door.': '一扇看起来很古老的门。',
-    'A barrel of water.': '一桶水。',
-    'A barrel full of finely sifted flour.': '一桶精细筛好的面粉。',
-    'A large collection of books.': '一大堆书。',
+    'A heap of sacks.': '一堆麻袋.',
+    'A pile of rocks.': '一堆岩石.',
+    'A large table.': '一张大桌子.',
+    'A wooden door.': '一扇木门.',
+    'A very old looking door.': '一扇看起来很古老的门.',
+    'A barrel of water.': '一桶水.',
+    'A barrel full of finely sifted flour.': '一桶精细筛好的面粉.',
+    'A large collection of books.': '一大堆书.',
 
     // --- Examine (high-frequency) ---
-    'A clue!': '一条线索！',
-    'A rocky outcrop.': '一片岩石露头。',
-    "I hope there's treasure in it.": '我希望里面有宝藏。',
-    'I can see fish swimming in the water.': '我能看到鱼在水中游动。',
-    "It's closed.": '它是关着的。',
-    'The door is closed.': '门是关着的。',
-    'A deposit of rocks.': '一片矿石沉积。',
-    'A wrought iron gate.': '一扇铸铁大门。',
-    'This tree has been cut down.': '这棵树已经被砍倒了。',
-    'A wooden gate.': '一扇木门。',
-    "One of RuneScape's many citizens.": 'RuneScape 的众多居民之一。',
-    "One of RuneScapes' many citizens.": 'RuneScape 的众多居民之一。',
-    'I should try cooking this.': '我应该试试烹饪这个。',
-    'I can climb this.': '我可以攀爬这个。',
-    'I can climb down this.': '我可以从这里爬下去。',
-    "It's open.": '它是开着的。',
-    "I wonder what's inside.": '我想知道里面有什么。',
-    "I wonder what's inside?": '我想知道里面有什么？',
-    'A professional gnome baller.': '一位专业的地精球员。',
-    'It actually smells quite good.': '闻起来其实挺不错的。',
-    'A portal from this mystical place.': '来自这个神秘之地的传送门。',
-    'A party balloon.': '一个派对气球。',
-    'A finely balanced throwing knife.': '一把精心打造的飞刀。',
+    'A clue!': '一条线索!',
+    'A rocky outcrop.': '一片岩石露头.',
+    "I hope there's treasure in it.": '我希望里面有宝藏.',
+    'I can see fish swimming in the water.': '我能看到鱼在水中游动.',
+    "It's closed.": '它是关着的.',
+    'The door is closed.': '门是关着的.',
+    'A deposit of rocks.': '一片矿石沉积.',
+    'A wrought iron gate.': '一扇铸铁大门.',
+    'This tree has been cut down.': '这棵树已经被砍倒了.',
+    'A wooden gate.': '一扇木门.',
+    "One of RuneScape's many citizens.": 'RuneScape 的众多居民之一.',
+    "One of RuneScapes' many citizens.": 'RuneScape 的众多居民之一.',
+    'I should try cooking this.': '我应该试试烹饪这个.',
+    'I can climb this.': '我可以攀爬这个.',
+    'I can climb down this.': '我可以从这里爬下去.',
+    "It's open.": '它是开着的.',
+    "I wonder what's inside.": '我想知道里面有什么.',
+    "I wonder what's inside?": '我想知道里面有什么?',
+    'A professional gnome baller.': '一位专业的地精球员.',
+    'It actually smells quite good.': '闻起来其实挺不错的.',
+    'A portal from this mystical place.': '来自这个神秘之地的传送门.',
+    'A party balloon.': '一个派对气球.',
+    'A finely balanced throwing knife.': '一把精心打造的飞刀.',
     'There is a powerful presence about these ruins...': '这些遗迹中有一股强大的力量...',
-    "It's missing a handle.": '它缺了一个把手。',
-    'A wooden crate for storage.': '一个用于储物的木箱。',
-    'A mysterious power emanates from this shrine.': '一股神秘的力量从这个神殿中散发出来。',
+    "It's missing a handle.": '它缺了一个把手.',
+    'A wooden crate for storage.': '一个用于储物的木箱.',
+    'A mysterious power emanates from this shrine.': '一股神秘的力量从这个神殿中散发出来.',
     'A mysterious power emanates from the talisman...': '一股神秘的力量从护符中散发出来...',
-    'Made from 100% real dragon hide.': '由100%真正的龙皮制成。',
-    'I need a closer look to identify this.': '我需要仔细看看才能辨认出这个。',
-    'Handy for boarding boats.': '方便上船。',
-    'An enchanted ring.': '一枚附魔戒指。',
-    'A silly pointed hat.': '一顶愚蠢的尖帽子。',
-    'Useful for putting things on.': '用来放东西的。',
-    'Oops!': '哎呀！',
+    'Made from 100% real dragon hide.': '由100%真正的龙皮制成.',
+    'I need a closer look to identify this.': '我需要仔细看看才能辨认出这个.',
+    'Handy for boarding boats.': '方便上船.',
+    'An enchanted ring.': '一枚附魔戒指.',
+    'A silly pointed hat.': '一顶愚蠢的尖帽子.',
+    'Useful for putting things on.': '用来放东西的.',
+    'Oops!': '哎呀!',
     'I wonder what this does...': '我想知道这是干什么用的...',
-    'A leafy bush.': '一丛茂密的灌木。',
-    'This tree contains dangerous insects no doubt.': '这棵树里无疑有危险的昆虫。',
-    'This needs refining.': '这个需要精炼。',
-    'Stoney!': '石头！',
-    'Perhaps I should search it.': '也许我应该搜索一下。',
-    "It's only useful for firewood now.": '它现在只能当柴火了。',
-    "It's a slightly magical stick.": '这是一根略带魔力的棍子。',
-    'A tree commonly found in Runescape.': '一棵在 RuneScape 中常见的树。',
-    'A large old oak tree.': '一棵又大又老的橡树。',
-    'A weeping willow.': '一棵垂柳。',
-    'This is a very old, very valuable yew tree.': '这是一棵非常古老、非常珍贵的紫杉。',
-    'A very old yew tree.': '一棵非常古老的紫杉。',
-    'A tree of considerable magical power.': '一棵拥有强大魔力的树。',
-    'A large maple tree.': '一棵大枫树。',
-    'Some sacks.': '一些麻袋。',
-    'A small table.': '一张小桌子。',
-    'A fireplace.': '一个壁炉。',
-    'A rickety ladder.': '一把摇摇晃晃的梯子。',
-    'A sturdy looking ladder.': '一把看起来很结实的梯子。',
-    'A ladder leading up.': '一把向上的梯子。',
-    'A ladder leading down.': '一把向下的梯子。',
-    'A spiraling staircase.': '一段螺旋楼梯。',
-    'A staircase leading up.': '一段向上的楼梯。',
-    'A staircase leading down.': '一段向下的楼梯。',
-    'The bank is open!': '银行开门了！',
-    'A sturdy set of iron railings.': '一组坚固的铁栏杆。',
-    'A small fishing net.': '一张小渔网。',
-    'A fishing rod.': '一根钓鱼竿。',
-    'A very sharp blade.': '一把非常锋利的刀刃。',
-    'Some kind of staff.': '某种法杖。',
-    'A strong looking bow.': '一把看起来很结实的弓。',
-    'A very powerful wand.': '一根非常强大的魔杖。',
-    'A very old amulet.': '一个非常古老的护符。',
-    'A very shiny ring.': '一枚闪闪发光的戒指。',
-    'Holy water in a vial.': '瓶装圣水。',
-    'A warm welcoming fire.': '一堆温暖的篝火。',
-    'Looks like it contains some sort of liquid.': '看起来里面装了某种液体。',
-    'These are${apos} fresh bones.': '这些是新鲜的骨头。',
-    'An altar to the gods.': '献给众神的祭坛。',
-    'It looks heavy.': '它看起来很重。',
-    'A very heavy looking anvil.': '一个看起来非常重的铁砧。',
-    'Hot enough to cook on.': '足够热，可以用来烹饪。',
-    'A very hot furnace.': '一个非常热的熔炉。',
-    'A large spinning wheel.': '一台大纺车。',
-    'Nicely crafted from local wood.': '用本地木材精心制作。',
-    'A long seat.': '一把长凳。',
-    'A plush cushioned throne.': '一把华丽的软垫王座。',
-    'A place to rest.': '一个休息的地方。',
-    'A well for collecting water.': '一口取水的井。',
-    'A dusty old bookcase.': '一个积满灰尘的旧书架。',
-    'Perhaps someone at the observatory can teach me to navigate?': '也许天文台的人可以教我导航？',
-    'Spikey!': '扎人的！',
+    'A leafy bush.': '一丛茂密的灌木.',
+    'This tree contains dangerous insects no doubt.': '这棵树里无疑有危险的昆虫.',
+    'This needs refining.': '这个需要精炼.',
+    'Stoney!': '石头!',
+    'Perhaps I should search it.': '也许我应该搜索一下.',
+    "It's only useful for firewood now.": '它现在只能当柴火了.',
+    "It's a slightly magical stick.": '这是一根略带魔力的棍子.',
+    'A tree commonly found in Runescape.': '一棵在 RuneScape 中常见的树.',
+    'A large old oak tree.': '一棵又大又老的橡树.',
+    'A weeping willow.': '一棵垂柳.',
+    'This is a very old, very valuable yew tree.': '这是一棵非常古老、非常珍贵的紫杉.',
+    'A very old yew tree.': '一棵非常古老的紫杉.',
+    'A tree of considerable magical power.': '一棵拥有强大魔力的树.',
+    'A large maple tree.': '一棵大枫树.',
+    'Some sacks.': '一些麻袋.',
+    'A small table.': '一张小桌子.',
+    'A fireplace.': '一个壁炉.',
+    'A rickety ladder.': '一把摇摇晃晃的梯子.',
+    'A sturdy looking ladder.': '一把看起来很结实的梯子.',
+    'A ladder leading up.': '一把向上的梯子.',
+    'A ladder leading down.': '一把向下的梯子.',
+    'A spiraling staircase.': '一段螺旋楼梯.',
+    'A staircase leading up.': '一段向上的楼梯.',
+    'A staircase leading down.': '一段向下的楼梯.',
+    'The bank is open!': '银行开门了!',
+    'A sturdy set of iron railings.': '一组坚固的铁栏杆.',
+    'A small fishing net.': '一张小渔网.',
+    'A fishing rod.': '一根钓鱼竿.',
+    'A very sharp blade.': '一把非常锋利的刀刃.',
+    'Some kind of staff.': '某种法杖.',
+    'A strong looking bow.': '一把看起来很结实的弓.',
+    'A very powerful wand.': '一根非常强大的魔杖.',
+    'A very old amulet.': '一个非常古老的护符.',
+    'A very shiny ring.': '一枚闪闪发光的戒指.',
+    'Holy water in a vial.': '瓶装圣水.',
+    'A warm welcoming fire.': '一堆温暖的篝火.',
+    'Looks like it contains some sort of liquid.': '看起来里面装了某种液体.',
+    'These are${apos} fresh bones.': '这些是新鲜的骨头.',
+    'An altar to the gods.': '献给众神的祭坛.',
+    'It looks heavy.': '它看起来很重.',
+    'A very heavy looking anvil.': '一个看起来非常重的铁砧.',
+    'Hot enough to cook on.': '足够热,可以用来烹饪.',
+    'A very hot furnace.': '一个非常热的熔炉.',
+    'A large spinning wheel.': '一台大纺车.',
+    'Nicely crafted from local wood.': '用本地木材精心制作.',
+    'A long seat.': '一把长凳.',
+    'A plush cushioned throne.': '一把华丽的软垫王座.',
+    'A place to rest.': '一个休息的地方.',
+    'A well for collecting water.': '一口取水的井.',
+    'A dusty old bookcase.': '一个积满灰尘的旧书架.',
+    'Perhaps someone at the observatory can teach me to navigate?': '也许天文台的人可以教我导航?',
+    'Spikey!': '扎人的!',
 
     // --- Shop (menus & messages) ---
     'Value': '估价',
@@ -1016,12 +1044,12 @@ const ZH_DICT: Record<string, string> = {
     // --- Shop (names & UI) ---
     "Gerrant's Fishy Business.": '杰兰特渔具店',
     'Right-click on shop to buy item - Right-click on inventory to sell item': '右键点击商店物品购买 - 右键点击背包物品出售',
-    "You can't sell this item to this shop.": '你不能把这个物品卖给这家商店。',
-    "You can't buy this item.": '你不能购买这个物品。',
-    'You feel weakened.': '你感到虚弱了。',
+    "You can't sell this item to this shop.": '你不能把这个物品卖给这家商店.',
+    "You can't buy this item.": '你不能购买这个物品.',
+    'You feel weakened.': '你感到虚弱了.',
     "Lowe's Archery Emporium": '洛弓箭商城',
     "Bob's Brilliant Axes": '鲍勃的精品斧头店',
-    "Zaff's Superior Staves!": '扎夫的高级法杖店！',
+    "Zaff's Superior Staves!": '扎夫的高级法杖店!',
     "Thessalia's Fine Clothes.": '塞萨利亚的精品服装店',
     "Varrock Swordshop.": '瓦洛克剑店',
     "Varrock General Store.": '瓦洛克杂货店',
@@ -1052,67 +1080,430 @@ const ZH_DICT: Record<string, string> = {
     "Wydin's Food Store.": '威丁的食品店',
 
     // --- Examine descriptions (common) ---
-    'A rocky outcrop.': '一处岩石露头。',
-    "It's closed.": '关着的。',
-    'The door is closed.': '门是关着的。',
-    'A deposit of rocks.': '一片岩石矿床。',
-    'A wrought iron gate.': '一扇铸铁门。',
-    'This tree has been cut down.': '这棵树已经被砍倒了。',
-    'I can climb this.': '我可以攀爬这个。',
-    'A wooden gate.': '一扇木门。',
-    'I can climb down this.': '我可以爬下去。',
-    "It's open.": '开着的。',
-    "I wonder what's inside.": '不知道里面有什么。',
-    'A wooden crate for storage.': '一个存放物品的木箱。',
-    'A mysterious power emanates from this shrine.': '这座神殿散发着神秘的力量。',
-    'A leafy bush.': '一丛茂盛的灌木。',
-    'A leafy shrub.': '一丛绿叶灌木。',
-    'Some beautiful flowers.': '一些美丽的花。',
-    'Solid bars of iron.': '坚固的铁栅栏。',
-    'A huge lump of rock.': '一大块巨石。',
-    "It's a flight of stairs.": '一段楼梯。',
-    'A sturdy wooden door.': '一扇坚固的木门。',
-    'A large stone block.': '一块大石头。',
-    'Used for storage.': '用来存放东西的。',
-    'I can see fish swimming in the water.': '我能看到鱼在水里游。',
-    'I can climb down these stairs.': '我可以走下这段楼梯。',
-    'A nicely fitted door.': '一扇安装精良的门。',
-    'A clue!': '一条线索！',
-    "I hope there's treasure in it.": '希望里面有宝藏。',
-    'I should try cooking this.': '我应该试试把这个烤了。',
-    'It actually smells quite good.': '闻起来其实挺香的。',
-    "It's a slightly magical stick.": '一根有点魔力的棍子。',
-    'Some nicely cooked fish.': '一些烤得很好的鱼。',
-    'A two handed sword.': '一把双手剑。',
-    'A razor sharp sword.': '一把锋利的剑。',
-    'A razor sharp longsword.': '一把锋利的长剑。',
-    'A medium square shield.': '一面中型方盾。',
-    'A medium sized helmet.': '一顶中型头盔。',
-    'A large metal shield.': '一面大型金属盾。',
-    'A full face helmet.': '一顶全面头盔。',
-    'Used for mining.': '用来采矿的。',
-    'I need to cook this first.': '我需要先把这个烤了。',
-    "One of RuneScape's many citizens.": 'RuneScape 的众多居民之一。',
-    "One of RuneScapes' many citizens.": 'RuneScape 的众多居民之一。',
-    'A holy man.': '一个虔诚的牧师。',
-    'An ugly green creature.': '一只丑陋的绿色生物。',
-    'The walking dead!': '行走的死者！',
-    'The strong arm of the law.': '法律的铁腕。',
-    'A fully grown feline.': '一只成年猫。',
-    'A friendly little pet.': '一只友好的小宠物。',
-    'Yep, definitely a chicken.': '没错，就是一只鸡。',
-    'He can look after my money.': '他可以帮我保管钱。',
-    'Issued by RuneScape Council to all new citizens.': '由 RuneScape 议会发放给所有新居民。',
+    'A rocky outcrop.': '一处岩石露头.',
+    "It's closed.": '关着的.',
+    'The door is closed.': '门是关着的.',
+    'A deposit of rocks.': '一片岩石矿床.',
+    'A wrought iron gate.': '一扇铸铁门.',
+    'This tree has been cut down.': '这棵树已经被砍倒了.',
+    'I can climb this.': '我可以攀爬这个.',
+    'A wooden gate.': '一扇木门.',
+    'I can climb down this.': '我可以爬下去.',
+    "It's open.": '开着的.',
+    "I wonder what's inside.": '不知道里面有什么.',
+    'A wooden crate for storage.': '一个存放物品的木箱.',
+    'A mysterious power emanates from this shrine.': '这座神殿散发着神秘的力量.',
+    'A leafy bush.': '一丛茂盛的灌木.',
+    'A leafy shrub.': '一丛绿叶灌木.',
+    'Some beautiful flowers.': '一些美丽的花.',
+    'Solid bars of iron.': '坚固的铁栅栏.',
+    'A huge lump of rock.': '一大块巨石.',
+    "It's a flight of stairs.": '一段楼梯.',
+    'A sturdy wooden door.': '一扇坚固的木门.',
+    'A large stone block.': '一块大石头.',
+    'Used for storage.': '用来存放东西的.',
+    'I can see fish swimming in the water.': '我能看到鱼在水里游.',
+    'I can climb down these stairs.': '我可以走下这段楼梯.',
+    'A nicely fitted door.': '一扇安装精良的门.',
+    'A clue!': '一条线索!',
+    "I hope there's treasure in it.": '希望里面有宝藏.',
+    'I should try cooking this.': '我应该试试把这个烤了.',
+    'It actually smells quite good.': '闻起来其实挺香的.',
+    "It's a slightly magical stick.": '一根有点魔力的棍子.',
+    'Some nicely cooked fish.': '一些烤得很好的鱼.',
+    'A two handed sword.': '一把双手剑.',
+    'A razor sharp sword.': '一把锋利的剑.',
+    'A razor sharp longsword.': '一把锋利的长剑.',
+    'A medium square shield.': '一面中型方盾.',
+    'A medium sized helmet.': '一顶中型头盔.',
+    'A large metal shield.': '一面大型金属盾.',
+    'A full face helmet.': '一顶全面头盔.',
+    'Used for mining.': '用来采矿的.',
+    'I need to cook this first.': '我需要先把这个烤了.',
+    "One of RuneScape's many citizens.": 'RuneScape 的众多居民之一.',
+    "One of RuneScapes' many citizens.": 'RuneScape 的众多居民之一.',
+    'A holy man.': '一个虔诚的牧师.',
+    'An ugly green creature.': '一只丑陋的绿色生物.',
+    'The walking dead!': '行走的死者!',
+    'The strong arm of the law.': '法律的铁腕.',
+    'A fully grown feline.': '一只成年猫.',
+    'A friendly little pet.': '一只友好的小宠物.',
+    'Yep, definitely a chicken.': '没错,就是一只鸡.',
+    'He can look after my money.': '他可以帮我保管钱.',
+    'Issued by RuneScape Council to all new citizens.': '由 RuneScape 议会发放给所有新居民.',
+    'He tries to keep order around here.': '他努力维持这里的秩序.',
+    'I could get a beer from him.': '我可以从他那买到啤酒.',
+    'The angry dead!': '愤怒的亡灵!',
+    'The walking dead.': '行走的死者.',
+    'A friendly not-so little pet.': '一只友好的, 不那么小的宠物.',
+    'Overgrown vermin.': '长大了的害虫.',
+    'Could do with gaining a few pounds.': '多长几斤肉就好了.',
+    'Sells stuff.': '卖东西的.',
+    'Rock with attitude.': '有态度的石头.',
+    'A sea bird.': '一只海鸟.',
+    'A mourner, or plague healer.': '一个哀悼者, 或者说瘟疫治疗师.',
+    'A professional gnome baller.': '一个专业的侏儒球手.',
+    'One of the Knights of the Round Table.': '圆桌骑士之一.',
+    'A wretched slave of Iban.': '伊班的一个可怜奴隶.',
+    'Likes fish... hates people.': '喜欢鱼... 讨厌人类.',
+    'An evil human cleric.': '一个邪恶的人类牧师.',
+    'A very angry nymph.': '一个非常愤怒的仙女.',
+    'I think this spider has been genetically modified.': '我觉得这只蜘蛛被基因改造过了.',
+    'A skavid.': '一只斯卡维德.',
+    'The cave guide.': '洞穴向导.',
+    "It's one of General Khazard's guards.": '这是卡扎德将军的一个卫兵.',
+    "It's a tree gnome.": '这是一个树精灵.',
+    'Salty old sea dog.': '老练的老水手.',
+    "One of Gertrude's Sons.": '格特鲁德的儿子之一.',
+    'Looks unnatural.': '看起来不太自然.',
+    'I can fish here.': '我可以在这里钓鱼.',
+    "He's a shape shifter.": '他是个变形者.',
+    'He looks a bit aggressive.': '他看起来有点好斗.',
+    "Even from here you can see this sheep's not well.": '即使从这里也能看出这只羊不太好.',
+    'An ogre that guards.': '一个守卫的食人魔.',
+    'A well dressed nobleman.': '一个穿着体面的贵族.',
+    'A small spider.': '一只小蜘蛛.',
+    'A giant spider.': '一只巨型蜘蛛.',
+    'Scary!': '好可怕!',
+    'A very large spider.': '一只非常大的蜘蛛.',
+    'A dirty rat.': '一只脏老鼠.',
+    'A giant rat.': '一只巨型老鼠.',
+    'A big ugly green creature.': '一个又大又丑的绿色生物.',
+    'A goblin.': '一个哥布林.',
+    'A vicious little imp.': '一个凶恶的小恶魔.',
+    'A cheeky little imp.': '一个调皮的小恶魔.',
+    'A dark wizard.': '一个黑暗法师.',
+    'A peaceful monk.': '一个和平的僧侣.',
+    'A wise druid.': '一个智慧的德鲁伊.',
+    'A pirate.': '一个海盗.',
+    'A tough looking barman.': '一个看起来很硬朗的酒保.',
+    'A man down on his luck.': '一个倒霉的人.',
+    'A dealer in potions.': '一个药剂商人.',
+    'A master fletcher.': '一个制箭大师.',
+    'A mighty warrior!': '一个强大的战士!',
+    'A big powerful dragon.': '一条又大又强的龙.',
+    'A fierce dragon with black scales!': '一条黑鳞的凶猛巨龙!',
+    'A slithering serpent.': '一条蜿蜒的蛇.',
+    'This kitten seems to like you.': '这只小猫好像喜欢你.',
+    'This cat definitely likes you.': '这只猫绝对喜欢你.',
+    'This cat is so well fed it can hardly move.': '这只猫吃得太好了, 都快走不动了.',
+    'A local civilian.': '一个本地居民.',
+    'A guard.': '一个卫兵.',
+    'A diligent guard.': '一个勤劳的卫兵.',
+    'A slightly nervous guard.': '一个有点紧张的卫兵.',
+    'A citizen of Al Kharid.': '阿尔卡里德的居民.',
+    'A dusty old suit of armour.': '一套落满灰尘的旧盔甲.',
+    // --- Town NPC descriptions ---
+    'Interesting assortment of clothes on offer...': '出售各种有趣的衣服...',
+    'A busy housewife.': '一个忙碌的家庭主妇.',
+    'A champion of a sales woman!': '一个出色的女推销员!',
+    'A mad scientist if ever I saw one!': '我见过最疯狂的科学家!',
+    'A mystical fount of knowledge.': '一个神秘的知识之泉.',
+    'A product of consumerist society.': '消费主义社会的产物.',
+    'A religious man... And occasional drunk.': '一个虔诚的人... 偶尔喝醉.',
+    'A short angry guy.': '一个矮小愤怒的家伙.',
+    'A strange little man.': '一个奇怪的小个子.',
+    'A tearful damsel, maybe I can help her?': '一个含泪的少女, 也许我能帮她?',
+    'A well fed looking farmer.': '一个看起来吃得很好的农夫.',
+    'A witch.': '一个女巫.',
+    'A young prince.': '一个年轻的王子.',
+    'A young sailor.': '一个年轻的水手.',
+    'An armourer.': '一个铠甲匠.',
+    'An elderly White Knight.': '一个年迈的白骑士.',
+    'An empowered woman.': '一个有力量的女人.',
+    'An expert on axes.': '一个斧头专家.',
+    'An expert on fishing.': '一个钓鱼专家.',
+    'An infamous bandit.': '一个臭名昭著的强盗.',
+    'An interesting assortment of items for sale.': '出售各种有趣的物品.',
+    'An old gardener.': '一个老园丁.',
+    'An old gypsy lady.': '一个年老的吉普赛女人.',
+    'An old motherly witch with a curious smile and a hooked nose.': '一个慈祥的老女巫, 带着好奇的微笑和鹰钩鼻.',
+    'An old sailor.': '一个老水手.',
+    'An old sea dog.': '一个老水手.',
+    'An old wizard.': '一个老巫师.',
+    'Animal skins are a speciality.': '兽皮是特色商品.',
+    'Anyone fancy a trim?': '有人想理发吗?',
+    'Buys wholesale, sells retail.': '批发买进, 零售卖出.',
+    'Duke Horacio of Lumbridge.': '伦布里奇的霍拉西奥公爵.',
+    'Dwarvish.': '矮人族的.',
+    'For the finest in armoured legware.': '最好的铠甲护腿在这.',
+    'For the interesting clothing items you just can\'t find elsewhere.': '在别处找不到的有趣服饰.',
+    'Guards the border.': '守卫边境.',
+    'He looks a little shifty.': '他看起来有点鬼鬼祟祟.',
+    'He looks big and dumb.': '他看起来又大又笨.',
+    'He looks holy.': '他看起来很神圣.',
+    'He looks kind of puny...': '他看起来有点弱小...',
+    'He looks scared.': '他看起来很害怕.',
+    'He runs a mining store.': '他经营一家矿业商店.',
+    'He runs a pickaxe store.': '他经营一家镐子商店.',
+    'He runs the museum.': '他管理博物馆.',
+    'He seems to sell tea.': '他好像在卖茶.',
+    'He smells funny.': '他闻起来怪怪的.',
+    "He's got the best armour around!": '他有附近最好的铠甲!',
+    'Helps people part with their money.': '帮助人们花钱.',
+    'Helps sell stuff.': '帮忙卖东西.',
+    'Helps the shop keeper sell swords.': '帮助店主卖剑.',
+    'Holy looking.': '看起来很神圣.',
+    'I could get a beer from her.': '我可以从她那买到啤酒.',
+    'I wonder if he wants to buy my junk?': '不知道他想不想买我的破烂?',
+    "I wonder who he's guarding?": '不知道他在守卫谁?',
+    "If crafting's your thing, he's your man!": '如果你喜欢制作, 他就是你要找的人!',
+    "If craftings your thing, he's your man!": '如果你喜欢制作, 他就是你要找的人!',
+    "If he doesn't have it, he can't sell it!": '如果他没有, 他就没法卖!',
+    'Indentured servant of a Knight.': '骑士的契约仆人.',
+    'Ironically, makes a living from swords.': '讽刺的是, 他靠卖剑为生.',
+    'Is here on work experience.': '在这里实习.',
+    'Kebabs are full of meaty goodness!': '烤肉串满满都是肉的美味!',
+    'Kind of funny looking.': '看起来有点滑稽.',
+    "Lady Keli's head guard.": '凯莉女士的卫队长.',
+    'Leader of the White Knights.': '白骑士的领袖.',
+    'Likes helping sell stuff.': '喜欢帮忙卖东西.',
+    'Likes his food to be kept fresh.': '喜欢食物保持新鲜.',
+    'Likes people spending money.': '喜欢人们花钱.',
+    'Likes you more the more you spend.': '你花得越多他越喜欢你.',
+    'Looks a bit holy.': '看起来有点神圣.',
+    'Looks down on his luck.': '看起来很倒霉.',
+    'Looks kind of obsessive...': '看起来有点偏执...',
+    'Looks kind of shifty...': '看起来有点鬼鬼祟祟...',
+    'Looks very holy.': '看起来很神圣.',
+    'Loves his gold!': '热爱他的黄金!',
+    'Makes his money selling rocks.': '靠卖石头赚钱.',
+    'Manufacturer of fine leathers.': '精制皮革制造商.',
+    'Master of the guild.': '公会大师.',
+    'Master of the mystical make-over.': '神秘变身大师.',
+    'Nice armour!': '好铠甲!',
+    'Nice eyes.': '眼睛真好看.',
+    'One of the citizens of Al-Kharid.': '阿尔卡里德的居民之一.',
+    "One of the king's knights.": '国王的骑士之一.',
+    "Part of Al-Kharid's elite fighting force.": '阿尔卡里德精英战斗部队的一员.',
+    'Rather dense and soppy looking.': '看起来又笨又傻.',
+    'Reldo the librarian.': '图书管理员 Reldo.',
+    'Runes are his passion.': '符文是他的热情所在.',
+    'Seems very well off.': '看起来很富裕.',
+    'Sells arrows.': '卖箭的.',
+    'Sells superior scimitars.': '卖高级弯刀的.',
+    'Sells superior staffs.': '卖高级法杖的.',
+    'Servant of the Duke of Lumbridge.': '伦布里奇公爵的仆人.',
+    'She comes from Al-Kharid.': '她来自阿尔卡里德.',
+    "She doesn't look too happy.": '她看起来不太开心.',
+    'She looks quite experienced.': '她看起来很有经验.',
+    'She seems like a nice sort of person.': '她看起来是个好人.',
+    "She's an expert on armoured skirts!": '她是铠甲裙的专家!',
+    'The chancellor to the Emir.': '埃米尔的大臣.',
+    'The head cook of Lumbridge castle.': '伦布里奇城堡的主厨.',
+    'The head of the palace guard.': '皇宫卫队长.',
+    'The mace salesman.': '锤子推销员.',
+    'The man with the armour.': '那个穿铠甲的人.',
+    "Varrocks' resident monarch.": '瓦洛克的常驻君主.',
+    'Very snappily dressed!': '穿着非常时髦!',
+    'Works on commission.': '靠佣金工作.',
+    // --- Loc descriptions (common) ---
+    "I'm guessing it's for making womens clothes.": '我猜这是用来做女装的.',
+    'Items for making clothes are kept on here.': '这里放着做衣服用的材料.',
+    'This stall smells great.': '这个摊位闻起来真香.',
+    'Bread cakes and pastries.': '面包蛋糕和糕点.',
+    'The bank teller will serve you from here.': '银行出纳员会在这里为你服务.',
+    'A wooden barrel for storage.': '一个存储用的木桶.',
+    'A woven storage basket.': '一个编织的储物篮.',
+    'A good source of books!': '书的好来源!',
+    'Lots of books.': '很多书.',
+    'Shelves filled with interesting books.': '架子上放满了有趣的书.',
+    'A pile of boxes for storage.': '一堆存储用的箱子.',
+    'A large bubbling cauldron, smells... Ugh!': '一个冒泡的大锅, 闻起来... 呃!',
+    'A huge lump of rock.': '一大块巨石.',
+    'A large stone block.': '一块大石头.',
+    'A pile of bricks.': '一堆砖块.',
+    'Good for sweeping.': '适合扫地.',
+    'Great for sleeping in.': '非常适合睡觉.',
+    'Lovely comfy looking big bed.': '一张看起来又大又舒服的床.',
+    'A bed fit for a king.': '一张适合国王的床.',
+    'A drab looking bed.': '一张看起来很朴素的床.',
+    'A stylish looking bed.': '一张看起来很时尚的床.',
+    'The perfect place to store things.': '存放东西的完美地方.',
+    'Ding-Dong!': '叮-咚!',
+    'One horse power, wooden suspension. A beauty.': '一匹马力, 木制悬挂. 真漂亮.',
+    "It's a war machine.": '这是一台战争机器.',
+    'It looks cold in there.': '里面看起来很冷.',
+    'Solid rock from the cave floor.': '洞穴地面的坚硬岩石.',
+    "This needs dusting before I'll sit on it.": '这个需要先掸掸灰我才会坐.',
+    'Tread carefully!': '小心行走!',
+    'How much does this weigh?': '这个有多重?',
+    'Dead animal head. Lovely.': '动物的头骨. 真好看.',
+    "How do these things manage to grow?": '这些东西怎么能长出来?',
+    "It's amazing what bees produce!": '蜜蜂能产出的东西真是太神奇了!',
+    "I shudder to think what has taken place here.": '想到这里发生过什么我就不寒而栗.',
+    'A standard of Asgarnia.': '阿斯加尼亚的旗帜.',
+    'A standard of Kandarin.': '坎达林的旗帜.',
+    'A standard of Misthalin.': '密斯塔林的旗帜.',
+    'A standard of Varrock.': '瓦洛克的旗帜.',
+    'A standard of the gnome race.': '侏儒族的旗帜.',
+    // --- Statues / monuments ---
+    'What a good likeness!': '真像!',
+    'A depiction of a great dwarf miner.': '一位伟大的矮人矿工的雕像.',
+    'Intimidating!': '令人生畏!',
+    'A depiction of a famous gnome baller.': '一位著名的侏儒球手的雕像.',
+    'A depiction of a famous gnome warrior.': '一位著名的侏儒战士的雕像.',
+    'The head and shoulders of a famous gnome.': '一位著名侏儒的头像和肩像.',
+    "Its' eyes stare off into the distance...": '它的眼睛凝望着远方...',
+    'An imposing stone structure.': '一座气势宏伟的石头建筑.',
+    'A column of elemental power.': '一根元素之力的石柱.',
+    'A carving of a figure from the history of RuneScape.': 'RuneScape 历史上一位人物的雕刻.',
+    'An expertly chiselled statue of a bird.': '一尊精心雕刻的鸟类雕像.',
+    'An expertly chiselled statue.': '一尊精心雕刻的雕像.',
+    'An unusual symbol of ancient times.': '古代的一个不寻常的符号.',
+    'I wonder how accurate a representation this is.': '不知道这个有多逼真.',
+    'A depiction of the evil god Zamorak.': '邪恶之神扎莫拉克的雕像.',
+    'A depiction that chills one to the bone.': '让人不寒而栗的雕像.',
+    'A monarch chiselled in stone.': '一位石雕君主.',
+    'A sculpture of a monarch.': '一尊君主雕塑.',
+    'This person was of great importance.': '这个人曾非常重要.',
+    'A huge carving of a ancient race.': '一个古老种族的巨大雕刻.',
+    'The remiains of someone lie inside.': '某人的遗骸安放在里面.',
+    "'Here lies...' is all I can read.": "'这里安葬着...'是我能读到的全部.",
+    'The inscription is worn away and unreadable.': '铭文已经磨损, 无法辨认.',
+    'A simple marker for a forgotten person.': '一个被遗忘之人的简单标记.',
+    'A monument to a special person.': '一座纪念特别之人的纪念碑.',
+    'Whoever bought this must have really cared for the inhabitant.': '买这个的人一定非常在意里面的人.',
+    'An old crumbled pillar.': '一根已经碎裂的古老柱子.',
+    'A part of an old temple.': '一座古老神殿的一部分.',
+    'A very tall column of ice.': '一根非常高的冰柱.',
+    "Patterns of light dance hypnotically across the pool's surface.": '光的图案在池面上催眠般地舞动着.',
+    // --- Doors / gates / walls ---
+    'A closed door.': '一扇关着的门.',
+    'The door is open.': '门是开着的.',
+    'This door is closed.': '这扇门是关着的.',
+    'This door requires a key.': '这扇门需要一把钥匙.',
+    'Securely fastened shut.': '牢牢地锁住了.',
+    'The door to the champion\'s guild.': '冠军公会的门.',
+    'A door to a grand place.': '通往一个宏伟地方的门.',
+    'This door has been boarded up.': '这扇门已经被钉死了.',
+    'A metal gate bars your way': '一扇铁门挡住了你的去路',
+    'Stops people walking past.': '阻止人们通过.',
+    'Suspiciously hole shaped.': '可疑的洞形.',
+    'The base of the archway.': '拱门的底部.',
+    'The top of the archway.': '拱门的顶部.',
+    'An entranceway into the dungeon.': '进入地牢的入口.',
+    'Flags marking the entrance to the arena.': '标记竞技场入口的旗帜.',
+    'Crate wall surprisingly sturdy looking.': '板条箱墙看起来出奇地坚固.',
+    // --- Furniture / indoor ---
+    'A cupboard.': '一个橱柜.',
+    'The curtain is open.': '窗帘是开着的.',
+    'This lets in more light.': '这让更多光线进来.',
+    'An ornamental lighting fixture.': '一盏装饰性灯具.',
+    'Posh candlesticks.': '豪华烛台.',
+    'Scary lighting apparatus.': '吓人的照明设备.',
+    'Not as nice as some.': '不如某些的好看.',
+    'An open chest.': '一个打开的箱子.',
+    'The ground flour comes down from the millstones above.': '磨好的面粉从上面的磨石落下.',
+    'Animals have no table manners.': '动物没有餐桌礼仪.',
+    'This drain leads from the sink to the sewers below.': '这个排水沟从水槽通向下面的下水道.',
+    'A recently extinguished fire.': '一堆刚熄灭的火.',
+    'Hot!': '好烫!',
+    // --- Ladders / ropes ---
+    'An escape route.': '一条逃生路线.',
+    'I can climb up this.': '我可以爬上去.',
+    'A rope hangs here': '一根绳子挂在这里',
+    "I'm not allowed to climb this ladder.": '我不被允许爬这个梯子.',
+    "It's useless.": '没什么用.',
+    'A slippery log I can walk across.': '一根我可以走过去的湿滑木头.',
+    // --- Nature / outdoor ---
+    'This has broad leaves.': '这个有宽大的叶子.',
+    'Found near the water\'s edge.': '在水边发现的.',
+    'A water feature.': '一个水景.',
+    'Probably pilot error.': '可能是飞行员失误.',
+    "It's to wet for firewood.": '太潮了, 不能当柴火.',
+    "A flag flies here.": '这里飘着一面旗帜.',
+    // --- Signposts ---
+    'This tells you which way is which.': '这个告诉你哪个方向是哪.',
+    'A signpost!': '一个路标!',
+    'A signpost.': '一个路标.',
+    'North to Varrock :: East to Al-Kharid.': '北 -> 瓦洛克 :: 东 -> 阿尔卡里德.',
+    'North to Draynor Village :: East to Varrock.': '北 -> 德雷诺村 :: 东 -> 瓦洛克.',
+    'North to Draynor Village.': '北 -> 德雷诺村.',
+    'North to Draynor Manor :: East to Lumbridge.': '北 -> 德雷诺庄园 :: 东 -> 伦布里奇.',
+    'South to  Wizards Tower ::  West to Asgarnia.': '南 -> 巫师塔 :: 西 -> 阿斯加尼亚.',
+    'South to Lumbridge :: West to Varrock :: East to Digsite.': '南 -> 伦布里奇 :: 西 -> 瓦洛克 :: 东 -> 挖掘场.',
+    'South to Al-Kharid :: West to Lumbridge :: East to Digsite.': '南 -> 阿尔卡里德 :: 西 -> 伦布里奇 :: 东 -> 挖掘场.',
+    'North to Varrock :: East to digsite.': '北 -> 瓦洛克 :: 东 -> 挖掘场.',
+    'South to Wizards Tower :: North to Draynor Village :: East to Lumbridge.': '南 -> 巫师塔 :: 北 -> 德雷诺村 :: 东 -> 伦布里奇.',
+    // --- Trees ---
+    'One of the most common trees in RuneScape.': 'RuneScape 中最常见的树之一.',
+    'A commonly found tree.': '一棵常见的树.',
+    'A tree commonly found in Runescape.': '一棵在 RuneScape 中常见的树.',
+    'A leafy tree.': '一棵枝繁叶茂的树.',
+    'A hardy evergreen tree.': '一棵耐寒的常绿树.',
+    'A healthy young tree.': '一棵健康的小树.',
+    'A tall palm tree.': '一棵高大的棕榈树.',
+    'A terribly tall tropical tree.': '一棵高得吓人的热带树.',
+    'A tree found in tropical areas.': '一棵在热带地区发现的树.',
+    'An exotic looking tree.': '一棵看起来很奇特的树.',
+    'An old weather beaten tree.': '一棵饱经风霜的老树.',
+    'An unusual tree grows here.': '这里长着一棵不寻常的树.',
+    'An ancient magical tree.': '一棵古老的魔法树.',
+    'A yew tree.': '一棵紫杉树.',
+    'A rare tree.': '一棵稀有的树.',
+    'A splendid tree.': '一棵壮丽的树.',
+    'A beautiful old oak.': '一棵美丽的老橡树.',
+    'A large evergreen tree.': '一棵常绿大树.',
+    'An ancient looking tree.': '一棵看起来很古老的树.',
+    'This tree has fallen to the ground.': '这棵树已经倒在地上.',
+    'This tree has long been dead.': '这棵树早就死了.',
+    'This tree is particularly leafy.': '这棵树叶子特别多.',
+    // --- Bench / Furniture ---
+    'Sit back and enjoy the view.': '坐下来欣赏风景吧.',
+    'Sit back and relax...': '坐下来放松一下...',
+    'A handy workbench for a handy person.': '一张给能工巧匠的实用工作台.',
+    'An ogre bench, useful for taking all that weight off their legs.': '一条食人魔长椅, 可以让他们沉重的双腿休息一下.',
+    'An old bench, probably made from wood in this swamp.': '一条旧长椅, 大概是用沼泽里的木头做的.',
+    // --- Common loc descriptions ---
+    'A range for cooking food on.': '用来烹饪食物的灶台.',
+    'A cooking range.': '一个烹饪灶台.',
+    'A fire for cooking.': '用来烹饪的火堆.',
+    'A fire.': '一堆火.',
+    'A bank booth.': '一个银行柜台.',
+    'A spinning wheel.': '一架纺车.',
+    'An anvil.': '一个铁砧.',
+    'A hot furnace.': '一个烧热的熔炉.',
+    'A bed.': '一张床.',
+    'A bookcase.': '一个书架.',
+    'A table.': '一张桌子.',
+    'A chair.': '一把椅子.',
+    'A ladder.': '一架梯子.',
+    'A barrel.': '一个桶.',
+    'A bush.': '一丛灌木.',
+    'A crate.': '一个板条箱.',
+    'A rock.': '一块石头.',
+    'Some rocks.': '一些石头.',
+    'A large rock.': '一块大石头.',
+    'A well.': '一口井.',
+    'A signpost.': '一个路标.',
+    'A chest.': '一个箱子.',
+    'An old chest.': '一个旧箱子.',
+    'A dead tree.': '一棵枯树.',
+    'A bare tree.': '一棵光秃秃的树.',
+    'A tree stump.': '一个树桩.',
+    'A stone altar.': '一座石祭坛.',
+    'A very old altar.': '一座很古老的祭坛.',
+    'An altar to the gods.': '一座献给众神的祭坛.',
+    'The mine entrance.': '矿洞入口.',
+    'The cave entrance.': '洞穴入口.',
+    'A dark passage.': '一条黑暗的通道.',
+    'The door is locked.': '门被锁住了.',
+    'The door seems to be locked.': '门好像被锁住了.',
+    'A very sturdy looking door.': '一扇看起来非常坚固的门.',
+    'A garden bench.': '一张花园长椅.',
+    'A pile of logs.': '一堆原木.',
+    'Coins can be stored here for safekeeping.': '可以把金币存放在这里保管.',
 
     // --- Report abuse ---
     'Report abuse': '举报滥用',
     'Close Window': '关闭窗口',
-    'This form is for reporting players who are breaking our rules.': '此表单用于举报违反规则的玩家。',
-    'Using it sends a snapshot of the last 60 secs of activity to us.': '提交后将发送最近60秒的活动记录。',
-    'If you misuse this form, you will be banned.': '如果你滥用此表单，你将被封禁。',
+    'This form is for reporting players who are breaking our rules.': '此表单用于举报违反规则的玩家.',
+    'Using it sends a snapshot of the last 60 secs of activity to us.': '提交后将发送最近60秒的活动记录.',
+    'If you misuse this form, you will be banned.': '如果你滥用此表单,你将被封禁.',
     'First please enter the name of the offending player below:': '请先在下方输入违规玩家的名字:',
-    'Then click below to indicate which of our 12 rules is being broken.': '然后点击下方选择违反了哪条规则。',
-    'For a detailed explanation of each rule please read the manual on our website.': '如需了解每条规则的详细说明，请查阅官网手册。',
+    'Then click below to indicate which of our 12 rules is being broken.': '然后点击下方选择违反了哪条规则.',
+    'For a detailed explanation of each rule please read the manual on our website.': '如需了解每条规则的详细说明,请查阅官网手册.',
     '1: Offensive language': '1: 攻击性语言',
     '2: Item scamming': '2: 物品诈骗',
     '3: Password scamming': '3: 密码诈骗',
@@ -1127,7 +1518,7 @@ const ZH_DICT: Record<string, string> = {
     '12: Real world item trading': '12: 现实交易游戏物品',
 
     // --- Music ---
-    'You have not unlocked this piece of music yet!': '你还没有解锁这首音乐！',
+    'You have not unlocked this piece of music yet!': '你还没有解锁这首音乐!',
     // Music track names
     'Adventure': '冒险',
     'Al Kharid': '阿尔卡里德',
@@ -1580,6 +1971,175 @@ const ZH_NAMES: Record<string, string> = {
     'Bookcase': '书架',
     'Bed': '床',
     'Fire': '火堆',
+    'Bench': '长椅',
+    'Picnic bench': '野餐椅',
+    'Barstool': '吧台凳',
+    'Fence': '栅栏',
+    'Broken fence': '坏栅栏',
+    'Hedge': '树篱',
+    'Bush': '灌木',
+    'Flower': '花',
+    'Flowers': '花丛',
+    'Flowerbed': '花坛',
+    'Fountain': '喷泉',
+    'Statue': '雕像',
+    'Signpost': '路标',
+    'Bridge': '桥',
+    'Cart': '手推车',
+    'Broken cart': '坏手推车',
+    'Boxes': '箱子',
+    'Crates': '板条箱堆',
+    'Plant': '植物',
+    'Pond': '池塘',
+    'Rock': '岩石',
+    'Rocks': '岩石',
+    'Log': '原木',
+    'Stump': '树桩',
+    'Tree stump': '树桩',
+    'Dead tree': '枯树',
+    'Evergreen': '常青树',
+    'Oak': '橡树',
+    'Willow': '柳树',
+    'Maple tree': '枫树',
+    'Yew': '紫杉',
+    'Magic tree': '魔法树',
+    'Wall': '墙',
+    'Cave': '洞穴',
+    'Tunnel': '隧道',
+    'Lever': '拉杆',
+    'Trap door': '活板门',
+    'Trapdoor': '活板门',
+    'Curtain': '窗帘',
+    'Candle': '蜡烛',
+    'Torch': '火把',
+    'Hay bale': '干草垛',
+    'Wheat': '麦子',
+    'Potato': '土豆',
+    'Cabbage': '卷心菜',
+    'Onion': '洋葱',
+    'Mushroom': '蘑菇',
+    'Sink': '水槽',
+    'Oven': '烤炉',
+    'Sack': '麻袋',
+    'Coffin': '棺材',
+    'Gravestone': '墓碑',
+    'Pillar': '柱子',
+    'Banner': '旗帜',
+    'Flag': '旗帜',
+    'Cannon': '大炮',
+    'Clothes model': '衣服模型',
+    'Clothes shop': '服装店',
+    'Broken cart': '坏手推车',
+    'Broken cart wheel': '坏车轮',
+    'Boxes': '箱子堆',
+    'Cabinet': '柜子',
+    'Cauldron': '大锅',
+    'Bell': '钟',
+    'Bath screen': '浴帘',
+    'Bay window': '凸窗',
+    'Broom': '扫帚',
+    'Candles': '蜡烛',
+    'Basket': '篮子',
+    'Boulder': '巨石',
+    'Bricks': '砖块',
+    'Campsite bed': '营地床铺',
+    'Catapult': '投石车',
+    'Cave entrance': '洞穴入口',
+    'Cave rocks': '洞穴岩石',
+    'Mine entrance': '矿洞入口',
+    'Stall': '摊位',
+    "Baker's stall": '面包摊',
+    'Bakery stall': '烘焙摊',
+    'Fur stall': '毛皮摊',
+    'Silver stall': '银器摊',
+    'Gem stall': '宝石摊',
+    'Spice stall': '香料摊',
+    'Silk stall': '丝绸摊',
+    'Bookcase': '书架',
+    'Bookshelves': '书架',
+    'Bed': '床',
+    'Counter': '柜台',
+    'Desk': '书桌',
+    'Wardrobe': '衣柜',
+    'Cupboard': '橱柜',
+    'Drawers': '抽屉',
+    'Shelves': '架子',
+    'Stairs': '楼梯',
+    'Staircase': '楼梯',
+    'Curtain': '窗帘',
+    'Window': '窗户',
+    'Mirror': '镜子',
+    'Painting': '画',
+    'Rug': '地毯',
+    'Carpet': '地毯',
+    'Clock': '时钟',
+    'Piano': '钢琴',
+    'Organ': '管风琴',
+    'Trapdoor': '活板门',
+    'Trap door': '活板门',
+    'Manhole': '下水道口',
+    'Lever': '拉杆',
+    'Pipe': '管道',
+    'Rope': '绳子',
+    'Sack': '麻袋',
+    'Coffin': '棺材',
+    'Gravestone': '墓碑',
+    'Monument': '纪念碑',
+    'Pillar': '柱子',
+    'Column': '柱子',
+    'Fountain of Heroes': '英雄之泉',
+    'Standard': '旗帜',
+    'Statue of Saradomin': '萨拉多明雕像',
+    'Statue of Zamorak': '扎莫拉克雕像',
+    'Statue of Guthix': '古斯克斯雕像',
+    'Statue of a king': '国王雕像',
+    'Statue of a queen.': '女王雕像',
+    'Statue of a warrior': '战士雕像',
+    'Mysterious statue': '神秘雕像',
+    'Eerie statue': '诡异雕像',
+    'Tribal statue': '部落雕像',
+    'Dwarf statue': '矮人雕像',
+    'Gnome statue': '侏儒雕像',
+    'Obelisk': '方尖碑',
+    'Obelisk of Air': '风之方尖碑',
+    'Obelisk of Water': '水之方尖碑',
+    'Obelisk of Earth': '土之方尖碑',
+    'Obelisk of Fire': '火之方尖碑',
+    'Shrine': '神殿',
+    'Totem Pole': '图腾柱',
+    'Tombstone': '墓碑',
+    'Grave marker': '墓标',
+    'Small gravestone': '小墓碑',
+    'Large grave': '大坟墓',
+    'Large grave stone': '大墓碑',
+    'Ice Column': '冰柱',
+    'Ruined Pillar': '残破柱子',
+    'Altar slab': '祭坛石板',
+    'Sparkling pool': '闪耀之池',
+    'Notice board': '公告板',
+    'Poster': '海报',
+    'Hanging banner': '悬挂旗帜',
+    'Doors': '大门',
+    'Doorway': '门廊',
+    'Dungeon door': '地牢门',
+    'Blacksmiths door': '铁匠铺门',
+    'Boarded-up door': '钉死的门',
+    'Drain': '排水沟',
+    'Gangplank': '跳板',
+    'Entrance': '入口',
+    'Henge': '石阵',
+    'Chandalier': '吊灯',
+    'Flour bin': '面粉箱',
+    'Food trough': '食槽',
+    'Fire remains': '火堆残迹',
+    'Climbing rope': '攀爬绳',
+    'Bell rope': '钟绳',
+    'Log balance': '平衡木',
+    'Balancing ledge': '平衡台',
+    'Statue steps.': '雕像台阶',
+    'Jungle plant': '丛林植物',
+    'Bullrushes': '芦苇',
+    'Cactus': '仙人掌',
 
     // ===== NPCs =====
     'Man': '男人',
@@ -2682,6 +3242,91 @@ const COMMON_LOCS: Record<string, string> = {
     'spice stall': '香料摊', 'tea stall': '茶叶摊',
     'market stall': '市场摊位',
     'fairy market stall': '仙女市场摊位',
+    // Fern variants
+    'small fern': '小蕨类', 'large fern': '大蕨类', 'ferns': '蕨类',
+    'tall grass': '高草', 'long grass': '长草', 'dry grass': '干草',
+    // Tree/plant variants
+    'small tree': '小树', 'large tree': '大树', 'old tree': '老树',
+    'small plant': '小植物', 'large plant': '大植物',
+    'dead plant': '枯植物', 'dead bush': '枯灌木',
+    'small bush': '小灌木', 'large bush': '大灌木',
+    'leafy tree': '茂密的树', 'wilted plant': '枯萎的植物',
+    // Rock/stone variants
+    'small rocks': '小石头', 'large rocks': '大石头',
+    'dark rocks': '黑色岩石', 'mossy rock': '长苔的岩石',
+    'small stone': '小石头', 'large stone': '大石头',
+    'flat rock': '扁平岩石', 'sharp rocks': '尖锐的岩石',
+    // Common scenery
+    'camp fire': '营火', 'campfire': '营火',
+    'bones': '骨头', 'skeleton': '骷髅',
+    'rubble': '碎石', 'debris': '残骸',
+    'log': '圆木', 'logs': '圆木',
+    'bush patch': '灌木丛', 'flower patch': '花圃',
+    'garden': '花园', 'pond': '池塘', 'pool': '水池',
+    'puddle': '水坑', 'stream': '溪流', 'river': '河流',
+    'waterfall': '瀑布', 'lake': '湖', 'sea': '海',
+    'hill': '山丘', 'mountain': '山', 'cliff': '悬崖',
+    'path': '小路', 'road': '道路', 'track': '小径',
+    'arch': '拱门', 'archway': '拱道', 'column': '圆柱',
+    'pipe': '管道', 'chimney': '烟囱',
+    'roof': '屋顶', 'floor': '地板', 'ground': '地面',
+    'ceiling': '天花板', 'beam': '横梁',
+    'cobweb': '蛛网', 'cobwebs': '蛛网',
+    'ivy': '常春藤', 'weeds': '杂草',
+    'moss': '苔藓', 'lichen': '地衣',
+    'stump': '树桩', 'log pile': '木头堆',
+    'woodpile': '木柴堆', 'lumber': '木材',
+    // Furniture & decoration
+    'candle': '蜡烛', 'candlestick': '烛台',
+    'chandelier': '吊灯', 'lantern': '灯笼', 'lamp': '灯',
+    'mirror': '镜子', 'tapestry': '挂毯',
+    'vase': '花瓶', 'pot': '罐子', 'jug': '壶',
+    'bucket': '桶', 'tub': '浴盆',
+    'hammock': '吊床', 'mat': '垫子', 'carpet': '地毯',
+    'curtains': '窗帘', 'drapes': '帷幔',
+    'cabinet': '橱柜', 'display case': '展示柜',
+    // Signs
+    'shop door': '商店门', 'house door': '房门',
+    'wooden door': '木门', 'iron door': '铁门',
+    'locked door': '上锁的门', 'closed door': '关着的门',
+    'open door': '开着的门', 'broken door': '损坏的门',
+    'prison door': '牢房门', 'cell door': '牢门',
+    'wooden fence': '木栅栏', 'iron fence': '铁栅栏',
+    'broken fence': '损坏的栅栏',
+    'wooden gate': '木门', 'iron gate': '铁门',
+    // Building features
+    'window': '窗户', 'shutters': '百叶窗',
+    'balcony': '阳台', 'porch': '门廊',
+    'tower': '塔', 'spire': '尖塔',
+    'dome': '圆顶', 'turret': '角楼',
+    // Mining
+    'copper ore': '铜矿', 'tin ore': '锡矿',
+    'iron ore': '铁矿', 'coal ore': '煤矿',
+    'gold ore': '金矿', 'silver ore': '银矿',
+    'mithril ore': '秘银矿', 'adamantite ore': '精金矿',
+    'runite ore': '符文矿',
+};
+
+// Scenery adjective prefixes for pattern-based name translation
+const SCENERY_PREFIX: Record<string, string> = {
+    'small': '小', 'large': '大', 'tall': '高', 'short': '矮',
+    'old': '古老的', 'young': '年轻的', 'ancient': '远古的',
+    'dead': '枯', 'dying': '垂死的', 'wilted': '枯萎的',
+    'broken': '损坏的', 'crumbling': '破碎的', 'ruined': '废弃的',
+    'collapsed': '倒塌的', 'damaged': '受损的', 'worn': '磨损的',
+    'dark': '黑暗的', 'bright': '明亮的', 'glowing': '发光的',
+    'lit': '点燃的', 'unlit': '未点燃的',
+    'empty': '空的', 'full': '满的',
+    'open': '打开的', 'closed': '关着的', 'locked': '上锁的',
+    'rusty': '生锈的', 'mossy': '长苔的', 'dusty': '布满灰尘的',
+    'dry': '干燥的', 'wet': '潮湿的', 'frozen': '冰冻的',
+    'burnt': '烧焦的', 'charred': '炭化的',
+    'strange': '奇怪的', 'mysterious': '神秘的', 'odd': '古怪的',
+    'ornate': '华丽的', 'crude': '粗糙的', 'rough': '粗糙的',
+    'smooth': '光滑的', 'flat': '平坦的', 'sharp': '尖锐的',
+    'heavy': '沉重的', 'light': '轻的',
+    'wooden': '木制的', 'stone': '石制的', 'iron': '铁制的',
+    'leafy': '茂密的', 'thorny': '多刺的', 'prickly': '带刺的',
 };
 
 // Pattern-based name translation fallback
@@ -2691,6 +3336,14 @@ function patternTranslateName(name: string): string | undefined {
     // Check common items/locs maps
     const common = COMMON_ITEMS[lower] ?? COMMON_LOCS[lower];
     if (common !== undefined) return common;
+
+    // Pattern: "Adjective Base" for scenery (e.g. "Small fern" → "小蕨类")
+    for (const [prefix, prefixZh] of Object.entries(SCENERY_PREFIX)) {
+        if (!lower.startsWith(prefix + ' ')) continue;
+        const base = lower.slice(prefix.length + 1);
+        const baseZh = COMMON_LOCS[base] ?? COMMON_ITEMS[base] ?? ZH_NAMES_LOWER.get(base);
+        if (baseZh !== undefined) return prefixZh + baseZh;
+    }
 
     // Pattern: "Metal WeaponType" or "Metal WeaponType(p)" etc.
     for (const [metal, metalZh] of Object.entries(METAL_PREFIX)) {
@@ -2837,7 +3490,7 @@ export function t(text: string, langSetting: number): string {
         const prefix = congratsMatch[1] || '';
         const skill = congratsMatch[2];
         const skillZh = LEVELUP_SKILL_ZH[skill] ?? skill;
-        return prefix + '恭喜你，你的' + skillZh + '等级提升了！';
+        return prefix + '恭喜你,你的' + skillZh + '等级提升了!';
     }
     // Pattern: "Your SKILL level is now NUMBER." or "Your hitpoints are now NUMBER."
     const levelNowMatch = text.match(/^Your (.+?) (?:level is|are) now (\d+)\.$/);
@@ -2845,7 +3498,7 @@ export function t(text: string, langSetting: number): string {
         const skill = levelNowMatch[1];
         const level = levelNowMatch[2];
         const skillZh = LEVELUP_SKILL_ZH[skill] ?? skill;
-        return '你的' + skillZh + '等级现在是 ' + level + '。';
+        return '你的' + skillZh + '等级现在是 ' + level + '.';
     }
     // Pattern: "Level X" → "等级 X"
     const levelMatch = text.match(/^Level (\d+)$/);
@@ -2887,7 +3540,7 @@ export function t(text: string, langSetting: number): string {
         const itemZh = lookupName(item);
         const articleZh = article === 'some' ? '一些' : '';
         if (itemZh !== item) {
-            return '你找到了' + articleZh + itemZh + '。';
+            return '你找到了' + articleZh + itemZh + '.';
         }
     }
     // Pattern: "You find a/an/some ITEM." or "You find a/an/some ITEM!"
@@ -2898,7 +3551,7 @@ export function t(text: string, langSetting: number): string {
         const itemZh = lookupName(item);
         const articleZh = article === 'some' ? '一些' : article === 'half a' ? '半个' : '';
         if (itemZh !== item) {
-            return '你找到了' + articleZh + itemZh + '。';
+            return '你找到了' + articleZh + itemZh + '.';
         }
     }
     // Pattern: "You get some ITEM."
@@ -2906,7 +3559,7 @@ export function t(text: string, langSetting: number): string {
     if (getMatch) {
         const itemZh = lookupName(getMatch[1]);
         if (itemZh !== getMatch[1]) {
-            return '你获得了一些' + itemZh + '。';
+            return '你获得了一些' + itemZh + '.';
         }
     }
     // Pattern: "You catch a/an ITEM."
@@ -2914,7 +3567,7 @@ export function t(text: string, langSetting: number): string {
     if (catchMatch) {
         const itemZh = lookupName(catchMatch[2]);
         if (itemZh !== catchMatch[2]) {
-            return '你抓到了' + itemZh + '。';
+            return '你抓到了' + itemZh + '.';
         }
     }
     // Pattern: "You cook the ITEM."
@@ -2922,7 +3575,7 @@ export function t(text: string, langSetting: number): string {
     if (cookMatch) {
         const itemZh = lookupName(cookMatch[1]);
         if (itemZh !== cookMatch[1]) {
-            return '你烹饪了' + itemZh + '。';
+            return '你烹饪了' + itemZh + '.';
         }
     }
     // Pattern: "You accidentally burn the ITEM."
@@ -2930,7 +3583,7 @@ export function t(text: string, langSetting: number): string {
     if (burnMatch) {
         const itemZh = lookupName(burnMatch[1]);
         if (itemZh !== burnMatch[1]) {
-            return '你不小心把' + itemZh + '烧焦了。';
+            return '你不小心把' + itemZh + '烧焦了.';
         }
     }
     // Pattern: "You eat the ITEM."
@@ -2938,7 +3591,7 @@ export function t(text: string, langSetting: number): string {
     if (eatMatch) {
         const itemZh = lookupName(eatMatch[1]);
         if (itemZh !== eatMatch[1]) {
-            return '你吃了' + itemZh + '。';
+            return '你吃了' + itemZh + '.';
         }
     }
     // Pattern: "You manage to mine some ITEM."
@@ -2946,7 +3599,7 @@ export function t(text: string, langSetting: number): string {
     if (mineMatch) {
         const itemZh = lookupName(mineMatch[1]);
         if (itemZh !== mineMatch[1]) {
-            return '你成功开采了一些' + itemZh + '。';
+            return '你成功开采了一些' + itemZh + '.';
         }
     }
     // Pattern: "It's a X." or "It's an X." (auto-generated examine fallback)
@@ -2954,7 +3607,56 @@ export function t(text: string, langSetting: number): string {
     if (itsAMatch) {
         const nameZh = lookupName(itsAMatch[1]);
         if (nameZh !== itsAMatch[1]) {
-            return '这是' + nameZh + '。';
+            return '这是' + nameZh + '.';
+        }
+    }
+    // Pattern: "A commonly found X." (scenery examine)
+    const commonlyFoundMatch = text.match(/^A commonly found (.+?)\.$/);
+    if (commonlyFoundMatch) {
+        const nameZh = lookupName(commonlyFoundMatch[1]);
+        if (nameZh !== commonlyFoundMatch[1]) {
+            return '常见的' + nameZh + '.';
+        }
+        return '一种常见的' + commonlyFoundMatch[1] + '.';
+    }
+    // Pattern: "A/An X." (generic examine)
+    const aMatch = text.match(/^An? (.+?)\.$/);
+    if (aMatch) {
+        const nameZh = lookupName(aMatch[1]);
+        if (nameZh !== aMatch[1]) {
+            return nameZh + '.';
+        }
+    }
+    // Pattern: "Some X." (examine)
+    const someMatch = text.match(/^Some (.+?)\.$/);
+    if (someMatch) {
+        const nameZh = lookupName(someMatch[1]);
+        if (nameZh !== someMatch[1]) {
+            return '一些' + nameZh + '.';
+        }
+    }
+    // Pattern: "A nice looking X." / "A X-looking X."
+    const niceLookingMatch = text.match(/^A (.+?) looking (.+?)\.$/);
+    if (niceLookingMatch) {
+        const nameZh = lookupName(niceLookingMatch[2]);
+        if (nameZh !== niceLookingMatch[2]) {
+            return '一个好看的' + nameZh + '.';
+        }
+    }
+    // Pattern: "This is a X."
+    const thisIsMatch = text.match(/^This is an? (.+?)\.$/);
+    if (thisIsMatch) {
+        const nameZh = lookupName(thisIsMatch[1]);
+        if (nameZh !== thisIsMatch[1]) {
+            return '这是' + nameZh + '.';
+        }
+    }
+    // Pattern: "A X grows here."
+    const growsMatch = text.match(/^An? (.+?) grows here\.$/);
+    if (growsMatch) {
+        const nameZh = lookupName(growsMatch[1]);
+        if (nameZh !== growsMatch[1]) {
+            return nameZh + '生长在这里.';
         }
     }
     // Pattern: "You drink some of your POTION." or "You drink the ITEM."
@@ -2962,7 +3664,7 @@ export function t(text: string, langSetting: number): string {
     if (drinkMatch) {
         const itemZh = lookupName(drinkMatch[1]);
         if (itemZh !== drinkMatch[1]) {
-            return '你喝了' + itemZh + '。';
+            return '你喝了' + itemZh + '.';
         }
     }
     // Pattern: "You bury the ITEM."
@@ -2970,7 +3672,7 @@ export function t(text: string, langSetting: number): string {
     if (buryMatch) {
         const itemZh = lookupName(buryMatch[1]);
         if (itemZh !== buryMatch[1]) {
-            return '你埋葬了' + itemZh + '。';
+            return '你埋葬了' + itemZh + '.';
         }
     }
     // Pattern: "You open the ITEM." / "You close the ITEM."
@@ -2979,7 +3681,7 @@ export function t(text: string, langSetting: number): string {
         const action = openCloseMatch[1] === 'open' ? '打开了' : '关上了';
         const itemZh = lookupName(openCloseMatch[2]);
         if (itemZh !== openCloseMatch[2]) {
-            return '你' + action + itemZh + '。';
+            return '你' + action + itemZh + '.';
         }
     }
     // Pattern: "Buy X" / "Sell X" (shop options)
@@ -2995,29 +3697,29 @@ export function t(text: string, langSetting: number): string {
     const costMatch = text.match(/^(.+?): currently costs (\d+)gp\.$/);
     if (costMatch) {
         const itemZh = lookupName(costMatch[1]);
-        return itemZh + '：当前售价 ' + costMatch[2] + ' 金币。';
+        return itemZh + ':当前售价 ' + costMatch[2] + ' 金币.';
     }
     // Pattern: "ITEM: shop will buy for Xgp." (shop sell price)
     const shopBuyMatch = text.match(/^(.+?): shop will buy for (\d+)gp\.$/);
     if (shopBuyMatch) {
         const itemZh = lookupName(shopBuyMatch[1]);
-        return itemZh + '：商店收购价 ' + shopBuyMatch[2] + ' 金币。';
+        return itemZh + ':商店收购价 ' + shopBuyMatch[2] + ' 金币.';
     }
     // Pattern: "You can't sell this item to this shop."
     if (text === "You can't sell this item to this shop.") {
-        return '你不能把这个物品卖给这家商店。';
+        return '你不能把这个物品卖给这家商店.';
     }
     // Pattern: "The door won't open - you need at least X Quest Points."
     const questPointsMatch = text.match(/^The door won't open - you need at least (\d+) Quest Points\.$/);
     if (questPointsMatch) {
-        return '门打不开——你至少需要 ' + questPointsMatch[1] + ' 个任务点数。';
+        return '门打不开——你至少需要 ' + questPointsMatch[1] + ' 个任务点数.';
     }
     // Pattern: "The door won't open." (and variants)
     const doorWontMatch = text.match(/^The door won't open\.(.*)$/);
     if (doorWontMatch) {
         const rest = doorWontMatch[1];
-        if (!rest) return '门打不开。';
-        return '门打不开。' + rest;
+        if (!rest) return '门打不开.';
+        return '门打不开.' + rest;
     }
     // Pattern: "You need to have completed X to enter." / "You need at least X to ..."
     const needAtLeastMatch = text.match(/^You need at least (\d+) (.+?) to (.+)$/);
@@ -3042,6 +3744,11 @@ export function t(text: string, langSetting: number): string {
             return translated.join('\\n');
         }
     }
+    // Fallback: try entity name lookup (for item/NPC/loc names sent via if_settext)
+    const nameMatch = lookupName(text);
+    if (nameMatch !== text) {
+        return nameMatch;
+    }
     return text;
 }
 
@@ -3053,6 +3760,11 @@ export function tName(name: string, langSetting: number): string {
     return lookupName(name);
 }
 
+// Unified name+dict lookup: try ZH_DICT first, then ZH_NAMES (entity names)
+function lookupAny(text: string): string {
+    return lookupDict(text) ?? lookupName(text);
+}
+
 // Translate menu option text (handles patterns like "Attack @yel@Goblin")
 export function tMenu(text: string, langSetting: number): string {
     if (langSetting !== 1) {
@@ -3062,8 +3774,8 @@ export function tMenu(text: string, langSetting: number): string {
     // Handle "Use X with @color@Target" pattern
     const useWithMatch = text.match(/^Use (.+?) with @([a-z0-9]{3})@(.+)$/);
     if (useWithMatch) {
-        const item = lookupName(useWithMatch[1]);
-        const target = lookupName(useWithMatch[3]);
+        const item = lookupAny(useWithMatch[1]);
+        const target = lookupAny(useWithMatch[3]);
         return '对 @' + useWithMatch[2] + '@' + target + ' 使用 ' + item;
     }
 
@@ -3084,7 +3796,7 @@ export function tMenu(text: string, langSetting: number): string {
         } else {
             translatedAction = lookupDict(action) ?? action;
         }
-        const translatedTarget = lookupName(target);
+        const translatedTarget = lookupAny(target);
         return translatedAction + ' @' + color + '@' + translatedTarget;
     }
 

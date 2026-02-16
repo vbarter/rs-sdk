@@ -25,6 +25,33 @@ const LEVELUP_SKILL_ZH: Record<string, string> = {
     'fletching': '制箭',
 };
 
+// Skill action translations (the "to X" part of "You need a Y level of Z to X")
+const SKILL_ACTION_ZH: Record<string, string> = {
+    'chop down this tree.': '砍伐这棵树.',
+    'chop down these trees.': '砍伐这些树.',
+    'chop this tree.': '砍伐这棵树.',
+    'burn these logs.': '燃烧这些原木.',
+    'burn this log.': '燃烧这根原木.',
+    'mine this rock.': '开采这块岩石.',
+    'mine your way through this rock.': '凿穿这块岩石.',
+    'clear the rockslide.': '清除碎石.',
+    'cook this.': '烹饪这个.',
+    'use this furnace.': '使用这个熔炉.',
+    'use the spit roast.': '使用烤架.',
+    'mix this potion.': '混合这瓶药水.',
+    'make this potion.': '制作这瓶药水.',
+    'make cannonballs.': '制造炮弹.',
+    'make wrapped oomlie meat.': '制作包裹的欧姆利肉.',
+    'fix this.': '修理这个.',
+    'pick this lock.': '撬开这把锁.',
+    'enter the Chef\'s Guild.': '进入厨师公会.',
+    'complete this task.': '完成这个任务.',
+    'use this item.': '使用这个物品.',
+    'use this potion.': '使用这瓶药水.',
+    'use this spell outside the Mage Arena.': '在法师竞技场外使用这个法术.',
+    'mine elemental ore.': '开采元素矿石.',
+};
+
 /**
  * Simple translation service for i18n support.
  * Loads translation dictionaries from JSON files.
@@ -33,6 +60,7 @@ const LEVELUP_SKILL_ZH: Record<string, string> = {
 export default class TranslationService {
     private static translations: Map<string, string> = new Map();
     private static loaded: boolean = false;
+    private static watching: boolean = false;
 
     /**
      * Load translation dictionary from file.
@@ -59,6 +87,16 @@ export default class TranslationService {
 
             console.log(`[i18n] Loaded ${TranslationService.translations.size} translations for locale: ${locale}`);
             TranslationService.loaded = true;
+
+            // Watch for file changes and auto-reload
+            if (!TranslationService.watching) {
+                TranslationService.watching = true;
+                fs.watchFile(filePath, { interval: 2000 }, () => {
+                    console.log(`[i18n] Translation file changed, reloading...`);
+                    TranslationService.loaded = false;
+                    TranslationService.load(locale);
+                });
+            }
         } catch (e) {
             console.error(`[i18n] Failed to load translations:`, e);
             TranslationService.loaded = true;
@@ -160,7 +198,8 @@ export default class TranslationService {
             const level = skillLevelMatch[2];
             const action = skillLevelMatch[3];
             const skillZh = LEVELUP_SKILL_ZH[skill.toLowerCase()] ?? TranslationService.translations.get(skill) ?? skill;
-            return `你需要${skillZh}等级达到${level}才能${action}`;
+            const actionZh = SKILL_ACTION_ZH[action] ?? TranslationService.translations.get(action) ?? action;
+            return `你需要${skillZh}等级达到${level}才能${actionZh}`;
         }
 
         // Dynamic pattern: "You need a Woodcutting level of X."
@@ -171,6 +210,46 @@ export default class TranslationService {
             const skillZh = LEVELUP_SKILL_ZH[skill.toLowerCase()] ?? TranslationService.translations.get(skill) ?? skill;
             return `你需要${skillZh}等级达到${level}.`;
         }
+
+        // Dynamic pattern: "A commonly found X." (scenery examine)
+        const commonlyFoundMatch = text.match(/^A commonly found (.+?)\.$/);
+        if (commonlyFoundMatch) {
+            const nameZh = TranslationService.translations.get(commonlyFoundMatch[1]);
+            if (nameZh) return `常见的${nameZh}.`;
+            return `一种常见的${commonlyFoundMatch[1]}.`;
+        }
+
+        // Dynamic pattern: "It's a/an X." (examine)
+        const itsAMatch = text.match(/^It's an? (.+?)\.$/);
+        if (itsAMatch) {
+            const nameZh = TranslationService.translations.get(itsAMatch[1]);
+            if (nameZh) return `这是${nameZh}.`;
+        }
+
+        // Dynamic pattern: "A/An X." (generic examine)
+        const aMatch = text.match(/^An? (.+?)\.$/);
+        if (aMatch) {
+            const nameZh = TranslationService.translations.get(aMatch[1]);
+            if (nameZh) return `${nameZh}.`;
+        }
+
+        // Dynamic pattern: "Some X." (examine)
+        const someMatch = text.match(/^Some (.+?)\.$/);
+        if (someMatch) {
+            const nameZh = TranslationService.translations.get(someMatch[1]);
+            if (nameZh) return `一些${nameZh}.`;
+        }
+
+        // Dynamic pattern: "This is a/an X."
+        const thisIsMatch = text.match(/^This is an? (.+?)\.$/);
+        if (thisIsMatch) {
+            const nameZh = TranslationService.translations.get(thisIsMatch[1]);
+            if (nameZh) return `这是${nameZh}.`;
+        }
+
+        // Fallback: try exact item/entity name lookup (for if_settext with item names)
+        const nameMatch = TranslationService.translations.get(text);
+        if (nameMatch) return nameMatch;
 
         return text;
     }

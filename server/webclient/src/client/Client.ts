@@ -3012,6 +3012,9 @@ export class Client extends GameShell {
     // ----
 
     async drawProgress(percent: number, message: string): Promise<void> {
+        if (this.languageSetting === 1) {
+            message = this.translateProgress(message);
+        }
         console.log(`${percent}%: ${message}`);
 
         this.lastProgressPercent = percent;
@@ -3030,7 +3033,7 @@ export class Client extends GameShell {
         const y: number = 200;
 
         const offsetY: number = 20;
-        this.fontBold12?.drawStringCenter((x / 2) | 0, ((y / 2) | 0) - offsetY - 26, 'RuneScape is loading - please wait...', Colors.WHITE);
+        this.fontBold12?.drawStringCenter((x / 2) | 0, ((y / 2) | 0) - offsetY - 26, this.languageSetting === 1 ? 'RuneScape 加载中 - 请稍候...' : 'RuneScape is loading - please wait...', Colors.WHITE);
 
         const midY: number = ((y / 2) | 0) - 18 - offsetY;
         Pix2D.drawRect(((x / 2) | 0) - 152, midY, 304, 34, Colors.PROGRESS_RED);
@@ -3058,6 +3061,43 @@ export class Client extends GameShell {
         }
 
         await sleep(5); // return a slice of time to the main loop so it can update the progress bar
+    }
+
+    private translateProgress(msg: string): string {
+        // Static messages
+        const map: Record<string, string> = {
+            'Connecting to web server': '正在连接网络服务器',
+            'Connecting to update server': '正在连接更新服务器',
+            'Connecting to fileserver': '正在连接文件服务器',
+            'Preloading cache': '预加载缓存',
+            'Requesting animations': '请求动画数据',
+            'Requesting models': '请求模型数据',
+            'Requesting maps': '请求地图数据',
+            'Unpacking media': '解包媒体资源',
+            'Unpacking textures': '解包纹理',
+            'Unpacking config': '解包配置',
+            'Unpacking sounds': '解包音效',
+            'Unpacking interfaces': '解包界面',
+            'Preparing game engine': '准备游戏引擎',
+            'Game updated - please reload page': '游戏已更新 - 请刷新页面',
+        };
+        if (map[msg]) return map[msg];
+
+        // Dynamic patterns
+        const loadingMatch = msg.match(/^Loading (animations|models|maps) - (\d+)%$/);
+        if (loadingMatch) {
+            const typeMap: Record<string, string> = { 'animations': '动画', 'models': '模型', 'maps': '地图' };
+            return `加载${typeMap[loadingMatch[1]] || loadingMatch[1]} - ${loadingMatch[2]}%`;
+        }
+        const requestingMatch = msg.match(/^Requesting (.+)$/);
+        if (requestingMatch) {
+            return `请求${requestingMatch[1]}`;
+        }
+        const retryMatch = msg.match(/^Error loading - Will retry in (\d+) secs\.$/);
+        if (retryMatch) {
+            return `加载失败 - ${retryMatch[1]}秒后重试`;
+        }
+        return msg;
     }
 
     private drawError(): void {
@@ -3280,7 +3320,7 @@ export class Client extends GameShell {
             x = ((this.width / 2) | 0) + 80;
             if (this.mouseClickButton === 1 && this.mouseClickX >= x - 75 && this.mouseClickX <= x + 75 && this.mouseClickY >= y - 20 && this.mouseClickY <= y + 20) {
                 this.loginMessage0 = '';
-                this.loginMessage1 = 'Enter your username & password.';
+                this.loginMessage1 = this.languageSetting === 1 ? '请输入你的用户名和密码.' : 'Enter your username & password.';
                 this.titleScreenState = 2;
                 this.titleLoginField = 0;
             }
@@ -3383,18 +3423,18 @@ export class Client extends GameShell {
             if (!reconnect) {
                 if (username.length < 1 || username.length > 12) {
                     this.loginMessage0 = '';
-                    this.loginMessage1 = 'Username must be 1-12 characters.';
+                    this.loginMessage1 = this.languageSetting === 1 ? '用户名必须为1-12个字符.' : 'Username must be 1-12 characters.';
                     return;
                 }
 
                 if (password.length < 1 || password.length > 20) {
                     this.loginMessage0 = '';
-                    this.loginMessage1 = 'Password must be 1-20 characters.';
+                    this.loginMessage1 = this.languageSetting === 1 ? '密码必须为1-20个字符.' : 'Password must be 1-20 characters.';
                     return;
                 }
 
                 this.loginMessage0 = '';
-                this.loginMessage1 = 'Connecting to server...';
+                this.loginMessage1 = this.languageSetting === 1 ? '正在连接服务器...' : 'Connecting to server...';
                 await this.drawTitle();
             }
 
@@ -3589,40 +3629,40 @@ export class Client extends GameShell {
                 this.prepareGame();
             } else if (reply === 3) {
                 this.loginMessage0 = '';
-                this.loginMessage1 = 'Invalid username or password.';
+                this.loginMessage1 = this.languageSetting === 1 ? '用户名或密码错误.' : 'Invalid username or password.';
             } else if (reply === 4) {
-                this.loginMessage0 = 'Your account has been disabled.';
-                this.loginMessage1 = 'Please check your message-centre for details.';
+                this.loginMessage0 = this.languageSetting === 1 ? '你的账号已被封禁.' : 'Your account has been disabled.';
+                this.loginMessage1 = this.languageSetting === 1 ? '请查看消息中心了解详情.' : 'Please check your message-centre for details.';
             } else if (reply === 5) {
-                this.loginMessage0 = 'Your account is already logged in.';
-                this.loginMessage1 = 'Try again in 60 secs...';
+                this.loginMessage0 = this.languageSetting === 1 ? '你的账号已在其他地方登录.' : 'Your account is already logged in.';
+                this.loginMessage1 = this.languageSetting === 1 ? '请60秒后重试...' : 'Try again in 60 secs...';
             } else if (reply === 6) {
-                this.loginMessage0 = 'RuneScape has been updated!';
-                this.loginMessage1 = 'Please reload this page.';
+                this.loginMessage0 = this.languageSetting === 1 ? 'RuneScape 已更新!' : 'RuneScape has been updated!';
+                this.loginMessage1 = this.languageSetting === 1 ? '请刷新页面.' : 'Please reload this page.';
             } else if (reply === 7) {
-                this.loginMessage0 = 'This world is full.';
-                this.loginMessage1 = 'Please use a different world.';
+                this.loginMessage0 = this.languageSetting === 1 ? '此世界已满.' : 'This world is full.';
+                this.loginMessage1 = this.languageSetting === 1 ? '请使用其他世界.' : 'Please use a different world.';
             } else if (reply === 8) {
-                this.loginMessage0 = 'Unable to connect.';
-                this.loginMessage1 = 'Login server offline.';
+                this.loginMessage0 = this.languageSetting === 1 ? '无法连接.' : 'Unable to connect.';
+                this.loginMessage1 = this.languageSetting === 1 ? '登录服务器离线.' : 'Login server offline.';
             } else if (reply === 9) {
-                this.loginMessage0 = 'Login limit exceeded.';
-                this.loginMessage1 = 'Too many connections from your address.';
+                this.loginMessage0 = this.languageSetting === 1 ? '登录次数超限.' : 'Login limit exceeded.';
+                this.loginMessage1 = this.languageSetting === 1 ? '你的地址连接过多.' : 'Too many connections from your address.';
             } else if (reply === 10) {
-                this.loginMessage0 = 'Unable to connect.';
-                this.loginMessage1 = 'Bad session id.';
+                this.loginMessage0 = this.languageSetting === 1 ? '无法连接.' : 'Unable to connect.';
+                this.loginMessage1 = this.languageSetting === 1 ? '会话ID无效.' : 'Bad session id.';
             } else if (reply === 11) {
-                this.loginMessage1 = 'Login server rejected session.'; // intentionally loginMessage1
-                this.loginMessage1 = 'Please try again.';
+                this.loginMessage1 = this.languageSetting === 1 ? '登录服务器拒绝了会话.' : 'Login server rejected session.'; // intentionally loginMessage1
+                this.loginMessage1 = this.languageSetting === 1 ? '请重试.' : 'Please try again.';
             } else if (reply === 12) {
-                this.loginMessage0 = 'You need a members account to login to this world.';
-                this.loginMessage1 = 'Please subscribe, or use a different world.';
+                this.loginMessage0 = this.languageSetting === 1 ? '你需要会员账号才能登录此世界.' : 'You need a members account to login to this world.';
+                this.loginMessage1 = this.languageSetting === 1 ? '请订阅, 或使用其他世界.' : 'Please subscribe, or use a different world.';
             } else if (reply === 13) {
-                this.loginMessage0 = 'Could not complete login.';
-                this.loginMessage1 = 'Please try using a different world.';
+                this.loginMessage0 = this.languageSetting === 1 ? '无法完成登录.' : 'Could not complete login.';
+                this.loginMessage1 = this.languageSetting === 1 ? '请尝试使用其他世界.' : 'Please try using a different world.';
             } else if (reply === 14) {
-                this.loginMessage0 = 'The server is being updated.';
-                this.loginMessage1 = 'Please wait 1 minute and try again.';
+                this.loginMessage0 = this.languageSetting === 1 ? '服务器正在更新.' : 'The server is being updated.';
+                this.loginMessage1 = this.languageSetting === 1 ? '请等待1分钟后重试.' : 'Please wait 1 minute and try again.';
             } else if (reply === 15) {
                 this.ingame = true;
                 this.out.pos = 0;
@@ -3643,23 +3683,23 @@ export class Client extends GameShell {
                     this.botOverlay.show();
                 }
             } else if (reply === 16) {
-                this.loginMessage0 = 'Login attempts exceeded.';
-                this.loginMessage1 = 'Please wait 1 minute and try again.';
+                this.loginMessage0 = this.languageSetting === 1 ? '登录尝试次数超限.' : 'Login attempts exceeded.';
+                this.loginMessage1 = this.languageSetting === 1 ? '请等待1分钟后重试.' : 'Please wait 1 minute and try again.';
             } else if (reply === 17) {
-                this.loginMessage0 = 'You are standing in a members-only area.';
-                this.loginMessage1 = 'To play on this world move to a free area first';
+                this.loginMessage0 = this.languageSetting === 1 ? '你站在会员专属区域.' : 'You are standing in a members-only area.';
+                this.loginMessage1 = this.languageSetting === 1 ? '请先移动到免费区域' : 'To play on this world move to a free area first';
             } else if (reply === 20) {
-                this.loginMessage0 = 'Invalid loginserver requested';
-                this.loginMessage1 = 'Please try using a different world.';
+                this.loginMessage0 = this.languageSetting === 1 ? '无效的登录服务器请求' : 'Invalid loginserver requested';
+                this.loginMessage1 = this.languageSetting === 1 ? '请尝试使用其他世界.' : 'Please try using a different world.';
             } else {
-                this.loginMessage0 = 'Unexpected server response';
-                this.loginMessage1 = 'Please try using a different world.';
+                this.loginMessage0 = this.languageSetting === 1 ? '服务器响应异常' : 'Unexpected server response';
+                this.loginMessage1 = this.languageSetting === 1 ? '请尝试使用其他世界.' : 'Please try using a different world.';
             }
         } catch (err) {
             console.error(err);
 
             this.loginMessage0 = '';
-            this.loginMessage1 = 'Error connecting to server.';
+            this.loginMessage1 = this.languageSetting === 1 ? '连接服务器出错.' : 'Error connecting to server.';
         }
     }
 
@@ -4054,10 +4094,12 @@ export class Client extends GameShell {
         console.warn('[LOGOUT DEBUG] tryReconnect() attempting reconnection...');
 
         this.areaViewport?.bind();
-        this.fontPlain12?.drawStringCenter(257, 144, 'Connection lost', Colors.BLACK);
-        this.fontPlain12?.drawStringCenter(256, 143, 'Connection lost', Colors.WHITE);
-        this.fontPlain12?.drawStringCenter(257, 159, 'Please wait - attempting to reestablish', Colors.BLACK);
-        this.fontPlain12?.drawStringCenter(256, 158, 'Please wait - attempting to reestablish', Colors.WHITE);
+        const connLostText = this.languageSetting === 1 ? '连接已断开' : 'Connection lost';
+        const reconnText = this.languageSetting === 1 ? '请稍候 - 正在尝试重新连接' : 'Please wait - attempting to reestablish';
+        this.fontPlain12?.drawStringCenter(257, 144, connLostText, Colors.BLACK);
+        this.fontPlain12?.drawStringCenter(256, 143, connLostText, Colors.WHITE);
+        this.fontPlain12?.drawStringCenter(257, 159, reconnText, Colors.BLACK);
+        this.fontPlain12?.drawStringCenter(256, 158, reconnText, Colors.WHITE);
         this.areaViewport?.draw(4, 4);
 
         this.flagSceneTileX = 0;
@@ -4074,8 +4116,8 @@ export class Client extends GameShell {
     private updateSceneState(): void {
         if (Client.lowMemory && this.sceneState === 2 && World.levelBuilt !== this.currentLevel) {
             this.areaViewport?.bind();
-            this.fontPlain12?.drawStringCenter(257, 151, 'Loading - please wait.', Colors.BLACK);
-            this.fontPlain12?.drawStringCenter(256, 150, 'Loading - please wait.', Colors.WHITE);
+            this.fontPlain12?.drawStringCenter(257, 151, this.languageSetting === 1 ? '加载中 - 请稍候.' : 'Loading - please wait.', Colors.BLACK);
+            this.fontPlain12?.drawStringCenter(256, 150, this.languageSetting === 1 ? '加载中 - 请稍候.' : 'Loading - please wait.', Colors.WHITE);
             this.areaViewport?.draw(4, 4);
             this.sceneState = 1;
         }
@@ -7447,12 +7489,12 @@ export class Client extends GameShell {
 
         if (this.wildernessLevel > 0) {
             this.imageHeadicon[0]?.draw(472, 296);
-            this.fontPlain12?.drawStringCenter(484, 329, 'Level: ' + this.wildernessLevel, Colors.YELLOW);
+            this.fontPlain12?.drawStringCenter(484, 329, (this.languageSetting === 1 ? '等级: ' : 'Level: ') + this.wildernessLevel, Colors.YELLOW);
         }
 
         if (this.worldLocationState === 1) {
             this.imageHeadicon[6]?.draw(472, 296);
-            this.fontPlain12?.drawStringCenter(484, 329, 'Arena', Colors.YELLOW);
+            this.fontPlain12?.drawStringCenter(484, 329, this.languageSetting === 1 ? '竞技场' : 'Arena', Colors.YELLOW);
         }
 
         if (this.displayFps) {
@@ -7483,10 +7525,11 @@ export class Client extends GameShell {
             const minutes: number = (seconds / 60) | 0;
             seconds %= 60;
 
+            const sysUpdateLabel = this.languageSetting === 1 ? '系统更新倒计时: ' : 'System update in: ';
             if (seconds < 10) {
-                this.fontPlain12?.drawString(4, 329, 'System update in: ' + minutes + ':0' + seconds, Colors.YELLOW);
+                this.fontPlain12?.drawString(4, 329, sysUpdateLabel + minutes + ':0' + seconds, Colors.YELLOW);
             } else {
-                this.fontPlain12?.drawString(4, 329, 'System update in: ' + minutes + ':' + seconds, Colors.YELLOW);
+                this.fontPlain12?.drawString(4, 329, sysUpdateLabel + minutes + ':' + seconds, Colors.YELLOW);
             }
         }
     }
@@ -7628,6 +7671,10 @@ export class Client extends GameShell {
             tooltip = t('Use', this.languageSetting) + ' ' + this.objSelectedName + ' ' + (this.languageSetting === 1 ? '...' : 'with...');
         } else if (this.spellSelected === 1 && this.menuSize < 2) {
             tooltip = this.spellCaption + '...';
+            // Ensure spell caption is translated at render time as fallback
+            if (this.languageSetting === 1) {
+                tooltip = t(tooltip, this.languageSetting);
+            }
         } else {
             tooltip = tMenu(this.menuOption[this.menuSize - 1], this.languageSetting);
         }
@@ -9085,8 +9132,8 @@ export class Client extends GameShell {
                 this.sceneLoadStartTime = performance.now();
 
                 this.areaViewport?.bind();
-                this.fontPlain12?.drawStringCenter(257, 151, 'Loading - please wait.', Colors.BLACK);
-                this.fontPlain12?.drawStringCenter(256, 150, 'Loading - please wait.', Colors.WHITE);
+                this.fontPlain12?.drawStringCenter(257, 151, this.languageSetting === 1 ? '加载中 - 请稍候.' : 'Loading - please wait.', Colors.BLACK);
+                this.fontPlain12?.drawStringCenter(256, 150, this.languageSetting === 1 ? '加载中 - 请稍候.' : 'Loading - please wait.', Colors.WHITE);
                 this.areaViewport?.draw(4, 4);
 
                 let regions = 0;
@@ -10629,7 +10676,7 @@ export class Client extends GameShell {
                 examine = obj.desc;
             }
 
-            this.addMessage(0, examine, '');
+            this.addMessage(0, t(examine, this.languageSetting), '');
         }
 
         if (action === 965) {
@@ -10738,7 +10785,7 @@ export class Client extends GameShell {
                     examine = npc.type.desc;
                 }
 
-                this.addMessage(0, examine, '');
+                this.addMessage(0, t(examine, this.languageSetting), '');
             }
         }
 
@@ -10824,7 +10871,7 @@ export class Client extends GameShell {
                 examine = loc.desc;
             }
 
-            this.addMessage(0, examine, '');
+            this.addMessage(0, t(examine, this.languageSetting), '');
         }
 
         if (action === 55) {
@@ -11048,7 +11095,12 @@ export class Client extends GameShell {
 
             if (this.languageSetting === 1) {
                 const translatedPrefix = t(prefix || '', this.languageSetting);
-                const name = com.targetText ? t(com.targetText, this.languageSetting) : t(suffix || '', this.languageSetting);
+                const rawName = (com.targetText ?? suffix ?? '').trim();
+                // Try dict lookup first (spell names), then entity name lookup
+                let name = t(rawName, this.languageSetting);
+                if (name === rawName) {
+                    name = tName(rawName, this.languageSetting);
+                }
                 this.spellCaption = translatedPrefix + ' ' + name;
             } else {
                 this.spellCaption = prefix + ' ' + com.targetText + ' ' + suffix;
@@ -12897,11 +12949,11 @@ export class Client extends GameShell {
             this.fontBold12?.drawStringCenter(239, 40, this.socialMessage, Colors.BLACK);
             this.fontBold12?.drawStringCenter(239, 60, this.socialInput + '*', Colors.DARKBLUE);
         } else if (this.chatbackInputOpen) {
-            this.fontBold12?.drawStringCenter(239, 40, 'Enter amount:', Colors.BLACK);
+            this.fontBold12?.drawStringCenter(239, 40, this.languageSetting === 1 ? '输入数量:' : 'Enter amount:', Colors.BLACK);
             this.fontBold12?.drawStringCenter(239, 60, this.chatbackInput + '*', Colors.DARKBLUE);
         } else if (this.modalMessage) {
             this.fontBold12?.drawStringCenter(239, 40, this.modalMessage, Colors.BLACK);
-            this.fontBold12?.drawStringCenter(239, 60, 'Click to continue', Colors.DARKBLUE);
+            this.fontBold12?.drawStringCenter(239, 60, this.languageSetting === 1 ? '点击继续' : 'Click to continue', Colors.DARKBLUE);
         } else if (this.chatInterfaceId !== -1) {
             this.drawInterface(Component.types[this.chatInterfaceId], 0, 0, 0);
         } else if (this.stickyChatInterfaceId !== -1) {

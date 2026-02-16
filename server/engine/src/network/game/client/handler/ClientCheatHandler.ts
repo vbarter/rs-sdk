@@ -56,7 +56,7 @@ export default class ClientCheatHandler extends ClientGameMessageHandler<ClientC
             if (varp) {
                 if (langArg === 'zh' || langArg === 'cn') {
                     player.setVar(varp.id, 1);
-                    player.messageGame('Language set to Chinese / 语言已切换为中文');
+                    player.messageGame('语言已切换为中文');
                 } else if (langArg === 'en') {
                     player.setVar(varp.id, 0);
                     player.messageGame('Language set to English');

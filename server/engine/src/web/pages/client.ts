@@ -65,33 +65,35 @@ export async function handleClientPage(url: URL): Promise<Response | null> {
     return null;
 }
 
+const NOCACHE_HEADERS = { 'Cache-Control': 'no-cache, no-store, must-revalidate' };
+
 export function handleCacheEndpoints(url: URL): Response | null {
     if (url.pathname.startsWith('/crc')) {
-        return new Response(Buffer.from(CrcBuffer.data));
+        return new Response(Buffer.from(CrcBuffer.data), { headers: NOCACHE_HEADERS });
     }
     if (url.pathname.startsWith('/title')) {
-        return new Response(Buffer.from(OnDemand.cache.read(0, 1)!));
+        return new Response(Buffer.from(OnDemand.cache.read(0, 1)!), { headers: NOCACHE_HEADERS });
     }
     if (url.pathname.startsWith('/config')) {
-        return new Response(Buffer.from(OnDemand.cache.read(0, 2)!));
+        return new Response(Buffer.from(OnDemand.cache.read(0, 2)!), { headers: NOCACHE_HEADERS });
     }
     if (url.pathname.startsWith('/interface')) {
-        return new Response(Buffer.from(OnDemand.cache.read(0, 3)!));
+        return new Response(Buffer.from(OnDemand.cache.read(0, 3)!), { headers: NOCACHE_HEADERS });
     }
     if (url.pathname.startsWith('/media')) {
-        return new Response(Buffer.from(OnDemand.cache.read(0, 4)!));
+        return new Response(Buffer.from(OnDemand.cache.read(0, 4)!), { headers: NOCACHE_HEADERS });
     }
     if (url.pathname.startsWith('/versionlist')) {
-        return new Response(Buffer.from(OnDemand.cache.read(0, 5)!));
+        return new Response(Buffer.from(OnDemand.cache.read(0, 5)!), { headers: NOCACHE_HEADERS });
     }
     if (url.pathname.startsWith('/textures')) {
-        return new Response(Buffer.from(OnDemand.cache.read(0, 6)!));
+        return new Response(Buffer.from(OnDemand.cache.read(0, 6)!), { headers: NOCACHE_HEADERS });
     }
     if (url.pathname.startsWith('/wordenc')) {
-        return new Response(Buffer.from(OnDemand.cache.read(0, 7)!));
+        return new Response(Buffer.from(OnDemand.cache.read(0, 7)!), { headers: NOCACHE_HEADERS });
     }
     if (url.pathname.startsWith('/sounds')) {
-        return new Response(Buffer.from(OnDemand.cache.read(0, 8)!));
+        return new Response(Buffer.from(OnDemand.cache.read(0, 8)!), { headers: NOCACHE_HEADERS });
     }
     if (url.pathname.startsWith('/ondemand.zip')) {
         return new Response(Bun.file('data/pack/ondemand.zip'));
