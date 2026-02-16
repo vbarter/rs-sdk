@@ -30,6 +30,12 @@ export function createPersonaTools(
             case 'sell_item':
                 tools.push(createSellItemTool(actions, context, toolDef.description));
                 break;
+            case 'open_shop':
+                tools.push(createOpenShopBasicTool(actions, toolDef.description));
+                break;
+            case 'give_item':
+                tools.push(createGiveItemTool(actions, toolDef.description));
+                break;
         }
     }
 
@@ -78,6 +84,40 @@ function createRecommendItemTool(
                 actions.push({ type: 'say', text });
                 return { content: [{ type: 'text', text: `未找到商品: ${name}` }], details: {} };
             }
+        }
+    };
+}
+
+function createOpenShopBasicTool(actions: NpcAiAction[], description?: string): AgentTool<any> {
+    return {
+        name: 'open_shop',
+        description: description || '打开商店界面（不指定玩家）。当 NPC 需要打开自己经营的商店时使用。',
+        label: '打开商店',
+        parameters: Type.Object({}),
+        execute: async () => {
+            actions.push({ type: 'open_shop' });
+            return { content: [{ type: 'text', text: '已打开商店界面' }], details: {} };
+        }
+    };
+}
+
+function createGiveItemTool(actions: NpcAiAction[], description?: string): AgentTool<any> {
+    return {
+        name: 'give_item',
+        description: description || '赠送物品给玩家。当 NPC 需要给玩家一个物品时使用。',
+        label: '赠送物品',
+        parameters: Type.Object({
+            itemId: Type.Number({ description: '物品 ID' }),
+            count: Type.Number({ description: '数量，默认1', default: 1 })
+        }),
+        execute: async (_id, params) => {
+            const itemId = Number(params.itemId);
+            const count = Number(params.count) || 1;
+            actions.push({ type: 'give_item', itemId, count });
+            return {
+                content: [{ type: 'text', text: `已赠送物品(ID:${itemId}) x${count}` }],
+                details: {}
+            };
         }
     };
 }

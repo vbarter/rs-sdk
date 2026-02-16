@@ -16,6 +16,10 @@ const namePatterns: Array<{ pattern: RegExp; role: NpcRole }> = [
     { pattern: /^Zaff$/i, role: 'shopkeeper' },        // 法杖店
     { pattern: /^Aubury$/i, role: 'shopkeeper' },       // 符文店
     { pattern: /^Thessalia$/i, role: 'shopkeeper' },     // 服装店
+    { pattern: /^Horvik/i, role: 'shopkeeper' },          // 盔甲店
+    { pattern: /^Lowe$/i, role: 'shopkeeper' },           // 弓箭店
+    { pattern: /^Baraek$/i, role: 'shopkeeper' },         // 皮毛商人
+    { pattern: /^Tea seller$/i, role: 'shopkeeper' },     // 茶叶小贩
     { pattern: /^Louie Legs$/i, role: 'shopkeeper' },
     { pattern: /^Zeke$/i, role: 'shopkeeper' },          // 弯刀店
 
@@ -36,6 +40,17 @@ const namePatterns: Array<{ pattern: RegExp; role: NpcRole }> = [
     { pattern: /^barmaid$/i, role: 'bartender' },
     { pattern: /^emily$/i, role: 'bartender' },          // Rising Sun 酒保
     { pattern: /^kaylee$/i, role: 'bartender' },
+
+    // 任务/氛围 NPC
+    { pattern: /^Apothecary$/i, role: 'generic' },
+    { pattern: /^Father Lawrence$/i, role: 'generic' },
+    { pattern: /^Romeo$/i, role: 'generic' },
+    { pattern: /^Juliet$/i, role: 'generic' },
+    { pattern: /^Jonny the Beard$/i, role: 'generic' },
+    { pattern: /^Harlow$/i, role: 'generic' },            // Dr. Harlow
+    { pattern: /^King Roald$/i, role: 'generic' },
+    { pattern: /^Reldo$/i, role: 'generic' },
+    { pattern: /^Curator$/i, role: 'generic' },
 
     // 训练师类
     { pattern: /master$/i, role: 'trainer' },
